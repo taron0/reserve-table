@@ -5,6 +5,8 @@ import {
     Route,
     Link
 } from "react-router-dom";
+import Home from "../../home/Home";
+import About from "../../pages/about/About";
 
 const MainLayout = () => {
     return (
@@ -13,16 +15,18 @@ const MainLayout = () => {
                 <Route exact path="/">
                     <Home />
                 </Route>
-                <Route path="/resturants">
-                    <Resturants />
-                </Route>
-                <Route path="/about">
+                {/*<Route exact path="/resturants">*/}
+                {/*    <Resturants />*/}
+                {/*</Route>*/}
+                <Route exact path="/about">
                     <About />
                 </Route>
-                <Route path="/contacts">
-                    <Contacts />
-                </Route>
+                {/*<Route exact path="/contacts">*/}
+                {/*    <Contacts />*/}
+                {/*</Route>*/}
             </Switch>
 
     )
 }
+
+export default MainLayout

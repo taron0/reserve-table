@@ -3,6 +3,7 @@ import Header from "../header/Header";
 import './Home.css'
 import backg from '../../assets/cover-image.jpg'
 import Button from "../shared/button/Button";
+import {Link} from "react-router-dom";
 
 const Home = () => {
     return (
@@ -23,7 +24,7 @@ const Home = () => {
                         </div>
 
                         <div >
-                            <Button context={'Book Now'}/>
+                          <Link to={'/resturants'} ><Button context={'Book Now'}/> </Link>
                         </div>
                     </div>
 
