@@ -11,7 +11,7 @@ const About = () => {
 
 
         </div>
-            <div>asdas</div>
+            <div>asdaas</div>
             </>
     )
 }
