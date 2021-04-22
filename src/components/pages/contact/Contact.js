@@ -5,6 +5,7 @@ import './contact.css'
 import Input from "../../shared/input/Input";
 import Button from "../../shared/button/Button";
 import useContact from "../../hooks/useContact";
+import { registredMessage, registredError } from "../../../constant/errorMessage/errorMessage";
 
 const Contact = () => {
     const {formik} = useContact()
@@ -73,7 +74,7 @@ const Contact = () => {
                     <Button context={'Send'}/>
                     <div>
                         {Object.keys(formik.touched).length ?
-                        <span>{Object.keys(formik.errors).length ? "error" : "Succsses"}</span>:<></>}
+                        <span>{Object.keys(formik.errors).length ? registredError : registredMessage}</span>:<></>}
                     </div>
                 </form>
             </div>

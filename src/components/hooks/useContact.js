@@ -1,21 +1,22 @@
 import React from 'react'
 import validateForm from "../../helpers/validateForm";
-import {useFormik} from "formik";
+import { errorMessage } from "../../constant/errorMessage/errorMessage";
+import { useFormik } from "formik";
 import * as Yup from 'yup';
 
 const useContact = () => {
     const contactValidate = Yup.object().shape({
         name: Yup.string()
-            .min(2, 'Shat karch e!')
-            .max(50, 'Shat erkar!')
-            .required('Required'),
+            .min(2, errorMessage)
+            .max(50, errorMessage)
+            .required(errorMessage),
         comment: Yup.string()
-            .min(2, 'Shat karch e!')
-            .required('Required'),
-        phone:Yup.number().min(4,"chi kara senc karch elni")
-             .required('Required'),
-        email: Yup.string().email('sxaal email')
-            .required('Required'),
+            .min(2, errorMessage)
+            .required(errorMessage),
+        phone:Yup.number().min(4,errorMessage)
+             .required(errorMessage),
+        email: Yup.string().email(errorMessage)
+            .required(errorMessage),
 
     });
     const formik = useFormik({
