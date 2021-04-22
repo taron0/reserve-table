@@ -4,8 +4,6 @@ import Header from "../../header/Header";
 import './contact.css'
 import Input from "../../shared/input/Input";
 import Button from "../../shared/button/Button";
-import { validationForm } from "../../../constant/validationForm/validationForm";
-import { errorMessage } from "../../../constant/errorMessage/errorMessage";
 import validateForm from "../../../helpers/validateForm";
 
 const Contact = () => {
