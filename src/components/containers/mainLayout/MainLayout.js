@@ -7,6 +7,7 @@ import {
 } from "react-router-dom";
 import Home from "../../home/Home";
 import About from "../../pages/about/About";
+import Contact from "../../pages/contact/Contact";
 
 const MainLayout = () => {
     return (
@@ -21,9 +22,9 @@ const MainLayout = () => {
                 <Route exact path="/about">
                     <About />
                 </Route>
-                {/*<Route exact path="/contacts">*/}
-                {/*    <Contacts />*/}
-                {/*</Route>*/}
+                <Route exact path="/contact">
+                    <Contact />
+                </Route>
             </Switch>
 
     )

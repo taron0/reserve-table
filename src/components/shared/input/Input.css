@@ -1,0 +1,28 @@
+.input-box {
+    border: none;
+    outline: 0;
+    font-weight: inherit;
+    font-style: inherit;
+    font-size: 100%;
+    font-family: inherit;
+    vertical-align: baseline;
+    text-decoration: none;
+    margin: 0;
+    padding: 0;
+}
+.contact-input {
+    float: left;
+    width: 100%;
+    background: none;
+    margin-bottom: 20px;
+    font-size: 14px;
+    height: 40px;
+    border-radius: none;
+    position: relative;
+    z-index: 20;
+    padding-left: 8px;
+    color: #333;
+    border: 0;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}

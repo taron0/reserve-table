@@ -8,7 +8,7 @@ import {Link} from "react-router-dom";
 const Home = () => {
     return (
 
-
+//fg
         <div className={'wrapper'} style={{backgroundImage: `url(${backg})`}}>
             <Header/>
             <div className={'hero-title-holder'}>
