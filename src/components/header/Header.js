@@ -1,5 +1,5 @@
 import React from 'react'
-import {Link} from "react-router-dom";
+import {NavLink} from "react-router-dom";
 import './Header.css'
 import  img from '../../assets/logo_r.png'
 
@@ -27,22 +27,22 @@ const Header = () => {
                 <nav>
                     <ul className={'menu'}>
                         <li className={'menu-item'}>
-                            <Link to={'/'}>
+                            <NavLink exact to={'/'}>
                                 HOME
-                            </Link>
+                            </NavLink>
                         </li>
                         <li className={'menu-item'}>
-                            <Link to={'/resturants'}>RESTURANTS</Link>
+                            <NavLink exact to={'/resturants'}>RESTURANTS</NavLink>
                         </li>
                         <li className={'menu-item'}>
-                            <Link to={'/about'}>
+                            <NavLink exact to={'/about'}>
                                 ABOUT
-                            </Link>
+                            </NavLink>
                         </li>
                         <li className={'menu-item'}>
-                            <Link to={'/contact'}>
+                            <NavLink exact to={'/contact'}>
                                 CONTACT
-                            </Link>
+                            </NavLink>
                         </li>
                     </ul>
                 </nav>

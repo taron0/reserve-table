@@ -142,3 +142,7 @@ nav li:last-child {
     margin-top: 25px;
 
 }
+
+.active{
+    color: red;
+}

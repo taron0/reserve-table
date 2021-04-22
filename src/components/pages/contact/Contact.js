@@ -1,73 +1,16 @@
-import React, {useState} from "react";
+import React from "react";
 import imgContact from "../../../assets/cover-image.jpg";
 import Header from "../../header/Header";
 import './contact.css'
 import Input from "../../shared/input/Input";
 import Button from "../../shared/button/Button";
-import validateForm from "../../../helpers/validateForm";
+import useContact from "../../hooks/useContact";
 
 const Contact = () => {
-    const [userData, setUserData] = useState({
-            fields: {
-                name: '',
-                email: '',
-                phone: '',
-                comment: '',
-            },
-            errors: {
-                name: '',
-                email: '',
-                phone: '',
-                comment: '',
-            },
-        }
-    );
+    const {formik} = useContact()
 
-    const [isUser, setIsUser] = useState(false)
+    console.log(formik)
 
-
-    const handleUserInput = e => {
-        setUserData({
-            ...userData,
-            errors: {
-                ...userData.errors,
-                [e.target.name]: validateForm(e.target.name, e.target.value)
-            },
-            fields: {
-                ...userData.fields,
-                [e.target.name]: e.target.value
-            }
-        });
-    };
-
-    const handleSubmit = e => {
-        const {fields} = userData;
-        e.preventDefault();
-        let validationErrors = {};
-        Object.keys(fields).forEach(name => {
-            const error = validateForm(name, fields[name]);
-            if (error && error.length > 0) {
-                validationErrors[name] = error;
-            }
-        });
-        if (Object.keys(validationErrors).length > 0) {
-            setUserData({
-                ...userData,
-                errors: validationErrors,
-            });
-            return;
-        }
-        if (fields.name && fields.email && fields.phone && fields.comment) {
-            const data = {
-                name: fields.name,
-                email: fields.email,
-                phone: fields.phone,
-                comment: fields.comment,
-            };
-            window.alert("subit success", JSON.stringify(data));
-            console.log("----data----", data);
-        }
-    };
     return (
         <>
             <div className={'wrapper-contact'} style={{backgroundImage: `url(${imgContact})`}}>
@@ -82,55 +25,57 @@ const Contact = () => {
                     <h3>Get in Touch</h3>
                     <h4 className={'decor-title'}>WRITE US</h4>
                 </div>
-                <div className={'form'}>
+                <form className={'form'} onSubmit={formik.handleSubmit}>
                     <Input
                         type={'text'}
                         placeholder={'Name'}
                         name={'name'}
-                        value={userData.fields.name}
-                        onChange={(e) => handleUserInput(e)}
+                        value={formik.values.name}
+                        onChange={formik.handleChange}
                     />
                     <div>
-                        <span className="text-danger">{userData.errors.name}</span>
+                        {formik.touched.phone && <span className="text-danger">{formik.errors.name}</span>}
                     </div>
                     <Input
                         type={'text'}
                         placeholder={'Email'}
                         name={'email'}
-                        value={userData.fields.email}
-                        onChange={(e) => handleUserInput(e)}
+                        value={formik.values.email}
+                        onChange={formik.handleChange}
                     />
                     <div>
-                        <span className="text-danger">{userData.errors.email}</span>
+                        {formik.touched.phone && <span className="text-danger">{formik.errors.email}</span>}
                     </div>
                     <Input
                         type={'text'}
                         placeholder={'Phone/+(123) - 456-78-90'}
                         name={'phone'}
-                        value={userData.fields.phone}
-                        onChange={(e) => handleUserInput(e)}
+                        value={formik.values.phone}
+                        onChange={formik.handleChange}
                     />
                     <div>
-                        <span className="text-danger">{userData.errors.phone}</span>
+                        {formik.touched.phone && <span className="text-danger">{formik.errors.phone}</span>}
                     </div>
                     <span className={'textarea-form'}>
                         <textarea
                             name={'comment'}
-                            value={userData.fields.comment}
                             placeholder={'Comments'}
-                            onChange={(e) => handleUserInput(e)}
-
+                            value={formik.values.comment}
+                            onChange={formik.handleChange}
                         >
-
                         </textarea>
 
                     </span>
                     <div>
-                        <span className="text-danger">{userData.errors.comment}</span>
+                        {formik.touched.comment && <span className="text-danger">{formik.errors.comment}</span>}
                     </div>
 
-                    <Button context={'Send'} onClick={(e) => handleSubmit(e)}/>
-                </div>
+                    <Button context={'Send'}/>
+                    <div>
+                        {Object.keys(formik.touched).length ?
+                        <span>{Object.keys(formik.errors).length ? "error" : "Succsses"}</span>:<></>}
+                    </div>
+                </form>
             </div>
         </>
     )
