@@ -8,24 +8,22 @@ import validateForm from "../../../helpers/validateForm";
 
 const Contact = () => {
     const [userData, setUserData] = useState({
-        fields:{
-            name:'',
-            email:'',
-            phone:'',
-            comment:'',
-        },
-        errors: {
-            name: '',
-            email: '',
-            phone: '',
-            comment: '',
-        },
-
-
+            fields: {
+                name: '',
+                email: '',
+                phone: '',
+                comment: '',
+            },
+            errors: {
+                name: '',
+                email: '',
+                phone: '',
+                comment: '',
+            },
         }
-    )
+    );
 
-
+    const [isUser, setIsUser] = useState(false)
 
 
     const handleUserInput = e => {
@@ -43,7 +41,7 @@ const Contact = () => {
     };
 
     const handleSubmit = e => {
-        const { fields } = userData;
+        const {fields} = userData;
         e.preventDefault();
         let validationErrors = {};
         Object.keys(fields).forEach(name => {
@@ -119,8 +117,6 @@ const Contact = () => {
                         <textarea
                             name={'comment'}
                             value={userData.fields.comment}
-                            // rows={'10'}
-                            // cols={'30'}
                             placeholder={'Comments'}
                             onChange={(e) => handleUserInput(e)}
 
