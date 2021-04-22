@@ -31,35 +31,35 @@ const Contact = () => {
         switch (name) {
             case "name":
                 if (!value || value.trim() === "") {
-                    return "The field is required.";
+                    return errorMessage;
                 } else if (!value.match(validationForm.name)){
-                    return "The field is required.";
+                    return errorMessage;
                 }else {
                     return ""
                 }
             case "email":
                 if (!value) {
-                    return "The field is required.";
+                    return errorMessage;
                 } else if (
                     !value.match(validationForm.email)
                 ) {
-                    return "The field is required.";
+                    return errorMessage;
                 } else {
                     return "";
                 }
             case "phone":
                 if (!value || value.trim() === "") {
-                    return "The field is required.";
+                    return errorMessage;
                 } else if (!value.match(validationForm.phone)) {
-                    return "The field is required.";
+                    return errorMessage;
                 } else {
                     return "";
                 }
             case "comment":
                 if (!value) {
-                    return "The field is required.";
+                    return errorMessage;
                 } else if (!value.match(validationForm.comments) ) {
-                    return "The field is required.";
+                    return errorMessage;
                 } else {
                     return "";
                 }
