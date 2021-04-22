@@ -23,7 +23,7 @@ const Home = () => {
                             className={'border-span'}></span>
                         </div>
 
-                        <div >
+                        <div  className={'btn-book'}>
                           <Link to={'/resturants'} ><Button context={'Book Now'}/> </Link>
                         </div>
                     </div>

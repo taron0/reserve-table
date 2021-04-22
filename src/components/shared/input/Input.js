@@ -1,7 +1,7 @@
 import React from 'react';
 import './Input.css';
 
-const Input = ({type, placeholder, name}) => {
+const Input = ({type, placeholder, name, value, onChange}) => {
 
     return (
         <>
@@ -12,6 +12,8 @@ const Input = ({type, placeholder, name}) => {
                     placeholder={placeholder}
                     name={name}
                     className={'contact-input'}
+                    value={value}
+                    onChange={onChange}
                 />
 
               </span>

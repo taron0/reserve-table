@@ -75,3 +75,7 @@ html[lang='hy'] .section-title h4 {
     font-family: inherit;
     height: 200px;
 }
+
+.text-danger {
+    color: red;
+}

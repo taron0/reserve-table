@@ -135,3 +135,13 @@ html[lang='hy'] .hero-title h3 {
 .hero-title h4 a {
     padding-right:0;
 }
+
+
+.text-content {
+    text-align: center;
+}
+
+.btn-book {
+    text-align: center;
+    margin-top:10px ;
+}
