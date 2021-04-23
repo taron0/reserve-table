@@ -93,7 +93,16 @@ html[lang='hy'] .section-title h4 {
 .registred-message {
     border: 1px solid green;
     margin-top: 10px;
+    width: 100%;
+    font-size: 12px;
+    padding: 0 20px;
+}
 
+.registred-error {
+    border: 1px solid yellow;
+    width: 100%;
+    font-size: 12px;
+    padding: 0 20px;
 }
 
 .for-restaurants {
