@@ -3,6 +3,7 @@ import imgContact from "../../../assets/cover-image.jpg";
 import Header from "../../header/Header";
 import './restaurants.css'
 import Input from "../../shared/input/Input";
+import Checkbox from "../../shared/checkbox/Checkbox";
 
 
 const Restaurants = () => {
@@ -24,56 +25,56 @@ const Restaurants = () => {
                     <div>
                         <span>Armenian</span>
                         <span>
-                            <Input type="checkbox" name='Armenian' className={'checkbox'}/>
+                            <Checkbox name='Armenian' />
                         </span>
 
                     </div>
                   <div>
                       <span>Chinese </span>
                       <span>
-                             <Input type="checkbox" name='Chinese' className={'checkbox'}/>
+                             <Checkbox name='Chinese' />
                       </span>
 
                   </div>
                     <div>
                         <span>European</span>
                         <span>
-                            <Input type="checkbox" name=' European' className={'checkbox'}/>
+                            <Checkbox  name=' European' />
                         </span>
 
                     </div>
                     <div>
                         <span>Caucasian</span>
                         <span>
-                              <Input type="checkbox" name=' Caucasian' className={'checkbox'}/>
+                              <Checkbox  name=' Caucasian' />
                         </span>
 
                     </div>
                     <div>
                         <span> Georgian</span>
                         <span>
-                              <Input type="checkbox" name=' Georgian' className={'checkbox'}/>
+                              <Checkbox name=' Georgian' />
                         </span>
 
                     </div>
                     <div>
                         <span>Italian</span>
                         <span>
-                            <Input type="checkbox" name='Italian' className={'checkbox'}/>
+                            <Checkbox name='Italian' />
                         </span>
 
                     </div>
                     <div>
                         <span> Russian</span>
                         <span>
-                             <Input type="checkbox" name=' Russian' className={'checkbox'}/>
+                             <Checkbox  name=' Russian' />
                         </span>
 
                     </div>
                     <div>
                         <span>Mexican</span>
                         <span>
-                             <Input type="checkbox" name=' Mexican' className={'checkbox'}/>
+                             <Checkbox name=' Mexican'/>
                         </span>
 
                     </div>
