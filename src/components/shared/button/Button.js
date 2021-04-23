@@ -1,5 +1,6 @@
 import React from 'react';
 import './index.css'
+
 const Button = ({context, onClick}) => {
     return (
         <div className={'btn-cont'}>
@@ -7,4 +8,4 @@ const Button = ({context, onClick}) => {
         </div>
     )
 }
-export  default Button
+export default Button

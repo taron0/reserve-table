@@ -78,9 +78,11 @@ const Contact = () => {
                     </div>
 
                     <Button context={'Send'}/>
-                    <div >
+                    <div>
                         {Object.keys(formik.touched).length ?
-                            <span>{Object.keys(formik.errors).length ? <span className={'registred-error'}>{registredError}</span> : <span className={'registred-message'}>{registredMessage}</span>}</span> : <></>}
+                            <span>{Object.keys(formik.errors).length ?
+                                <span className={'registred-error'}>{registredError}</span> :
+                                <span className={'registred-message'}>{registredMessage}</span>}</span> : <></>}
                     </div>
                 </form>
             </div>

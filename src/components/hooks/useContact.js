@@ -1,7 +1,6 @@
 import React from 'react'
-import validateForm from "../../helpers/validateForm";
-import { errorMessage } from "../../constant/errorMessage/errorMessage";
-import { useFormik } from "formik";
+import {errorMessage} from "../../constant/errorMessage/errorMessage";
+import {useFormik} from "formik";
 import * as Yup from 'yup';
 
 const useContact = () => {
@@ -13,8 +12,8 @@ const useContact = () => {
         comment: Yup.string()
             .min(2, errorMessage)
             .required(errorMessage),
-        phone:Yup.number().min(4,errorMessage)
-             .required(errorMessage),
+        phone: Yup.number().min(4, errorMessage)
+            .required(errorMessage),
         email: Yup.string().email(errorMessage)
             .required(errorMessage),
 
@@ -24,14 +23,14 @@ const useContact = () => {
             name: '',
             email: '',
             phone: '',
-            comment:""
+            comment: ""
         },
-        validationSchema:contactValidate,
+        validationSchema: contactValidate,
         onSubmit: async values => {
-        console.log(values)
+            console.log(values)
         },
     });
-    return{
+    return {
         formik
     }
 }
