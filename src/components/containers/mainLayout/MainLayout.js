@@ -8,6 +8,7 @@ import {
 import Home from "../../home/Home";
 import About from "../../pages/about/About";
 import Contact from "../../pages/contact/Contact";
+import Restaurants from "../../pages/restaurants/Restaurants";
 
 const MainLayout = () => {
     return (
@@ -16,9 +17,9 @@ const MainLayout = () => {
                 <Route exact path="/">
                     <Home />
                 </Route>
-                {/*<Route exact path="/resturants">*/}
-                {/*    <Resturants />*/}
-                {/*</Route>*/}
+                <Route exact path="/restaurants">
+                    <Restaurants />
+                </Route>
                 <Route exact path="/about">
                     <About />
                 </Route>

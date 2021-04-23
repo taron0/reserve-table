@@ -8,7 +8,7 @@ import {Link} from "react-router-dom";
 const Home = () => {
     return (
 
-
+        <>
         <div className={'wrapper'} style={{backgroundImage: `url(${backg})`}}>
             <Header/>
             <div className={'hero-title-holder'}>
@@ -24,7 +24,7 @@ const Home = () => {
                         </div>
 
                         <div  className={'btn-book'}>
-                          <Link to={'/resturants'} ><Button context={'Book Now'}/> </Link>
+                          <Link to={'/restaurants'} ><Button context={'Book Now'}/> </Link>
                         </div>
                     </div>
 
@@ -33,6 +33,7 @@ const Home = () => {
             </div>
 
         </div>
+        </>
 
 
     )

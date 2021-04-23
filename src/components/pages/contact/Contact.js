@@ -20,6 +20,12 @@ const Contact = () => {
                     <h1>CONTACT</h1>
                     <p>Get in Touch With Us.</p>
                 </div>
+
+            </div>
+            <div className={'for-restaurants'}>
+                <h3>FOR RESTAURANTS</h3>
+                <p>We’re are open to partner with the best restaurants across the country.</p>
+                <p>Join our growing list of partners.</p>
             </div>
             <div className={'container-content'}>
                 <div className={'section-title'}>
@@ -67,14 +73,14 @@ const Contact = () => {
                         </textarea>
 
                     </span>
-                    <div>
-                        {formik.touched.comment && <span className="text-danger">{formik.errors.comment}</span>}
+                    <div className={'text-danger'}>
+                        {formik.touched.comment && <span>{formik.errors.comment}</span>}
                     </div>
 
                     <Button context={'Send'}/>
-                    <div>
+                    <div className={'registred-message'}>
                         {Object.keys(formik.touched).length ?
-                        <span className={'registred-message'}>{Object.keys(formik.errors).length ? registredError : registredMessage}</span>:<></>}
+                        <span >{Object.keys(formik.errors).length ? registredError : registredMessage}</span>:<></>}
                     </div>
                 </form>
             </div>

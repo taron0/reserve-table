@@ -15,7 +15,14 @@
     left: 50%;
     margin-right: -50%;
     transform: translate(-50%, -50%) ;
+    text-align: center;
+}
 
+.contact-text > p {
+   color: #C59D5F;
+    font-style: italic;
+    font-family: 'Noto Serif', serif;
+    font-size: 34px;
 }
 
 .section-title {
@@ -69,13 +76,26 @@ html[lang='hy'] .section-title h4 {
 
 .textarea-form > textarea {
     text-align: left;
-    padding-top: 10px;
+    /*padding-top: 10px;*/
     width: 100%;
     font-size: 100%;
     font-family: inherit;
-    height: 200px;
+    height: 160px;
 }
 
 .text-danger {
     color: red;
+}
+
+.registred-message {
+    border: 1px solid green;
+    margin-top: 10px;
+
+}
+
+.for-restaurants {
+    width: 400px;
+    margin: 0 auto;
+    text-align: center;
+
 }
