@@ -2,7 +2,6 @@ import React from 'react';
 import imgContact from "../../../assets/cover-image.jpg";
 import Header from "../../header/Header";
 import './restaurants.css'
-import Input from "../../shared/input/Input";
 import Checkbox from "../../shared/checkbox/Checkbox";
 
 
@@ -25,49 +24,49 @@ const Restaurants = () => {
                     <div>
                         <span>Armenian</span>
                         <span>
-                            <Checkbox name='Armenian' />
+                            <Checkbox name='Armenian'/>
                         </span>
 
                     </div>
-                  <div>
-                      <span>Chinese </span>
-                      <span>
-                             <Checkbox name='Chinese' />
+                    <div>
+                        <span>Chinese </span>
+                        <span>
+                             <Checkbox name='Chinese'/>
                       </span>
 
-                  </div>
+                    </div>
                     <div>
                         <span>European</span>
                         <span>
-                            <Checkbox  name=' European' />
+                            <Checkbox name=' European'/>
                         </span>
 
                     </div>
                     <div>
                         <span>Caucasian</span>
                         <span>
-                              <Checkbox  name=' Caucasian' />
+                              <Checkbox name=' Caucasian'/>
                         </span>
 
                     </div>
                     <div>
                         <span> Georgian</span>
                         <span>
-                              <Checkbox name=' Georgian' />
+                              <Checkbox name=' Georgian'/>
                         </span>
 
                     </div>
                     <div>
                         <span>Italian</span>
                         <span>
-                            <Checkbox name='Italian' />
+                            <Checkbox name='Italian'/>
                         </span>
 
                     </div>
                     <div>
                         <span> Russian</span>
                         <span>
-                             <Checkbox  name=' Russian' />
+                             <Checkbox name=' Russian'/>
                         </span>
 
                     </div>

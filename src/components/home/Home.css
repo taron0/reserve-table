@@ -1,4 +1,4 @@
-.wrapper{
+.wrapper {
     color: white;
     min-height: 100vh;
     background-size: cover;
@@ -7,22 +7,24 @@
 }
 
 .hero-title-holder {
-    position:absolute;
-    top:0;
-    width:100%;
-    height:100%;
-    z-index:3;
+    position: absolute;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 3;
 }
+
 .hero-title-holder .overlay {
-    opacity:1;
+    opacity: 1;
 }
+
 .hero-title {
-    max-width:450px;
-    margin:0 auto;
-    top:50%;
-    text-align:justify-all;
+    max-width: 450px;
+    margin: 0 auto;
+    top: 50%;
+    text-align: justify-all;
     align-items: baseline;
-    z-index:5;
+    z-index: 5;
     margin: 0;
 
     position: absolute;
@@ -33,18 +35,21 @@
 }
 
 .hero-decor {
-    position:absolute;
-    left:50%;
-    margin-left:-50px;
-    width:100px;
-    height:50px;
+    position: absolute;
+    left: 50%;
+    margin-left: -50px;
+    width: 100px;
+    height: 50px;
 }
+
 .t-dec {
-    top:-60px;
+    top: -60px;
 }
+
 .b-dec {
-    bottom:-70px;
+    bottom: -70px;
 }
+
 .half-circle {
     width: 100px;
     height: 50px;
@@ -52,88 +57,99 @@
     border-bottom-right-radius: 200px;
     border: 5px solid #C59D5F;
     border-top: 0 !important;
-    position:relative;
+    position: relative;
     -webkit-box-sizing: border-box;
     -moz-box-sizing: border-box;
     box-sizing: border-box;
     text-align: center;
     margin: 0 auto;
 }
+
 .half-circle:before {
-        content:'\f005';
-    content:'\f111';
-    position:absolute;
-    top:50%;
-    left:50%;
-    width:20px;
-    height:20px;
+    content: '\f005';
+    content: '\f111';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 20px;
+    height: 20px;
     font-family: FontAwesome;
 
     font-style: normal;
     font-weight: normal;
     text-decoration: inherit;
-    margin-top:-15px;
-    margin-left:-10px;
-    color:#C59D5F;
-    font-size:12px;
+    margin-top: -15px;
+    margin-left: -10px;
+    color: #C59D5F;
+    font-size: 12px;
 
 }
+
 html[lang='hy'] .half-circle:before {
     font-family: 'Noto Sans Armenian', sans-serif;
 }
+
 .hero-title h3 {
-    font-size:40px;
-    letter-spacing:2px;
-    position:relative;
-    width:100%;
-    margin-bottom:10px;
-    color:#C59D5F ;
+    font-size: 40px;
+    letter-spacing: 2px;
+    position: relative;
+    width: 100%;
+    margin-bottom: 10px;
+    color: #C59D5F;
     align-items: baseline;
-    font-weight:bold;
-    letter-spacing:3px;
-    padding:10px 0;
-    /*font-family: 'Arial', sans-serif;*/
+    font-weight: bold;
+    letter-spacing: 3px;
+    padding: 10px 0;
     font-family: 'Noto Serif', snas-serif;
     font-style: italic;
 }
+
 html[lang='hy'] .hero-title h3 {
     font-family: 'Noto Serif Armenian', serif;
 }
+
 .hero-title h4 {
     font-size: 14px;
-    text-transform:uppercase;
-    letter-spacing:2px;
-    position:relative;
-    margin:6px 0 10px 0;
-    color:white;
-    max-width:350px;
-    margin:0 auto;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    position: relative;
+    margin: 6px 0 10px 0;
+    color: white;
+    max-width: 350px;
+    margin: 0 auto;
 }
-.hero-title h4:before , .hero-title h4:after {
-    content:'';
-    position:absolute;
-    top:50%;
-    width:75px;
-    height:1px;
-    opacity:1.8;
+
+.hero-title h4:before, .hero-title h4:after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    width: 75px;
+    height: 1px;
+    opacity: 1.8;
 }
+
 .hero-title h4:before {
-    left:-90px;
+    left: -90px;
 }
+
 .hero-title h4:after {
-    right:-90px;
+    right: -90px;
 }
-.hero-title h3 a  , .hero-title h4 a{
-    color:white;
+
+.hero-title h3 a, .hero-title h4 a {
+    color: white;
 }
+
 .hero-title h4 a {
-    float:right;
+    float: right;
 }
-.hero-title h4 a:hover , .hero-title h4 a:hover i {
-    color:white;
+
+.hero-title h4 a:hover, .hero-title h4 a:hover i {
+    color: white;
 }
+
 .hero-title h4 a {
-    padding-right:0;
+    padding-right: 0;
 }
 
 
@@ -143,5 +159,5 @@ html[lang='hy'] .hero-title h3 {
 
 .btn-book {
     text-align: center;
-    margin-top:10px ;
+    margin-top: 10px;
 }
