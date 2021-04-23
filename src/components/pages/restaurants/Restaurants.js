@@ -20,54 +20,62 @@ const Restaurants = () => {
                 <div>
                     Cuisine:
                 </div>
-                <div>
+                <div className={'countries'}>
                     <div>
-                        <span>
-                            <Input type="checkbox" name='Armenian'/>
-                        </span>
                         <span>Armenian</span>
+                        <span>
+                            <Input type="checkbox" name='Armenian' className={'checkbox'}/>
+                        </span>
+
                     </div>
                   <div>
+                      <span>Chinese </span>
                       <span>
-                             <Input type="checkbox" name='Chinese'/>
+                             <Input type="checkbox" name='Chinese' className={'checkbox'}/>
                       </span>
-                     <span>Chinese </span>
+
                   </div>
                     <div>
+                        <span>European</span>
                         <span>
-                            <Input type="checkbox" name=' European'/>
+                            <Input type="checkbox" name=' European' className={'checkbox'}/>
                         </span>
-                          <span>European</span>
+
                     </div>
                     <div>
+                        <span>Caucasian</span>
                         <span>
-                              <Input type="checkbox" name=' Caucasian'/>
+                              <Input type="checkbox" name=' Caucasian' className={'checkbox'}/>
                         </span>
-                       <span>Caucasian</span>
+
                     </div>
                     <div>
+                        <span> Georgian</span>
                         <span>
-                              <Input type="checkbox" name=' Georgian'/>
+                              <Input type="checkbox" name=' Georgian' className={'checkbox'}/>
                         </span>
-                      <span> Georgian</span>
+
                     </div>
                     <div>
-                        <span>
-                            <Input type="checkbox" name='Italian'/>
-                        </span>
                         <span>Italian</span>
+                        <span>
+                            <Input type="checkbox" name='Italian' className={'checkbox'}/>
+                        </span>
+
                     </div>
                     <div>
-                        <span>
-                             <Input type="checkbox" name=' Russian'/>
-                        </span>
                         <span> Russian</span>
+                        <span>
+                             <Input type="checkbox" name=' Russian' className={'checkbox'}/>
+                        </span>
+
                     </div>
                     <div>
-                        <span>
-                             <Input type="checkbox" name=' Mexican'/>
-                        </span>
                         <span>Mexican</span>
+                        <span>
+                             <Input type="checkbox" name=' Mexican' className={'checkbox'}/>
+                        </span>
+
                     </div>
                 </div>
             </div>
