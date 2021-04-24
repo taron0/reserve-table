@@ -1,11 +1,21 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import imgContact from "../../../assets/cover-image.jpg";
+import RESTAURANTS from "../../../helpers/resturants/restaurants"
+import firebase from '../../../configs/mainConfig';
 import Header from "../../header/Header";
 import './restaurants.css'
 import Checkbox from "../../shared/checkbox/Checkbox";
+import Firebase from '../../../service/firebase/firebase'
+import ResturantsList from "../../../helpers/resturantsList/resturantsList";
 
 
 const Restaurants = () => {
+const [data, setData] = useState([])
+    useEffect(() => {
+        Firebase.getDataBase(data, setData)
+
+    }, [data])
+    console.log(data)
     return (
         <>
             <div className={'wrapper-resturants'} style={{backgroundImage: `url(${imgContact})`}}>
@@ -78,6 +88,22 @@ const Restaurants = () => {
 
                     </div>
                 </div>
+            </div>
+
+            <div className={'container-restaurants'}>
+
+                 {RESTAURANTS.map(el => {
+                     return (
+                         <div key={el.name}>
+                             <ResturantsList el={el}/>
+                         </div>
+                         )
+
+
+                 })}
+
+
+
             </div>
         </>
     )
