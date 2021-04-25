@@ -17,7 +17,7 @@ const ResturantsList = ({el}) => {
                     </div>
                     <div className={'description-img '}>
                         <p>
-                            <Link to={`/resturants/lists/${el.name}`}>  {el.name} </Link>
+                            <Link to={`/resturants/${el.name}`}>  {el.name} </Link>
 
                         </p>
                     </div>
