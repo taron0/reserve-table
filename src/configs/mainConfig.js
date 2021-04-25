@@ -1,18 +1,16 @@
-import  firebase from 'firebase';
-
-
+import firebase from "firebase";
 const firebaseConfig = {
-    apiKey: "AIzaSyBYzQj1YeBtXkYCx6oUMruVUL3fDDWY9_4",
-    authDomain: "reserve-table-f5404.firebaseapp.com",
-    databaseURL: "https://reserve-table-f5404-default-rtdb.firebaseio.com",
-    projectId: "reserve-table-f5404",
-    storageBucket: "reserve-table-f5404.appspot.com",
-    messagingSenderId: "62459580411",
-    appId: "1:62459580411:web:52223a1e687b94380e455e",
-    measurementId: "G-3ZTY8E8T0Z"
+    apiKey: "AIzaSyCFSL-H-Xce0ybeo1PhKyRcXK7urZZJjK4",
+    authDomain: "reserve-81dc6.firebaseapp.com",
+    databaseURL: "https://reserve-81dc6-default-rtdb.firebaseio.com",
+    projectId: "reserve-81dc6",
+    storageBucket: "reserve-81dc6.appspot.com",
+    messagingSenderId: "629662162508",
+    appId: "1:629662162508:web:7b741d0e8198f046881ee9",
+    measurementId: "G-M2LJ8BV9L5"
 };
+// Initialize Firebase
+firebase.initializeApp(firebaseConfig);
 
-
- firebase.initializeApp(firebaseConfig);
 
  export default firebase

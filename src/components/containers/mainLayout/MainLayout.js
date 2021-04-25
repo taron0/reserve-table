@@ -4,6 +4,7 @@ import Home from "../../home/Home";
 import About from "../../pages/about/About";
 import Contact from "../../pages/contact/Contact";
 import Restaurants from "../../pages/restaurants/Restaurants";
+import Child from "../../router/childer/child";
 
 const MainLayout = () => {
     return (
@@ -21,6 +22,8 @@ const MainLayout = () => {
             <Route exact path="/contact">
                 <Contact/>
             </Route>
+                <Route path="/resturants/:id" children={<Child />} />
+
         </Switch>
 
     )

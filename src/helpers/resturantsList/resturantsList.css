@@ -1,9 +1,18 @@
 .box-resurants {
     width: 400px;
     height: 400px;
-    border: 2px solid black;
+
     position: relative;
     text-align: center;
+    margin-left: 40px;
+    margin-bottom: 40px;
+    overflow: hidden;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    justify-items: center;
+
 }
 
 .box-img {
@@ -13,11 +22,18 @@
     top: 0;
     left: 0;
     overflow: hidden;
+    background-size: cover;
+    background-position: center;
+    transition: 0.5s;
+}
+.box-img:hover {
+    transform: scale(1.2);
 }
 
 .box-img > .img-resturants {
     width: 400px;
     height: 266px;
+    overflow: hidden;
 }
 
 /*.description-img {*/
@@ -25,3 +41,21 @@
 /*    left: 0;*/
 /*    bottom: 0;*/
 /*}*/
+
+.description-img  {
+    position: absolute;
+    top: 270px;
+}
+.description-name {
+    position: absolute;
+    margin-bottom: 45px;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    top: 300px;
+}
+
+.description-name > p {
+    margin-left: 20px;
+
+}

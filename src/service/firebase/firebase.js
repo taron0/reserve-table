@@ -1,4 +1,5 @@
 import firebase from "firebase";
+import validateForm from "../../helpers/validateForm";
 
 
 
@@ -10,7 +11,7 @@ class Firebase {
     dataBase(data) {
         // api sxalaa grac sax tex
 
-        fetch('https://reserve-table-f5404-default-rtdb.firebaseio.com/userdata.json', {
+        fetch('https://reserve-81dc6-default-rtdb.firebaseio.com/userdata.json', {
             method: "POST",
             body: JSON.stringify(data),
         })
@@ -22,17 +23,17 @@ class Firebase {
 
     }
 
-    getDataBase(data, setData) {
-        fetch("https://reserve-table-f5404-default-rtdb.firebaseio.com/userdata.json")
+    getDataBase(data, setData, setLoading) {
+        return  fetch("https://reserve-81dc6-default-rtdb.firebaseio.com/userdata.json")
             .then(res => res.json())
             .then(r => {
                 setData([
-                    ...data,
-                    ...r,
+                    ...Object.values(r)
                 ])
+                setLoading(true)
+                console.log(Object.values(r))
             })
-
-            .catch(r => console.log('::::', r))
+            .catch(res => console.log(':::: userData', res))
 
     }
 
