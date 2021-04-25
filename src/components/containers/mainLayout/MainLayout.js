@@ -27,7 +27,7 @@ const MainLayout = () => {
                 <Contact/>
             </Route>
                 <Route path="/resturants/:id" children={<Child />} />
-            <Route path="/resturants/:name" component={RestaurantAbout} />
+            <Route  path="/resturants/:name" component={RestaurantAbout} />
 
         </Switch>
 
