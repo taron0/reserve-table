@@ -6,6 +6,7 @@ import Contact from "../../pages/contact/Contact";
 import Restaurants from "../../pages/restaurants/Restaurants";
 import Child from "../../router/childer/child";
 import RestaurantAbout from "../../pages/restaurantAbout/restaurantAbout";
+import ResoranPage from "../../../ResoranPage";
 
 
 const MainLayout = () => {
@@ -27,7 +28,7 @@ const MainLayout = () => {
                 <Contact/>
             </Route>
                 <Route path="/resturants/:id" children={<Child />} />
-                 <Route path="/resturants/:name" component={ RestaurantAbout } />
+
 
         </Switch>
 
