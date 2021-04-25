@@ -28,7 +28,7 @@ const MainLayout = () => {
             </Route>
                 <Route path="/resturants/:id" children={<Child />} />
             <Route  path="/resturants/:name" component={RestaurantAbout} />
-
+//a
         </Switch>
 
     )
