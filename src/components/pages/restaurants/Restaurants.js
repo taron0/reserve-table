@@ -10,8 +10,7 @@ import Pagination from "../../pagination/pagination";
 const Restaurants = () => {
     const [data, setData] = useState([])
     const [loading, setLoading] = useState(false)
-    // const [posts, setPosts] = useState([]);
-    // const [loading, setLoading] = useState(false);
+
     const [currentPage, setCurrentPage] = useState(1);
     const [postsPerPage, setPostsPerPage] = useState(9);
 
@@ -22,19 +21,17 @@ const Restaurants = () => {
     }, []);
 
     const indexOfLastPost = currentPage * postsPerPage;
-    // console.log("indexOfLastPost: ", indexOfLastPost);
+
 
     const indexOfFirstPost = indexOfLastPost - postsPerPage;
-    // console.log("indexOfFirstPost: ", indexOfFirstPost);
+
 
     const currentPosts = loading && data[0].slice(indexOfFirstPost, indexOfLastPost);
-    console.log(data, 'datamata ::::::::::')
+
     const paginate = pageNumber => {
         setCurrentPage(pageNumber);
     };
-    console.log("currentPosts: ", currentPosts);
 
-    // console.log('::::', data)
     return (
         <>
             <div className={'wrapper-resturants'} style={{backgroundImage: `url(${imgContact})`}}>

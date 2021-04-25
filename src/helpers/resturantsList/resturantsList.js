@@ -1,8 +1,11 @@
 import React from 'react'
 import './resturantsList.css'
+import {Link, useHistory , useLocation } from "react-router-dom";
 
 
 const ResturantsList = ({el}) => {
+    let location = useLocation();
+    console.log(location)
 
     return (
         <>
@@ -13,7 +16,10 @@ const ResturantsList = ({el}) => {
                         <img src={el.urlImg} className={'img-resturants'}/>
                     </div>
                     <div className={'description-img '}>
-                        <p>{el.name}</p>
+                        <p>
+                            <Link to={`/resturants/lists/${el.name}`}>  {el.name} </Link>
+
+                        </p>
                     </div>
                 <div className={'description-name'}>
                     <p>{el.Cuisine}</p>

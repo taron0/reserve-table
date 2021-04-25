@@ -1,7 +1,7 @@
 import React from 'react';
 import ResturantsList from "../../helpers/resturantsList/resturantsList";
 
-const Posts = ({ posts, loading }) => {
+const Posts = ({posts, loading}) => {
 
 
     return (
@@ -16,11 +16,7 @@ const Posts = ({ posts, loading }) => {
         }
 
 
-
-
-
-
-            </>
+        </>
     )
 }
 

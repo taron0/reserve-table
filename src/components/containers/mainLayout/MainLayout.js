@@ -1,12 +1,15 @@
 import React from "react";
-import {Route, Switch} from "react-router-dom";
+import {Route, Switch, useHistory } from "react-router-dom";
 import Home from "../../home/Home";
 import About from "../../pages/about/About";
 import Contact from "../../pages/contact/Contact";
 import Restaurants from "../../pages/restaurants/Restaurants";
 import Child from "../../router/childer/child";
 
+
 const MainLayout = () => {
+
+
     return (
 
         <Switch>
@@ -23,6 +26,7 @@ const MainLayout = () => {
                 <Contact/>
             </Route>
                 <Route path="/resturants/:id" children={<Child />} />
+
 
         </Switch>
 

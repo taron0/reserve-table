@@ -3,7 +3,7 @@ import {errorMessage} from "../constant/errorMessage/errorMessage";
 
 
 const validateForm = (name, value) => {
-    // const { fields } = userData;
+
     switch (name) {
         case "name":
             if (!value || value.trim() === "") {

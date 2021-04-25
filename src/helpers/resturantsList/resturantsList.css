@@ -12,6 +12,7 @@
     flex-wrap: wrap;
     justify-content: center;
     justify-items: center;
+    border-bottom: 1px solid black;
 
 }
 
@@ -27,7 +28,7 @@
     transition: 0.5s;
 }
 .box-img:hover {
-    transform: scale(1.2);
+    transform: scale(1.1);
 }
 
 .box-img > .img-resturants {
@@ -44,7 +45,12 @@
 
 .description-img  {
     position: absolute;
-    top: 270px;
+    top: 270px;color: black;
+    font-weight: bold;
+    cursor: pointer;
+}
+.description-img:hover {
+    color: gray;
 }
 .description-name {
     position: absolute;
@@ -57,5 +63,10 @@
 
 .description-name > p {
     margin-left: 20px;
+    color: #C59D5F;
+    cursor: pointer;
+}
 
+.description-name > p:hover {
+    color: black;
 }

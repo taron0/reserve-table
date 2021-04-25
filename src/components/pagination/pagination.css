@@ -4,9 +4,17 @@
     font-size: 20px;
     padding: 10px;
 }
-
+.page-link:hover {
+    background-color: #C59D5F;
+    color: white;
+}
 .pagination {
     margin-top: 10px;
     font-size: 20px;
     text-align: center;
+}
+
+ .active  {
+    color: white;
+    background-color: #C59D5F;
 }

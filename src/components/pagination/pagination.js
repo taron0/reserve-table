@@ -1,5 +1,5 @@
 import React from 'react'
-import { Link } from "react-router-dom";
+import { Link, NavLink } from "react-router-dom";
 import './pagination.css'
 const Pagination = ({ postsPerPage, totalPosts, paginate }) => {
     // const location = useHistory()
@@ -15,13 +15,13 @@ const Pagination = ({ postsPerPage, totalPosts, paginate }) => {
                 <ul className="pagination">
                     {pageNumbers.map(number => (
                         <li className="page-item" key={number}>
-                            <Link to={`/resturants/page-${number}`}
+                            <NavLink to={`/resturants/page-${number}`}
                                 onClick={() => paginate(number)}
 
                                 className="page-link"
                             >
                                 {number}
-                            </Link>
+                            </NavLink>
                         </li>
                     ))}
                 </ul>
