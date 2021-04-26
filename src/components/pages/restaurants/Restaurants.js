@@ -6,6 +6,8 @@ import Checkbox from "../../shared/checkbox/Checkbox";
 import Firebase from '../../../service/firebase/firebase'
 import Posts from "../../pagination/posts";
 import Pagination from "../../pagination/pagination";
+import RESTAURANTS from "../../../helpers/resturants/restaurants";
+
 
 const Restaurants = () => {
     const [data, setData] = useState([])
@@ -15,18 +17,21 @@ const Restaurants = () => {
     const [postsPerPage, setPostsPerPage] = useState(9);
 
 
-    useEffect
-    (() => {
-        Firebase.getDataBase(data, setData, setLoading)
+    console.log(data, loading);
+
+
+    useEffect(() => {
+        setLoading(true);
+        Firebase.getRestaurants()
+            .then((val => {
+                setData(val);
+                setLoading(false);
+            }))
     }, []);
 
     const indexOfLastPost = currentPage * postsPerPage;
-
-
     const indexOfFirstPost = indexOfLastPost - postsPerPage;
-
-
-    const currentPosts = loading && data[0].slice(indexOfFirstPost, indexOfLastPost);
+    const currentPosts = loading ? [] : data.slice(indexOfFirstPost, indexOfLastPost);
 
     const paginate = pageNumber => {
         setCurrentPage(pageNumber);
@@ -35,7 +40,6 @@ const Restaurants = () => {
     return (
         <>
             <div className={'wrapper-resturants'} style={{backgroundImage: `url(${imgContact})`}}>
-                <Header/>
                 <div className={'contact-text'}>
                     <h1>RESTAURANTS</h1>
                     <p>Booking online is Easy.</p>
@@ -107,24 +111,24 @@ const Restaurants = () => {
             </div>
 
             <div className={'container-restaurants'}>
-                {loading ? (
+                {!loading ? (
                     <>
                         <div className={'post-data'}>
-                            <Posts posts={currentPosts} loading={loading}/>
+                            <Posts
+                                posts={currentPosts}
+                                loading={loading}
+                            />
                         </div>
 
                    <div className={'pagination-pages'}>
                     <Pagination
                         paginate={paginate}
                         postsPerPage={postsPerPage}
-                        totalPosts={data[0].length}
+                        totalPosts={data.length}
                     />
                     </div>
                     </>
                 ): 'Loading...'}
-
-
-
             </div>
         </>
     )

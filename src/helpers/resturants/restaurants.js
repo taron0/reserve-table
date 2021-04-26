@@ -1,14 +1,9 @@
 
 
-const RESTAURANTS = [
-    {
-        name: 'MUSA',
-        description: '',
-        Cuisine: 'European',
-        urlImg:'data:image/jpeg;base64,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'
-    },
 
+const RESTAURANTS_LIST = [
     {
+        id:Math.random(),
         name: 'KAVKAZSKAYA PLENNICA (SAYAT-NOVA 25)',
         description: 'Here you will find the most exquisite dishes of Caucasian cuisine, and meetings with the heroes of the film of the same name: right at the door you will be greeted by an indistinguishable trinity, you will be here both “a Komsomol member, an athlete and just a beauty”, and “a Soviet court – the most humane court in the world.”',
         Cuisine: 'Caucasian',
@@ -17,6 +12,7 @@ const RESTAURANTS = [
     },
 
     {
+        id:Math.random(),
         name: 'Charentsi 28 Restaurant',
         description: 'Located in downtown Yerevan, Charents Street number 28 is a fully restored old house turned restaurant. In an ambiance of incredible warmth and casual elegance, the restaurant serves a variety of dishes from around the world.',
         Cuisine: 'Armenian',
@@ -24,6 +20,7 @@ const RESTAURANTS = [
     },
 
     {
+        id:Math.random(),
         name: 'THE OLD HOUSE',
         description: 'Want to eat healthy, light, delicious and you want to be cut off from the whole world and just spend a happy time with your friends, than come to The Old House …',
         Cuisine: 'Armenian',
@@ -31,6 +28,7 @@ const RESTAURANTS = [
     },
 
     {
+        id:Math.random(),
         name: 'MEZZO CLASSIC HOUSE CLUB',
         description: 'MEZZO is an upscale two-storey complex club located in the heart of  Yerevan, conveniently close to both cultural and entertainment districts of the city. Our lovely and uniquely designed facility offers multi-sectioned zones to satisfy every style. MEZZO’s guests may browse through our large wine and spirit variety in the Bar, relax in comfortable sofa seats in lounge area, enjoy their food selection in the classically designed Restaurant section, or listen to live music in the Parterre zone.\n' +
             'MEZZO is open to the public during lunch, brunch and dinner times, presenting different kitchen and bar menus to satisfy every guest.\n' +
@@ -41,6 +39,7 @@ const RESTAURANTS = [
     },
 
     {
+        id:Math.random(),
         name: 'EL CHILLOUT',
         description: 'El Chillout is the new project of El Holding which has already become the favorite recreation. A breathtaking panorama opens up from the bar located on the top of Tsitsernakaberd hill hidden inside big and incredibly beautiful El Garden.\n' +
             '\n' +
@@ -54,6 +53,7 @@ const RESTAURANTS = [
     },
 
     {
+        id:Math.random(),
         name: 'VOSKEVAZ WINE TIME',
         description: '',
         Cuisine: 'European',
@@ -61,6 +61,7 @@ const RESTAURANTS = [
     },
 
     {
+        id:Math.random(),
         name: 'NOYAN AYGI',
         description: 'The cultural exhibition store “Noah’s Garden” has opened its doors in the village Garni, next to the temple. Here our visitors can taste all types of Armenian wine, fruit-vodka, cognac as well as savour bountiful Armenian cuisine appetizers, delicious dried fruit, take master classes in pottery, woodworking, carpet weaving and baking lavash, enjoy Armenian cuisine in restaurant Maran and shop Armenian goods.',
         Cuisine: 'Armenian',
@@ -68,6 +69,7 @@ const RESTAURANTS = [
     },
 
     {
+        id:Math.random(),
         name: 'PAPARAZZI CLUB',
         description: 'NOTE: Dear visitors of the Paparazzi club, Reserve.am does not guarantee that you will be allowed into the club if you do not meet the safety requirements and face control of the club.\n' +
             '\n' +
@@ -78,6 +80,7 @@ const RESTAURANTS = [
 
 
     {
+        id:Math.random(),
         name: 'VEREV',
         description: 'VEREV Rooftop Bar & Restaurant is located on 3 Abovyan street on the 6th floor of the establishment. Here you will find lyrical atmosphere and superb cuisine in any season.\n' +
             '\n' +
@@ -89,6 +92,7 @@ const RESTAURANTS = [
     },
 
     {
+        id:Math.random(),
         name: 'YANS MUSIC HALL & RESTAURANT',
         description: 'The Yans Club is the unique top class Music Hall in Armenia and a high-quality restaurant with an exclusive interior and excellent food.\n' +
             '\n' +
@@ -98,6 +102,7 @@ const RESTAURANTS = [
     },
 
     {
+        id:Math.random(),
         name: 'ASTRAL CAFE RESTAURANT',
         description: '',
         Cuisine: 'Armenian',
@@ -105,6 +110,7 @@ const RESTAURANTS = [
     },
 
     {
+        id:Math.random(),
         name: 'BŪRO',
         description: 'BŪRO Networking Space is the first place in Yerevan with concept and significance. The BŪRO differs with its unique interior and comfort. There are 2 separate halls for you.\n' +
             '\n' +
@@ -118,6 +124,7 @@ const RESTAURANTS = [
     },
 
     {
+        id:Math.random(),
         name: 'GARNITOUN',
         description: '“GarniToun” is a hotel and a restaurant complex that offers modern and comfortable leisure facilities for its guests all year around.\n' +
             '\n' +
@@ -134,6 +141,7 @@ const RESTAURANTS = [
     },
 
     {
+        id:Math.random(),
         name: 'PAULANER BEERHOUSE, TERYAN 19',
         description: 'The production of “Paulaner” Beer began still in 1634 in Munich. Currently, the brand represents 16 types of beer. In the “Paulaner” beerhouse you can try cold beers with unique tastes from the big assortment (filtered and not filtered), as well as you can taste various dishes from German and other European cuisine prepared by professional and experienced chefs.',
         Cuisine: 'European',
@@ -141,6 +149,7 @@ const RESTAURANTS = [
     },
 
     {
+        id:Math.random(),
         name: 'PAULANER BEERHOUSE, TAMANYAN 6',
         description: 'The production of “Paulaner” Beer began still in 1634 in Munich. Currently, the brand represents 16 types of beer. In the “Paulaner” beerhouse you can try cold beers with unique tastes from the big assortment (filtered and not filtered), as well as you can taste various dishes from German and other European cuisine prepared by professional and experienced chefs.',
         Cuisine: 'European',
@@ -148,6 +157,7 @@ const RESTAURANTS = [
     },
 
     {
+        id:Math.random(),
         name: 'RESTAURANT-MANE GARDEN',
         description: 'Mane Garden is located in the city: quiet environment filled with music of Yerevan, delicious cuisine and most importantly, soft colors where you can pass your family leisure or organize large-scale events.\n' +
             '\n' +
@@ -157,6 +167,7 @@ const RESTAURANTS = [
     },
 
     {
+        id:Math.random(),
         name: 'MANE RESTAURANT-SHOWROOM',
         description: 'On Pavstos Buzand street not far from Vernisazh which is one of the favorite sightseeing of tourists in Yerevan cozy Mane Restaurant & Showroom is located. This place captivates with brightness of colors: at the very entrance you will notice and will not be able to revert the eyes from incredible beauty of ceramic plates with which the whole interior is decorated. The plates, as well as the furniture of the restaurant are made by Mane Holding company – one of the biggest manufacturing holdings of Armenia. The difficult mosaic of patterns is performed exceptionally manually: here you will find both exotic forms, and collection of traditional Armenian ornaments and souvenir plates with tongue-in-cheek pictures. Every manufactured article is unique and no pattern is ever repeated. By the way, the establishment is also signature and is manufactured by Mane Wood.\n' +
             '\n' +
@@ -168,6 +179,7 @@ const RESTAURANTS = [
     },
 
     {
+        id:Math.random(),
         name: 'SINATRA RESTAURANT',
         description: 'The Sinatra Restaurant located on the 12th floor of Opera Suite Hotel offers a stunning interior and magnificent view of the city center, particularly the Opera House and Cascade.\n' +
             'The restaurant is infused with international and modern dishes, prepared by our chef, who brings new energy and rich aromas to the restaurant, while expressing her culinary proficiency.\n' +
@@ -180,6 +192,7 @@ const RESTAURANTS = [
     },
 
     {
+        id:Math.random(),
         name: 'DRAGON GARDEN',
         description: 'Enjoy the best Chinese and Japanese cuisine at the Dragon Garden restaurant.',
         Cuisine: 'Chinese',
@@ -187,6 +200,7 @@ const RESTAURANTS = [
     },
 
     {
+        id:Math.random(),
         name: 'KAMI MUSIC CLUB',
         description: 'Kami Music Club is one of few clubs in Yerevan, where you can feel the relaxed atmosphere and listen to the top musicians of the city. Every day we have live performing artists and bands of various genres, and on Fridays and Saturdays performs our dance troupe. The club is located behind the Moscow theater. The program starts at 21:00. The entry is restricted by face control, club cards or private invitations. The club interior is minimalistic and made in oriental style. Here you can find a bar with a big variety of delightful alcoholic beverages, including fanciful cocktails.Moscafe menu will be at our guests’ disposal. Theme and holiday parties as well as CD presentations are being held in Kami club. Regular visitors of the club also receive text messages with an invitation to spend another relaxed evening in Kami Club',
         Cuisine: 'Armenian',
@@ -194,6 +208,7 @@ const RESTAURANTS = [
     },
 
     {
+        id:Math.random(),
         name: 'ARMAT LOUNGE RESTAURANT',
         description: 'Armenian Lounge Restaurant',
         Cuisine: 'Armenian',
@@ -201,6 +216,7 @@ const RESTAURANTS = [
     },
 
     {
+        id:Math.random(),
         name: 'MALKHAS JAZZ CLUB',
         description: 'Note: Dear users, please be informed that bookings at Malkhas Jazz Club are made from 11:00 to 22:00.\n' +
             '\n' +
@@ -211,6 +227,7 @@ const RESTAURANTS = [
     },
 
     {
+        id:Math.random(),
         name: 'TERRAZZA LOUNGE',
         description: 'Terrazza’s lounge and jazz style music provides a relaxed atmosphere. Several times a week you can enjoy also a live music in the café – piano and contrabass, which is free of charge. Late in the evenings, the café entrance and the tables are decorated with candles. It’s hard to imagine a more romantic atmosphere.\n' +
             '\n' +
@@ -224,6 +241,7 @@ const RESTAURANTS = [
     },
 
     {
+        id:Math.random(),
         name: 'DIPNDIP',
         description: 'At DipnDip we are a family, and we love making people smile.\n' +
             'Smile along with us and together we can make our endless dreams a possibility!',
@@ -232,6 +250,7 @@ const RESTAURANTS = [
     },
 
     {
+        id:Math.random(),
         name: 'CASCADE ROYAL',
         description: 'Just as Aznavour’s songs, which represent French / European / delicate taste and art, during the performance of which Armenian spirit soars, newly-built “Cascade Royal” lounge restaurant as well, located in the immediate neighborhood of his residence, presents its clients a high quality place of resort with European and Armenian delicious dishes. Exclusive features of Lounge Restaurant are: the panoramic view of entire Yerevan and Ararat mountain, external and interior design with classic and modern style combination, European and Armenian delicacies menu. Dining and resting here, admiration of the unique landscape make “Cascade Royal” one of the most exciting sites in Yerevan.',
         Cuisine: 'European',
@@ -239,6 +258,7 @@ const RESTAURANTS = [
     },
 
     {
+        id:Math.random(),
         name: 'DOLMAMA',
         description: 'Dolmama began in 1998 as the dream of Jirair Avanian. He started the restaurant with two missions: to popularize and modernize Armenian cuisine. Armenia is one of the oldest countries in the world, and the food tradition is just as old. This means that the techniques and recipes have been passed down from generation to generation for thousands of years. So we decided we needed to shake things up. Our ancestors knew nothing of jalapeno peppers or mozzarella cheese, but we are sure if they did, they certainly would have used them in their cuisine. So, while many restaurants are fusions between different cultures, ours is a fusion between the old and the new.',
         Cuisine: 'Armenian',
@@ -246,6 +266,7 @@ const RESTAURANTS = [
     },
 
     {
+        id:Math.random(),
         name: 'CAFE MERCI',
         description: 'Café “Mercy” is one of the most popular places in Yerevan.Luxurious interior, warm atmosphere, high quality service and the unique rich menu of the European cuisine guarantee the success. Our visitors are attracted by the exceptional dishes prepared by professional and qualified chefs.\n' +
             '\n' +
@@ -255,6 +276,7 @@ const RESTAURANTS = [
     },
 
     {
+        id:Math.random(),
         name: 'GENACVALE, KOMITAS 35',
         description: '“Genatsvale” tavern was opened in 2006 and has gained the love and trust of our citizens during the last 8 years. Being the first representative of Georgian cuisine, “Genatsvale” tavern has played a major role by expanding Georgian cuisine in Yerevan. There is an atmosphere of old Tblisi in the tavern: favorite music with Armenian and Georgian folk instruments. Every day from 10: 00-24: 00 you will be welcomed by the chef invited from Georgia, warm and hospitable staff who will serve delicious food.\n' +
             '\n' +
@@ -264,6 +286,7 @@ const RESTAURANTS = [
     },
 
     {
+        id:Math.random(),
         name: 'EL SKY BAR',
         description: 'Located on the 7th floor of Yerevan Plaza business center EL Sky Bar has a breathtaking panoramic view over the capital of Armenia. It offers two zones: main hall with balcony and seasonal open-air rooftop. Here you can attend thematic parties, organized nearly every Friday and Saturday, where DJ creates an atmosphere charged with energy, transforming the space into a party place, listen to live music performances or just relax in a friendly atmosphere. Gourmets can enjoy fantastic gastronomic menu from Continental cuisine and a wide variety of alcoholic drinks or cocktails. For seafood lovers our chef offers uniquely presented sushi and snacks. Exquisite service and warm, relaxed ambiance make it the perfect place for just about any occasion including weddings, private parties, meetings or corporate events with indoor/outdoor space.\n' +
             'Have a delicate dinner with a glass of good wine or enjoy one of our cocktails, prepared specially for you.',
@@ -272,6 +295,7 @@ const RESTAURANTS = [
     },
 
     {
+        id:Math.random(),
         name: 'EL GARDEN',
         description: 'Popular alternative entertainment place in Yerevan.',
         Cuisine: 'Armenian',
@@ -279,6 +303,7 @@ const RESTAURANTS = [
     },
 
     {
+        id:Math.random(),
         name: 'GENACVALE, PAPAZYAN 23',
         description: '“Genatsvale” tavern was opened in 2006 and has gained the love and trust of our citizens during the last 8 years. Being the first representative of Georgian cuisine, “Genatsvale” tavern has played a major role by expanding Georgian cuisine in Yerevan. There is an atmosphere of old Tblisi in the tavern: favorite music with Armenian and Georgian folk instruments. Every day from 10: 00-24: 00 you will be welcomed by the chef invited from Georgia, warm and hospitable staff who will serve delicious food.\n' +
             '\n' +
@@ -288,6 +313,7 @@ const RESTAURANTS = [
     },
 
     {
+        id:Math.random(),
         name: 'FAMOUS KALIAN, TERYAN 83',
         description: 'Famous Group represents a unique format in the market – hookah and hookah accessories brand shop, delivery service, as well as entertainment venues of different formats. All the service halls of Famous Group which include pub, cafe, lounge bar, game rooms are distinguished not only with a large assortment of unique hookah, but also with high-quality European cuisine, drinks and cocktails, friendly and professional service, reasonable prices, as well we with individual approach to each client. The Company has been in the market for already nine years and is expanding with the aim of creating a network where anyone can find corresponding preferred option for rest and leisure. Brand shop offers exclusive and unique products-hookah, a wide range of tobacco, e-cigarettes and other accessories. Delivery service which is available all day long will quickly provide your favorite hookah with the professional specialist and the service as requested. You can also organize corporate events, various intellectual games, Play Station computer game competitions, parties which will be accompanied not only with good service but also with gifts and other promotions. Famous Group company launched, developed and today is the largest network company that represents its entertainment centers in Yerevan, Tsakhkadzor and Tbilisi introducing Famous Kalian.',
         Cuisine: 'European',
@@ -295,6 +321,7 @@ const RESTAURANTS = [
     },
 
     {
+        id:Math.random(),
         name: 'FAMOUS KALIAN, TUMANYAN 42',
         description: 'Famous Group represents a unique format in the market – hookah and hookah accessories brand shop, delivery service, as well as entertainment venues of different formats. All the service halls of Famous Group which include pub, cafe, lounge bar, game rooms are distinguished not only with a large assortment of unique hookah, but also with high-quality European cuisine, drinks and cocktails, friendly and professional service, reasonable prices, as well we with individual approach to each client. The Company has been in the market for already nine years and is expanding with the aim of creating a network where anyone can find corresponding preferred option for rest and leisure. Brand shop offers exclusive and unique products-hookah, a wide range of tobacco, e-cigarettes and other accessories. Delivery service which is available all day long will quickly provide your favorite hookah with the professional specialist and the service as requested. You can also organize corporate events, various intellectual games, Play Station computer game competitions, parties which will be accompanied not only with good service but also with gifts and other promotions. Famous Group company launched, developed and today is the largest network company that represents its entertainment centers in Yerevan, Tsakhkadzor and Tbilisi introducing Famous Kalian.',
         Cuisine: 'European',
@@ -302,6 +329,7 @@ const RESTAURANTS = [
     },
 
     {
+        id:Math.random(),
         name: 'GENACVALE, PAPAZYAN 24',
         description: '“Genatsvale” tavern was opened in 2006 and has gained the love and trust of our citizens during the last 8 years. Being the first representative of Georgian cuisine, “Genatsvale” tavern has played a major role by expanding Georgian cuisine in Yerevan. There is an atmosphere of old Tblisi in the tavern: favorite music with Armenian and Georgian folk instruments. Every day from 10: 00-24: 00 you will be welcomed by the chef invited from Georgia, warm and hospitable staff who will serve delicious food.\n' +
             '\n' +
@@ -311,6 +339,7 @@ const RESTAURANTS = [
     },
 
     {
+        id:Math.random(),
         name: 'GENACVALE, PARONYAN 1',
         description: '“Genatsvale” tavern was opened in 2006 and has gained the love and trust of our citizens during the last 8 years. Being the first representative of Georgian cuisine, “Genatsvale” tavern has played a major role by expanding Georgian cuisine in Yerevan. There is an atmosphere of old Tblisi in the tavern: favorite music with Armenian and Georgian folk instruments. Every day from 10: 00-24: 00 you will be welcomed by the chef invited from Georgia, warm and hospitable staff who will serve delicious food.\n' +
             '\n' +
@@ -320,6 +349,7 @@ const RESTAURANTS = [
     },
 
     {
+        id:Math.random(),
         name: 'BEER ACADEMY',
         description: '“Beer Academy” is a restaurant-brewery based in 2012 in Yerevan, Moskovyan St. 8. We have our own beer production making the first and only bio beer in Armenia with 6 types of organic beer. 2 of them are seasonal (1- from May to October, 2- from October to May) Our mission is to introduce people beer drinking culture and serve them only high-quality beer.',
         Cuisine: 'Armenian',
@@ -327,6 +357,7 @@ const RESTAURANTS = [
     },
 
     {
+        id:Math.random(),
         name: 'GENACVALE, KIEVYAN 7',
         description: '“Genatsvale” tavern was opened in 2006 and has gained the love and trust of our citizens during the last 8 years. Being the first representative of Georgian cuisine, “Genatsvale” tavern has played a major role by expanding Georgian cuisine in Yerevan. There is an atmosphere of old Tblisi in the tavern: favorite music with Armenian and Georgian folk instruments. Every day from 10: 00-24: 00 you will be welcomed by the chef invited from Georgia, warm and hospitable staff who will serve delicious food.\n' +
             '\n' +
@@ -336,6 +367,7 @@ const RESTAURANTS = [
     },
 
     {
+        id:Math.random(),
         name: 'MIMINO',
         description: 'This comfortable venue has been operating since 2006. The restaurant holds Armenian and Georgian halls, and a separate VIP room for 10 persons.\n' +
             'The interior design of Georgian hall speaks about the cultural aspects of that country. The Armenian hall is designed according to the same principle. Here you can enjoy puppets dressed in Armenian national ancient costumes.\n' +
@@ -347,4 +379,4 @@ const RESTAURANTS = [
 
 ];
 
-export default RESTAURANTS;
+export default RESTAURANTS_LIST;

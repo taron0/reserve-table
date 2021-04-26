@@ -4,6 +4,7 @@ import './Home.css'
 import backg from '../../assets/cover-image.jpg'
 import Button from "../shared/button/Button";
 import {Link} from "react-router-dom";
+import Firebase from "../../service/firebase/firebase";
 
 const Home = () => {
 
@@ -12,7 +13,7 @@ const Home = () => {
         <>
 
             <div className={'wrapper'} style={{backgroundImage: `url(${backg})`}}>
-                <Header/>
+                {/*<Header/>*/}
                 <div className={'hero-title-holder'}>
                     <div className={'overlay'}>
                         <div className={'hero-title'}>
