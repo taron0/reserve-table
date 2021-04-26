@@ -6,6 +6,7 @@ import Dropdown from "../../shared/dropdown/dropdown";
 import Button from "../../shared/button/Button";
 import {DATE, PART_SIZE, TIME} from "../../../constant/dataDropdown";
 import imgDiner from '../../../assets/cutlery.png'
+import RestaurantsAboutText from "../../restaurantsAbouthText/restaurantsAbouthText";
 
 
 const RestaurantAbout = () => {
@@ -72,7 +73,9 @@ const RestaurantAbout = () => {
                 <p>{restaurant.Cuisine}</p>
 
             </div>
-
+            <div>
+                <RestaurantsAboutText  restaurants={ restaurant }/>
+            </div>
 
         </>
     )

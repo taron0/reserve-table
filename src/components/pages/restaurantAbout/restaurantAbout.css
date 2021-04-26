@@ -54,3 +54,39 @@
     font-size: 14px;
     color: #C59D5F;
 }
+
+
+.restaurant-about-content {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin-top: 45px;
+}
+
+
+.img-style {
+    width: 450px;
+    height: 300px;
+}
+
+.about-context-desc {
+    width: 800px;
+    margin-left: 45px;
+}
+
+
+.restaurant-name-s {
+    font-size: 50px;
+    font-family: 'Noto Serif Armenian', serif;
+    font-style: italic;
+    color: #C59D5F;
+}
+
+
+.restaurant-open {
+    color:#C59D5F;
+    border: 1px solid #C59D5F;
+    padding: 0;
+    text-align: center;
+}
