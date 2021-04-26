@@ -8,7 +8,7 @@ const About = () => {
     return (
         <>
         <div className={'wrapper-about'} style={{backgroundImage: `url(${img})`}}>
-            <Header />
+            {/*<Header />*/}
         <div className={'about-title'}>
             <h1 className={'h3'}>ABOUT</h1>
             <p className={'h4'}>Trust us the organization of your leisure.</p>

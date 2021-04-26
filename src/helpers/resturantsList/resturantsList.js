@@ -9,27 +9,20 @@ const ResturantsList = ({el}) => {
 
     return (
         <>
-
             <div className={'box-resurants'}>
-
                     <div className={'box-img'}>
                         <img src={el.urlImg} className={'img-resturants'}/>
                     </div>
                     <div className={'description-img '}>
                         <p>
-                            <Link to={`/resturants/${el.name}`}>  {el.name} </Link>
-
+                            <Link to={`/resturants/search/${el.id}`}>  {el.name} </Link>
                         </p>
                     </div>
                 <div className={'description-name'}>
                     <p>{el.Cuisine}</p>
                     <p>Downtown</p>
                 </div>
-
-
-
             </div>
-
         </>
     )
 
