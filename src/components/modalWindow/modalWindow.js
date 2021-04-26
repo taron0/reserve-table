@@ -1,27 +1,18 @@
+import React, { useState } from 'react';
 import './modalWindow.css';
 
-import React, { useState } from 'react';
-import './Modal.css'
 
+const Modal = ({onClose, isOpen, children}) => {
 
-const Modal = (props) => {
-    const  close = (e) => {
-        e.preventDefault()
-
-        if (props.onClose) {
-            props.onClose()
-        }
-    }
-
-    if (props.isOpen === false){
+    if (isOpen === false){
         return null
     }
 
     return (
         <div className={'modal'}>
-            <div className={'bg'} onClick={e => close(e)}/>
+            <div className={'bg'} />
             <div className={'content'}>
-                {props.children}
+                {children}
             </div>
         </div>
     );
