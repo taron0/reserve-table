@@ -1,0 +1,23 @@
+.dropdown-v {
+    text-align: center;
+}
+
+.dropdown-title {
+    color: #C59D5F;
+    font-family: 'Noto Serif Armenian', serif;
+}
+
+.dropdown-option {
+    width: 100%;
+    float: left;
+    background: none;
+    margin-bottom: 20px;
+    font-size: 14px;
+    height: 40px;
+
+    padding-left: 8px;
+    color: #333;
+
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}

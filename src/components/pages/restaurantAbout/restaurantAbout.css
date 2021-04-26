@@ -1,7 +1,56 @@
 .wrapper-resturants-about {
     color: white;
-    min-height: 500px;
+    min-height: 400px;
     background-size: cover;
     background-position: center;
     position: relative;
+}
+
+.dropdown-container {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    width: 100%;
+    text-align: center;
+    border: none;
+    outline: 0;
+    font-weight: inherit;
+    font-style: inherit;
+    font-size: 100%;
+    font-family: inherit;
+    vertical-align: baseline;
+    text-decoration: none;
+    margin: 0;
+    padding: 0;
+    margin-left: -15px;
+    margin-right: -15px;
+    justify-content: center;
+}
+
+.dropdown-select {
+    width: 300px;
+    margin-left: 25px;
+}
+
+.modal-button {
+    margin-top: 20px;
+
+}
+
+.button-modal {
+    border-radius: 10px;
+}
+
+
+.diner-icon {
+    width: 250px;
+    margin: 0 auto;
+    text-align: center;
+    font-family: 'Noto Serif Armenian', serif;
+    border-bottom: 1px solid #C59D5F;
+}
+
+.cuisine-text {
+    font-size: 14px;
+    color: #C59D5F;
 }
