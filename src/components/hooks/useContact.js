@@ -23,7 +23,7 @@ const useContact = () => {
             name: '',
             email: '',
             phone: '',
-            comment: ""
+            comment: "",
         },
         validationSchema: contactValidate,
         onSubmit: async values => {

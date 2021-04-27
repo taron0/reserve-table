@@ -7,6 +7,7 @@ import Restaurants from "../../components/pages/restaurants/Restaurants";
 import Child from "../../components/router/childer/child";
 import RestaurantAbout from "../../components/pages/restaurantAbout/restaurantAbout";
 import Header from "../../components/header/Header";
+import {Routes} from "../../helpers/routes";
 
 
 const MainLayout = () => {
@@ -30,6 +31,11 @@ const MainLayout = () => {
                 </Route>
                 <Route  path="/resturants/search/:id" component={RestaurantAbout } /> // TODO change to id
                 <Route path="/resturants/:id" children={<Child />} /> // TODO change search params
+                {/*{Routes.map(({ route, component: Component }) => (*/}
+                {/*    <Route exact path={route}>*/}
+                {/*        <Component />*/}
+                {/*    </Route>*/}
+                {/*))}*/}
                 <Redirect to="/" />
 
             </Switch>

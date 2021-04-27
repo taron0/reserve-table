@@ -45,6 +45,8 @@ const Header = () => {
                                 <NavLink exact to={'/contact'}>
                                     CONTACT
                                 </NavLink>
+
+
                             </li>
                         </ul>
                     </nav>

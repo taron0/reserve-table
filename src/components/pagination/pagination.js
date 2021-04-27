@@ -1,8 +1,8 @@
 import React from 'react'
-import { Link, NavLink } from "react-router-dom";
+import { NavLink } from "react-router-dom";
 import './pagination.css'
 const Pagination = ({ postsPerPage, totalPosts, paginate }) => {
-    // const location = useHistory()
+
     const pageNumbers = [];
 
     for (let i = 1; i <= Math.ceil(totalPosts / postsPerPage); i++) {
@@ -22,6 +22,7 @@ const Pagination = ({ postsPerPage, totalPosts, paginate }) => {
                             >
                                 {number}
                             </NavLink>
+
                         </li>
                     ))}
                 </ul>

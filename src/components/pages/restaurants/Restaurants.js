@@ -1,23 +1,20 @@
 import React, {useEffect, useState} from 'react';
 import imgContact from "../../../assets/cover-image.jpg";
-import Header from "../../header/Header";
 import './restaurants.css'
 import Checkbox from "../../shared/checkbox/Checkbox";
 import Firebase from '../../../service/firebase/firebase'
 import Posts from "../../pagination/posts";
 import Pagination from "../../pagination/pagination";
-import RESTAURANTS from "../../../helpers/resturants/restaurants";
+// import  { filteredData } from '../../../helpers/filtredData'
+
 
 
 const Restaurants = () => {
     const [data, setData] = useState([])
     const [loading, setLoading] = useState(false)
     const [currentPage, setCurrentPage] = useState(1);
-    const [postsPerPage, setPostsPerPage] = useState(9);
-
-
-    console.log(data, loading);
-
+    const [postsPerPage, setPostsPerPage] = useState(8);
+    const checkedValues = [];
 
     useEffect(() => {
         setLoading(true);
@@ -28,13 +25,26 @@ const Restaurants = () => {
             }))
     }, []);
 
+
+
+
+    const handleCheck = (e) => {
+        if(e.target.checked) {
+            checkedValues.push(e.target.name);
+        }
+
+    }
+
+
+
     const indexOfLastPost = currentPage * postsPerPage;
     const indexOfFirstPost = indexOfLastPost - postsPerPage;
     const currentPosts = loading ? [] : data.slice(indexOfFirstPost, indexOfLastPost);
-
     const paginate = pageNumber => {
         setCurrentPage(pageNumber);
     };
+
+
 
     return (
         <>
@@ -53,56 +63,56 @@ const Restaurants = () => {
                     <div>
                         <span>Armenian</span>
                         <span>
-                            <Checkbox name='Armenian'/>
+                            <Checkbox name='Armenian' onChange={(e) => handleCheck(e)}/>
                         </span>
 
                     </div>
                     <div>
                         <span>Chinese </span>
                         <span>
-                             <Checkbox name='Chinese'/>
+                             <Checkbox name='Chinese' onChange={(e) => handleCheck(e)}/>
                       </span>
 
                     </div>
                     <div>
                         <span>European</span>
                         <span>
-                            <Checkbox name=' European'/>
+                            <Checkbox name=' European' onChange={(e) => handleCheck(e)}/>
                         </span>
 
                     </div>
                     <div>
                         <span>Caucasian</span>
                         <span>
-                              <Checkbox name=' Caucasian'/>
+                              <Checkbox name=' Caucasian' onChange={(e) => handleCheck(e)}/>
                         </span>
 
                     </div>
                     <div>
                         <span> Georgian</span>
                         <span>
-                              <Checkbox name=' Georgian'/>
+                              <Checkbox name=' Georgian' onChange={(e) => handleCheck(e)}/>
                         </span>
 
                     </div>
                     <div>
                         <span>Italian</span>
                         <span>
-                            <Checkbox name='Italian'/>
+                            <Checkbox name='Italian' onChange={(e) => handleCheck(e)}/>
                         </span>
 
                     </div>
                     <div>
                         <span> Russian</span>
                         <span>
-                             <Checkbox name=' Russian'/>
+                             <Checkbox name=' Russian' onChange={(e) => handleCheck(e)}/>
                         </span>
 
                     </div>
                     <div>
                         <span>Mexican</span>
                         <span>
-                             <Checkbox name=' Mexican'/>
+                             <Checkbox name=' Mexican' onChange={(e) => handleCheck(e)}/>
                         </span>
 
                     </div>
@@ -113,6 +123,7 @@ const Restaurants = () => {
                 {!loading ? (
                     <>
                         <div className={'post-data'}>
+
                             <Posts
                                 posts={currentPosts}
                                 loading={loading}
@@ -122,7 +133,7 @@ const Restaurants = () => {
                    <div className={'pagination-pages'}>
                     <Pagination
                         paginate={paginate}
-                        postsPerPage={postsPerPage}
+                        postsPerPage={ postsPerPage}
                         totalPosts={data.length}
                     />
                     </div>

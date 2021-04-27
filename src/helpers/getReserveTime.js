@@ -1,8 +1,6 @@
 const getReserveTime = () => {
-
     const times = [];
     const date = new Date();
-
 
     while (date.getMinutes() % 30 !== 0) {
         date.setMinutes(date.getMinutes() + 1);
@@ -14,8 +12,6 @@ const getReserveTime = () => {
     }
 
     return times
-
-
 }
 
 export default getReserveTime
