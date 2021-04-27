@@ -29,12 +29,15 @@ const Restaurants = () => {
 
 
     const handleCheck = (e) => {
-        if(e.target.checked) {
+        if(e.target.checked ) {
             checkedValues.push(e.target.name);
+        }else {
+
         }
 
-    }
+        console.log(checkedValues, 'checked values new')
 
+    }
 
 
     const indexOfLastPost = currentPage * postsPerPage;
@@ -44,6 +47,7 @@ const Restaurants = () => {
         setCurrentPage(pageNumber);
     };
 
+    console.log(checkedValues, 'checked values')
 
 
     return (

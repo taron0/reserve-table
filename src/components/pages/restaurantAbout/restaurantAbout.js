@@ -34,7 +34,6 @@ const RestaurantAbout = () => {
     const restaurant = data.length && data[id];
 
 
-    console.log(restaurant, 'chgitem inch')
 
     return (
         <>
