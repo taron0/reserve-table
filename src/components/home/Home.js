@@ -1,13 +1,17 @@
-import React from 'react'
+import React, {useEffect} from 'react'
 import Header from "../header/Header";
 import './Home.css'
 import backg from '../../assets/cover-image.jpg'
 import Button from "../shared/button/Button";
 import {Link} from "react-router-dom";
 import Firebase from "../../service/firebase/firebase";
+import { ADMIN } from "../../helpers/adminPas";
+
 
 const Home = () => {
-
+    // useEffect(() => {
+    //     Firebase.addFirebaseUrl(JSON.stringify(ADMIN),  108)
+    // }, [])
     return (
 //g
         <>

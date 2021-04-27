@@ -2,6 +2,7 @@ import app from "firebase/app";
 import "firebase/database";
 import mainConfig from "../../configs/mainConfig";
 import {RESTAURANTS} from "../../constant/apiEndpoints";
+import { ADMIN } from "../../helpers/adminPas";
 
 class Firebase {
     constructor() {
@@ -9,6 +10,14 @@ class Firebase {
         this.db = app.database();
         this.data = [];
     }
+
+    // addFirebaseUrl(data, n) {
+    //     return this.db
+    //         .ref(`${ADMIN}/${n}`)
+    //         .set(data)
+    //         .then(res => console.log(res))
+    //         .catch(err => console.log(err))
+    // }
 
     addNewRestaurant (data, id) {
         return this.db

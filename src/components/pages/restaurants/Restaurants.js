@@ -7,7 +7,7 @@ import Posts from "../../pagination/posts";
 import Pagination from "../../pagination/pagination";
 import Header from "../../header/Header";
 // import  { filteredData } from '../../../helpers/filtredData'
-
+import { filteredData } from "../../../helpers/filtredData";
 
 
 const Restaurants = () => {
@@ -15,8 +15,9 @@ const Restaurants = () => {
     const [loading, setLoading] = useState(false)
     const [currentPage, setCurrentPage] = useState(1);
     const [postsPerPage, setPostsPerPage] = useState(8);
-    const checkedValues = [];
-
+    const [cuisines, setCuisines] = useState([]);
+    const [filtered, setFiltered] = useState([])
+    const checked = []
     useEffect(() => {
         setLoading(true);
         Firebase.getRestaurants()
@@ -30,15 +31,23 @@ const Restaurants = () => {
 
 
     const handleCheck = (e) => {
-        if(e.target.checked ) {
-            checkedValues.push(e.target.name);
-        }else {
+       if(e.target.checked ) {
+            checked.push(e.target.name);
 
-        }
+           setFiltered([...filteredData(checked, data)])
+       }else {
+           let i = checked.indexOf(e.target.name);
+           checked.splice(i,1)
+           setFiltered([...filteredData(checked, data)])
 
-        console.log(checkedValues, 'checked values new')
+       }
 
+        console.log(checked,'checked box ban man')
     }
+
+
+
+
 
 
     const indexOfLastPost = currentPage * postsPerPage;
@@ -48,7 +57,6 @@ const Restaurants = () => {
         setCurrentPage(pageNumber);
     };
 
-    console.log(checkedValues, 'checked values')
 
 
     return (
@@ -131,11 +139,11 @@ const Restaurants = () => {
                         <div className={'post-data'}>
 
                             <Posts
-                                posts={currentPosts}
+                                posts={filtered.length ? filtered.slice(indexOfFirstPost, indexOfLastPost) : currentPosts}
                                 loading={loading}
                             />
                         </div>
-
+                        {console.log(filtered,' choaskdjasuduio')}
                    <div className={'pagination-pages'}>
                     <Pagination
                         paginate={paginate}
