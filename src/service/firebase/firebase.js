@@ -7,10 +7,7 @@ class Firebase {
     constructor() {
         app.initializeApp(mainConfig.connection);
         this.db = app.database();
-
-
         this.data = [];
-        this.url = 'https://reserve-81dc6-default-rtdb.firebaseio.com/userdata.json'; // TODO move base url to config
     }
 
     addNewRestaurant (data, id) {

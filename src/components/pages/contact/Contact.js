@@ -15,7 +15,7 @@ const Contact = () => {
     return (
         <>
             <div className={'wrapper-contact'} style={{backgroundImage: `url(${imgContact})`}}>
-                {/*<Header/>*/}
+                <Header/>
                 <div className={'contact-text'}>
                     <h1>CONTACT</h1>
                     <p>Get in Touch With Us.</p>

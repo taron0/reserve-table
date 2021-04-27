@@ -13,7 +13,7 @@ const Home = () => {
         <>
 
             <div className={'wrapper'} style={{backgroundImage: `url(${backg})`}}>
-                {/*<Header/>*/}
+                <Header/>
                 <div className={'hero-title-holder'}>
                     <div className={'overlay'}>
                         <div className={'hero-title'}>

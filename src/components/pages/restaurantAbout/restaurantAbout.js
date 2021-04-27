@@ -1,6 +1,6 @@
 import React, {useEffect, useState} from 'react';
 import './restaurantAbout.css'
-import {useParams} from 'react-router-dom';
+import {useLocation, useParams} from 'react-router-dom';
 import Firebase from '../../../service/firebase/firebase'
 import Dropdown from "../../shared/dropdown/dropdown";
 import Button from "../../shared/button/Button";
@@ -10,6 +10,7 @@ import RestaurantsAboutText from "../../restaurantsAbouthText/restaurantsAbouthT
 import Modal from "../../modalWindow/modalWindow";
 import SVG from '../../../assets/cancel.png'
 import Input from "../../shared/input/Input";
+import Header from "../../header/Header";
 
 
 const RestaurantAbout = () => {
@@ -17,7 +18,8 @@ const RestaurantAbout = () => {
     const [data, setData] = useState([])
     const [loading, setLoading] = useState(false);
     const [isopenModal, setIsOpenModal] = useState(false);
-
+    let location = useLocation()
+    console.log('location', location)
     const openModal = () => setIsOpenModal(true);
     const closeModal = () => setIsOpenModal(false);
 
@@ -32,13 +34,14 @@ const RestaurantAbout = () => {
     }, [])
 
     const restaurant = data.length && data[id];
-
+    console.log(data,'localstorage')
 
 
     return (
         <>
 
             <div className={'wrapper-resturants-about'} style={{backgroundImage: `url(${restaurant.urlImg})`}}>
+                <Header />
                 <div className={'contact-text'}>
                     <h1>{restaurant.name}</h1>
                     <p>Order online is easy</p>

@@ -8,6 +8,7 @@ import Child from "../../components/router/childer/child";
 import RestaurantAbout from "../../components/pages/restaurantAbout/restaurantAbout";
 import Header from "../../components/header/Header";
 import {Routes} from "../../helpers/routes";
+import Admin from "../../components/admin/admin";
 
 
 const MainLayout = () => {
@@ -15,7 +16,7 @@ const MainLayout = () => {
     return (
 // TODO change to config
         <>
-            <Header />
+            {/*<Header />*/}
             <Switch>
                 <Route exact path="/">
                     <Home/>
@@ -36,6 +37,9 @@ const MainLayout = () => {
                 {/*        <Component />*/}
                 {/*    </Route>*/}
                 {/*))}*/}
+                <Route exact path='/admin'>
+                    <Admin />
+                </Route>
                 <Redirect to="/" />
 
             </Switch>

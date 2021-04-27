@@ -5,6 +5,7 @@ import Checkbox from "../../shared/checkbox/Checkbox";
 import Firebase from '../../../service/firebase/firebase'
 import Posts from "../../pagination/posts";
 import Pagination from "../../pagination/pagination";
+import Header from "../../header/Header";
 // import  { filteredData } from '../../../helpers/filtredData'
 
 
@@ -53,6 +54,7 @@ const Restaurants = () => {
     return (
         <>
             <div className={'wrapper-resturants'} style={{backgroundImage: `url(${imgContact})`}}>
+                <Header />
                 <div className={'contact-text'}>
                     <h1>RESTAURANTS</h1>
                     <p>Booking online is Easy.</p>
