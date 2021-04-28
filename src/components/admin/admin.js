@@ -35,7 +35,9 @@ const Admin = () => {
     }
 
     const handleClick = () => {
-        if((admin[0].username === login.username) && (admin[0].password === login.password)) {
+        const isUsername =  admin[0].username === login.username;
+        const isPassword = admin[0].password === login.password
+        if( isUsername &&  isPassword ) {
             setIsAdmin(true);
         }else {
             setIsAdmin(false);
@@ -48,7 +50,7 @@ const Admin = () => {
             <div className={'loginContainer'}>
             <label>Username</label>
             <Input
-                placeholder='writ email'
+                placeholder='Username...'
                 type='text'
                 name='username'
                 onChange={(e) => handleChange(e)}
@@ -56,7 +58,7 @@ const Admin = () => {
 
             <label>Password</label>
             <Input
-                placeholder='write password ...'
+                placeholder='Password ...'
                 type='password'
                 name='password'
                 onChange={(e) => handleChange(e)}

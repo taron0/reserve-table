@@ -1,7 +1,7 @@
 import React from 'react';
 import './Input.css';
 
-// TODO use for dropdown
+
 const Input = ({type, placeholder, name, value, onChange}) => {
 
     return (

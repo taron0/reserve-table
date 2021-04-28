@@ -30,7 +30,7 @@ const Filters = () => {
                 />
                 ))
             }
-            {console.log(cuisine, 'adsadsadasd')}
+            {console.log(cuisine, 'cuisine')}
             {console.log(selectedFilters, 'selected Filters')}
         </div>
 

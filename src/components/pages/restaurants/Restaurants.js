@@ -15,11 +15,11 @@ const Restaurants = () => {
     const [data, setData] = useState([])
     const [loading, setLoading] = useState(false)
     const [currentPage, setCurrentPage] = useState(1);
-    const [postsPerPage, setPostsPerPage] = useState(8);
+    const [postsPerPage, setPostsPerPage] = useState(9);
     const [filtered, setFiltered] = useState([]);
 
 
-    const checked = []
+
     useEffect(() => {
         setLoading(true);
         Firebase.getRestaurants()
@@ -34,13 +34,13 @@ const Restaurants = () => {
 
     const handleCheck = (e) => {
        if(e.target.checked ) {
-            checked.push(e.target.name);
+
        }else {
-           let i = checked.indexOf(e.target.name);
-           checked.splice(i,1)
+           // let i = checked.indexOf(e.target.name);
+
        }
-        setFiltered([...filteredData(checked, data)])
-        console.log(checked,'checked box ban man')
+        // setFiltered([...filteredData(checked, data)])
+
     }
 
     const indexOfLastPost = currentPage * postsPerPage;
@@ -48,7 +48,6 @@ const Restaurants = () => {
     const currentPosts = loading ? [] : data.slice(indexOfFirstPost, indexOfLastPost);
     const paginate = pageNumber => {
         setCurrentPage(pageNumber);
-        setFiltered([...filteredData(checked, data)])
 
     };
 
@@ -75,16 +74,16 @@ const Restaurants = () => {
                         <div className={'post-data'}>
 
                             <Posts
-                                posts={filtered.length ? filtered.slice(indexOfFirstPost, indexOfLastPost) : currentPosts}
+                                posts={currentPosts}
                                 loading={loading}
                             />
                         </div>
-                        {console.log(filtered,' choaskdjasuduio')}
+
                    <div className={'pagination-pages'}>
                     <Pagination
                         paginate={paginate}
                         postsPerPage={ postsPerPage}
-                        totalPosts={filtered.length ? filtered.length : data.length}
+                        totalPosts={data.length}
                     />
                     </div>
                     </>
