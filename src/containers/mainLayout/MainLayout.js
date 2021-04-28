@@ -30,7 +30,7 @@ const MainLayout = () => {
                 <Route exact path="/contact">
                     <Contact/>
                 </Route>
-                <Route  path="/resturants/search/:id" component={RestaurantAbout } /> // TODO change to id
+                <Route  path="/resturants/search/:id" component={RestaurantAbout } /> // TODO change to id++
                 <Route path="/resturants/:id" children={<Child />} /> // TODO change search params
                 {/*{Routes.map(({ route, component: Component }) => (*/}
                 {/*    <Route exact path={route}>*/}

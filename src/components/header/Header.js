@@ -14,16 +14,7 @@ const Header = () => {
                 <a><img src={`${img}`} className={'respimg logo-viz'}/></a>
             </div>
             <div className={'navigation-and-social'}>
-                <div className={'nav-social'}>
-                    <ul>
-                        <li className={'aper-visitors'}>
-                            <span>BOOKED TODAY :</span>
-                            <span>4</span>
-                        </li>
-                        <li><a href={'https://www.facebook.com/'} target={'_blank'}>F</a></li>
-                        <li><a href={'https://www.instagram.com/'} target={'_blank'}>I</a></li>
-                    </ul>
-                </div>
+
 
                 <div className={'nav-holder'}>
                     <nav>

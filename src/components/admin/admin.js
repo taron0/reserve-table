@@ -15,6 +15,7 @@ const Admin = () => {
 
     });
     const [isAdmin, setIsAdmin] = useState(false);
+    const [error, setError] = useState(false);
 
     // useState(() => {
     //     Firebase.getAdminInfo().then(res => {
@@ -39,15 +40,24 @@ const Admin = () => {
         const isPassword = admin[0].password === login.password
         if( isUsername &&  isPassword ) {
             setIsAdmin(true);
+            setError(false)
         }else {
             setIsAdmin(false);
+            setError(true);
         }
 
     }
 
     return (
         <div className={'login'}>
+
+
             <div className={'loginContainer'}>
+                {login.password || login.username && (!isAdmin) ? (
+                    <p className={'error-isAdmin'}>You are not the site administrator</p>
+                ): ''
+
+                }
             <label>Username</label>
             <Input
                 placeholder='Username...'

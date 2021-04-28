@@ -6,8 +6,6 @@ import Button from "../shared/button/Button";
 import {Link} from "react-router-dom";
 
 
-
-
 const Home = () => {
 
     return (
