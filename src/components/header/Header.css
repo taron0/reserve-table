@@ -157,5 +157,6 @@ nav li:last-child {
 }
 
 .active {
-    color: #C59D5F;
+    color: white;
+    background-color: #C59D5F;
 }

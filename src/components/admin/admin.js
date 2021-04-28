@@ -25,7 +25,7 @@ const Admin = () => {
     // }, [])
     useEffect(() => {
         Fetch.get(`${mainConfig.connection.databaseURL}/admin.json`).then(res => setAdmin([...res]));
-        console.log(admin, 'admin')
+
     }, [])
 
     const handleChange = (e) => {
@@ -78,8 +78,7 @@ const Admin = () => {
             </Link>
 
         </div>
-            {   console.log(admin, 'new  admin ')}
-            {console.log(login, 'login')}
+
         </div>
     )
 }

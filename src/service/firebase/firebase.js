@@ -2,7 +2,7 @@ import app from "firebase/app";
 import "firebase/database";
 import mainConfig from "../../configs/mainConfig";
 import {RESTAURANTS} from "../../constant/apiEndpoints";
-import { ADMIN } from "../../helpers/adminPas";
+
 
 class Firebase {
     constructor() {

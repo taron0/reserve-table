@@ -10,7 +10,6 @@ import {registredError, registredMessage} from "../../../constant/errorMessage/e
 const Contact = () => {
     const {formik} = useContact()
 
-    console.log(formik, 'formik');
 
     return (
         <>

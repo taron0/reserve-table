@@ -3,7 +3,7 @@ import React from 'react';
 
 const ResoranPage = () => {
     const {name} = useParams()
-    console.log(name)
+
     return (
         <div>
           helo vord

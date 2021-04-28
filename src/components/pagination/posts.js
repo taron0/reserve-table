@@ -3,8 +3,6 @@ import ResturantsList from "../../helpers/resturantsList/resturantsList";
 
 const Posts = ({posts, loading}) => {
 
-    console.log('posts', posts)
-
 
     return (
         <>{

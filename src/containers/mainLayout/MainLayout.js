@@ -1,14 +1,14 @@
 import React, { useEffect } from "react";
 import {Route, Switch, Redirect } from "react-router-dom";
+import { Routes } from "../../helpers/routes";
 import Home from "../../components/home/Home";
 import About from "../../components/pages/about/About";
 import Contact from "../../components/pages/contact/Contact";
 import Restaurants from "../../components/pages/restaurants/Restaurants";
-import Child from "../../components/router/childer/child";
 import RestaurantAbout from "../../components/pages/restaurantAbout/restaurantAbout";
-
 import Admin from "../../components/admin/admin";
 import AdminPage from "../../components/pages/adminPages/adminPage";
+import AdminRestaurants from "../../components/pages/adminRestaurants/adminRestaurants";
 
 
 const MainLayout = () => {
@@ -19,30 +19,34 @@ const MainLayout = () => {
             {/*<Header />*/}
             <Switch>
                 <Route exact path="/">
-                    <Home/>
+                   <Home/>
                 </Route>
                 <Route exact path="/restaurants">
-                    <Restaurants/>
+                  <Restaurants/>
                 </Route>
                 <Route exact path="/about">
-                    <About/>
+                <About/>
                 </Route>
                 <Route exact path="/contact">
-                    <Contact/>
+                <Contact/>
                 </Route>
-                <Route  path="/resturants/search/:id" component={RestaurantAbout } /> // TODO change to id++
-                <Route path="/resturants/:id" children={<Child />} /> // TODO change search params
+                <Route  path="/resturants/search/:id" component={RestaurantAbout } /> // TODO change to id++*/
+                <Route path="/restaurants/page/:id" component={Restaurants} /> // TODO change search params
                 {/*{Routes.map(({ route, component: Component }) => (*/}
                 {/*    <Route exact path={route}>*/}
                 {/*        <Component />*/}
                 {/*    </Route>*/}
                 {/*))}*/}
                 <Route exact path='/admin'>
-                    <Admin />
+                <Admin />
                 </Route>
                 <Route exact path='/admin/page' component={AdminPage} />
+                <Route exact path={'/admin/restaurants'} component={AdminRestaurants}/>
+                <Route exact path={'/admin/restaurants/page/:id'} component={AdminRestaurants}/>
                 <Redirect to="/" />
-
+                <Route path="">
+                    <h1>Not Found</h1>
+                </Route>
             </Switch>
         </>
 

@@ -19,7 +19,7 @@ const RestaurantAbout = () => {
     const [loading, setLoading] = useState(false);
     const [isopenModal, setIsOpenModal] = useState(false);
     let location = useLocation()
-    console.log('location', location)
+
     const openModal = () => setIsOpenModal(true);
     const closeModal = () => setIsOpenModal(false);
 
@@ -34,7 +34,6 @@ const RestaurantAbout = () => {
     }, [])
 
     const restaurant = data.length && data[id];
-    console.log(data,'localstorage')
 
 
     return (

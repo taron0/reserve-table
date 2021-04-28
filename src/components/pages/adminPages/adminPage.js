@@ -24,7 +24,7 @@ const AdminPage = () => {
                         </div>
                         <div className={'admin-book'}>
                             <div className={'btn-book'}>
-                                <Link to={''}><Button context={'Book Now'}/> </Link>
+                                <Link to={'/admin/restaurants'}><Button context={'Book Now'}/> </Link>
                             </div>
                             <div className={'btn-book'}>
                                 <Link to={''}><Button context={'Orders'}/> </Link>
