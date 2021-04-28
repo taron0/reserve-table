@@ -8,6 +8,8 @@ import Pagination from "../../pagination/pagination";
 import Header from "../../header/Header";
 // import  { filteredData } from '../../../helpers/filtredData'
 import { filteredData } from "../../../helpers/filtredData";
+import Filters from "../../filters";
+
 
 
 const Restaurants = () => {
@@ -15,8 +17,9 @@ const Restaurants = () => {
     const [loading, setLoading] = useState(false)
     const [currentPage, setCurrentPage] = useState(1);
     const [postsPerPage, setPostsPerPage] = useState(8);
-    const [cuisines, setCuisines] = useState([]);
-    const [filtered, setFiltered] = useState([])
+    const [filtered, setFiltered] = useState([]);
+
+
     const checked = []
     useEffect(() => {
         setLoading(true);
@@ -33,19 +36,16 @@ const Restaurants = () => {
     const handleCheck = (e) => {
        if(e.target.checked ) {
             checked.push(e.target.name);
-
-           setFiltered([...filteredData(checked, data)])
        }else {
            let i = checked.indexOf(e.target.name);
            checked.splice(i,1)
-           setFiltered([...filteredData(checked, data)])
-
        }
-
+        setFiltered([...filteredData(checked, data)])
         console.log(checked,'checked box ban man')
     }
 
 
+    // [{id: 1, name: 'Armenia'}]
 
 
 
@@ -55,6 +55,8 @@ const Restaurants = () => {
     const currentPosts = loading ? [] : data.slice(indexOfFirstPost, indexOfLastPost);
     const paginate = pageNumber => {
         setCurrentPage(pageNumber);
+        setFiltered([...filteredData(checked, data)])
+
     };
 
 
@@ -69,69 +71,70 @@ const Restaurants = () => {
                 </div>
 
             </div>
-            <div className={'filtred-container'}>
-                <div>
-                    Cuisine:
-                </div>
-                <div className={'countries'}>
-                    <div>
-                        <span>Armenian</span>
-                        <span>
-                            <Checkbox name='Armenian' onChange={(e) => handleCheck(e)}/>
-                        </span>
+            {/*// <div className={'filtred-container'}>*/}
+            {/*//     <div>*/}
+            {/*//         Cuisine:*/}
+            {/*//     </div>*/}
+            {/*//     <div className={'countries'}>*/}
+            {/*//         <div>*/}
+            {/*//             <span>Armenian</span>*/}
+            {/*//             <span>*/}
+            {/*//                 <Checkbox name='Armenian' onChange={(e) => handleCheck(e)}/>*/}
+            {/*//             </span>*/}
+            {/*//*/}
+            {/*//         </div>*/}
+            {/*//         <div>*/}
+            {/*//             <span>Chinese </span>*/}
+            {/*//             <span>*/}
+            {/*//                  <Checkbox name='Chinese' onChange={(e) => handleCheck(e)}/>*/}
+            {/*/!*          </span>*!/*/}
 
-                    </div>
-                    <div>
-                        <span>Chinese </span>
-                        <span>
-                             <Checkbox name='Chinese' onChange={(e) => handleCheck(e)}/>
-                      </span>
+            {/*//         </div>*/}
+            {/*//         <div>*/}
+            {/*//             <span>European</span>*/}
+            {/*//             <span>*/}
+            {/*//                 <Checkbox name=' European' onChange={(e) => handleCheck(e)}/>*/}
+            {/*            </span>*/}
 
-                    </div>
-                    <div>
-                        <span>European</span>
-                        <span>
-                            <Checkbox name=' European' onChange={(e) => handleCheck(e)}/>
-                        </span>
+            {/*        </div>*/}
+            {/*        <div>*/}
+            {/*            <span>Caucasian</span>*/}
+            {/*            <span>*/}
+            {/*                  <Checkbox name=' Caucasian' onChange={(e) => handleCheck(e)}/>*/}
+            {/*//             </span>*/}
+            {/*//*/}
+            {/*//         </div>*/}
+            {/*        <div>*/}
+            {/*            <span> Georgian</span>*/}
+            {/*            <span>*/}
+            {/*                  <Checkbox name=' Georgian' onChange={(e) => handleCheck(e)}/>*/}
+            {/*            </span>*/}
 
-                    </div>
-                    <div>
-                        <span>Caucasian</span>
-                        <span>
-                              <Checkbox name=' Caucasian' onChange={(e) => handleCheck(e)}/>
-                        </span>
-
-                    </div>
-                    <div>
-                        <span> Georgian</span>
-                        <span>
-                              <Checkbox name=' Georgian' onChange={(e) => handleCheck(e)}/>
-                        </span>
-
-                    </div>
-                    <div>
-                        <span>Italian</span>
-                        <span>
-                            <Checkbox name='Italian' onChange={(e) => handleCheck(e)}/>
-                        </span>
-
-                    </div>
-                    <div>
-                        <span> Russian</span>
-                        <span>
-                             <Checkbox name=' Russian' onChange={(e) => handleCheck(e)}/>
-                        </span>
-
-                    </div>
-                    <div>
-                        <span>Mexican</span>
-                        <span>
-                             <Checkbox name=' Mexican' onChange={(e) => handleCheck(e)}/>
-                        </span>
-
-                    </div>
-                </div>
-            </div>
+            {/*// //         </div>
+            // //         <div>
+            // //             <span>Italian</span>
+            // //             <span>
+            // //                 <Checkbox name='Italian' onChange={(e) => handleCheck(e)}/>
+            // //             </span>
+            // //
+            // {/*        </div>
+            // {/*        <div>*
+            // //             <span> Russian</span>
+            // //             <span>
+            // //                  <Checkbox name=' Russian' onChange={(e) => handleCheck(e)}/>
+            // //             </span>
+            // //
+            // //         </div>
+            // //         <div>
+            // //             <span>Mexican</span>
+            // //             <span>
+            // {/*                 <Checkbox name=' Mexican' onChange={(e) => handleCheck(e)}/>*/}
+            // {/*            </span>*/}
+            //
+            // {/*        </div>*/}
+            // {/*    </div>*/}
+            // {/*</div>*/}*/}
+            <Filters />
 
             <div className={'container-restaurants'}>
                 {!loading ? (
@@ -148,7 +151,7 @@ const Restaurants = () => {
                     <Pagination
                         paginate={paginate}
                         postsPerPage={ postsPerPage}
-                        totalPosts={data.length}
+                        totalPosts={filtered.length ? filtered.length : data.length}
                     />
                     </div>
                     </>

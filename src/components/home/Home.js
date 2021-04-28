@@ -9,9 +9,7 @@ import { ADMIN } from "../../helpers/adminPas";
 
 
 const Home = () => {
-    // useEffect(() => {
-    //     Firebase.addFirebaseUrl(JSON.stringify(ADMIN),  108)
-    // }, [])
+
     return (
 //g
         <>

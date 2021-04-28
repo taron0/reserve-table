@@ -6,9 +6,9 @@ import Contact from "../../components/pages/contact/Contact";
 import Restaurants from "../../components/pages/restaurants/Restaurants";
 import Child from "../../components/router/childer/child";
 import RestaurantAbout from "../../components/pages/restaurantAbout/restaurantAbout";
-import Header from "../../components/header/Header";
-import {Routes} from "../../helpers/routes";
+
 import Admin from "../../components/admin/admin";
+import AdminPage from "../../components/pages/adminPages/adminPage";
 
 
 const MainLayout = () => {
@@ -40,6 +40,7 @@ const MainLayout = () => {
                 <Route exact path='/admin'>
                     <Admin />
                 </Route>
+                <Route exact path='/admin/page' component={AdminPage} />
                 <Redirect to="/" />
 
             </Switch>
