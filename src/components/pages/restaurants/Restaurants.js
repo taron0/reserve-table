@@ -1,12 +1,11 @@
 import React, {useEffect, useState} from 'react';
 import imgContact from "../../../assets/cover-image.jpg";
 import './restaurants.css'
-import Checkbox from "../../shared/checkbox/Checkbox";
 import Firebase from '../../../service/firebase/firebase'
 import Posts from "../../pagination/posts";
 import Pagination from "../../pagination/pagination";
 import Header from "../../header/Header";
-// import  { filteredData } from '../../../helpers/filtredData'
+
 import { filteredData } from "../../../helpers/filtredData";
 import Filters from "../../filters";
 
@@ -44,12 +43,6 @@ const Restaurants = () => {
         console.log(checked,'checked box ban man')
     }
 
-
-    // [{id: 1, name: 'Armenia'}]
-
-
-
-
     const indexOfLastPost = currentPage * postsPerPage;
     const indexOfFirstPost = indexOfLastPost - postsPerPage;
     const currentPosts = loading ? [] : data.slice(indexOfFirstPost, indexOfLastPost);
@@ -71,70 +64,10 @@ const Restaurants = () => {
                 </div>
 
             </div>
-            {/*// <div className={'filtred-container'}>*/}
-            {/*//     <div>*/}
-            {/*//         Cuisine:*/}
-            {/*//     </div>*/}
-            {/*//     <div className={'countries'}>*/}
-            {/*//         <div>*/}
-            {/*//             <span>Armenian</span>*/}
-            {/*//             <span>*/}
-            {/*//                 <Checkbox name='Armenian' onChange={(e) => handleCheck(e)}/>*/}
-            {/*//             </span>*/}
-            {/*//*/}
-            {/*//         </div>*/}
-            {/*//         <div>*/}
-            {/*//             <span>Chinese </span>*/}
-            {/*//             <span>*/}
-            {/*//                  <Checkbox name='Chinese' onChange={(e) => handleCheck(e)}/>*/}
-            {/*/!*          </span>*!/*/}
-
-            {/*//         </div>*/}
-            {/*//         <div>*/}
-            {/*//             <span>European</span>*/}
-            {/*//             <span>*/}
-            {/*//                 <Checkbox name=' European' onChange={(e) => handleCheck(e)}/>*/}
-            {/*            </span>*/}
-
-            {/*        </div>*/}
-            {/*        <div>*/}
-            {/*            <span>Caucasian</span>*/}
-            {/*            <span>*/}
-            {/*                  <Checkbox name=' Caucasian' onChange={(e) => handleCheck(e)}/>*/}
-            {/*//             </span>*/}
-            {/*//*/}
-            {/*//         </div>*/}
-            {/*        <div>*/}
-            {/*            <span> Georgian</span>*/}
-            {/*            <span>*/}
-            {/*                  <Checkbox name=' Georgian' onChange={(e) => handleCheck(e)}/>*/}
-            {/*            </span>*/}
-
-            {/*// //         </div>
-            // //         <div>
-            // //             <span>Italian</span>
-            // //             <span>
-            // //                 <Checkbox name='Italian' onChange={(e) => handleCheck(e)}/>
-            // //             </span>
-            // //
-            // {/*        </div>
-            // {/*        <div>*
-            // //             <span> Russian</span>
-            // //             <span>
-            // //                  <Checkbox name=' Russian' onChange={(e) => handleCheck(e)}/>
-            // //             </span>
-            // //
-            // //         </div>
-            // //         <div>
-            // //             <span>Mexican</span>
-            // //             <span>
-            // {/*                 <Checkbox name=' Mexican' onChange={(e) => handleCheck(e)}/>*/}
-            // {/*            </span>*/}
-            //
-            // {/*        </div>*/}
-            // {/*    </div>*/}
-            // {/*</div>*/}*/}
+        <div className='filters-container'>
             <Filters />
+        </div>
+
 
             <div className={'container-restaurants'}>
                 {!loading ? (

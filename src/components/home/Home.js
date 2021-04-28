@@ -4,14 +4,14 @@ import './Home.css'
 import backg from '../../assets/cover-image.jpg'
 import Button from "../shared/button/Button";
 import {Link} from "react-router-dom";
-import Firebase from "../../service/firebase/firebase";
-import { ADMIN } from "../../helpers/adminPas";
+
+
 
 
 const Home = () => {
 
     return (
-//g
+
         <>
 
             <div className={'wrapper'} style={{backgroundImage: `url(${backg})`}}>

@@ -2,6 +2,7 @@ import app from "firebase/app";
 import "firebase/database";
 import mainConfig from "../../configs/mainConfig";
 import {RESTAURANTS} from "../../constant/apiEndpoints";
+import { ADMIN } from "../../helpers/adminPas";
 
 class Firebase {
     constructor() {
@@ -10,15 +11,14 @@ class Firebase {
         this.data = [];
     }
 
-    getCuisine() {
-        return new Promise((resolve, reject) => {
-            this.db
-                .ref('cuisine/')
-                .once('value')
-                .then(snap => resolve(snap.val()))
-                .catch(err => reject(err));
-        })
+    addCuisine(data, i) {
+        return this.db
+            .ref(`cuisine/${i}`)
+            .set(data)
+            .then(res => console.log(res))
+            .catch(err => console.log(err))
     }
+
 
     addFirebaseUrl(data, n) {
         return this.db
@@ -27,7 +27,6 @@ class Firebase {
             .then(res => console.log(res))
             .catch(err => console.log(err))
     }
-
     getAdminInfo() {
         return new Promise((resolve, reject) => {
             this.db
@@ -36,10 +35,9 @@ class Firebase {
                 .then(snap => resolve(snap.val()))
                 .catch(err => reject(err));
         })
-
     }
 
-    addNewRestaurant(data, id) {
+    addNewRestaurant (data, id) {
         return this.db
             .ref(`${RESTAURANTS}/${id}`)
             .set(data)
@@ -47,7 +45,7 @@ class Firebase {
             .catch(err => console.log(err))
     }
 
-    getRestaurants() {
+    getRestaurants () {
         return new Promise((resolve, reject) => {
             this.db
                 .ref(RESTAURANTS)

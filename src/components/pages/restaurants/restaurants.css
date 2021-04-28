@@ -22,31 +22,25 @@
 .countries {
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
-
 }
 
 .checkbox {
     width: 25px !important;
     height: 25px !important;
     border-radius: 5px !important;
-
 }
 .container-restaurants {
     text-align: center;
+
 }
 .post-data {
-
-/*width: 100%;*/
     width: 1500px;
-    margin: 0 auto;
-    /*display: flex;*/
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
     justify-content: center;
     align-content: space-between;
-    /*margin: 0 auto;*/
-
+    align-items: center;
 }
 
 .pagination-pages{
@@ -55,4 +49,10 @@
     margin-top: 20px;
     font-size: 20px;
     padding: 10px;
+}
+
+
+.filters-container {
+    text-align: center;
+    margin: 0 auto;
 }
