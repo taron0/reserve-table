@@ -7,7 +7,8 @@ import Button from "../../shared/button/Button";
 import Modal from "../../modalWindow/modalWindow";
 import SVG from "../../../assets/cancel.png";
 import Input from "../../shared/input/Input";
-import '../../modalWindow/modalWindow.css'
+import '../../modalWindow/modalWindow.css';
+import '../adminPages/adminPage.css'
 
 const AdminRestaurants = () => {
 
@@ -35,18 +36,21 @@ const AdminRestaurants = () => {
             }))
     }, []);
 
-    const handleChangeRestaurants = (key,e) => {
+    const handleChangeRestaurants =  ( e) => {
+
         setNewRestaurants({
             ...newRestaurants,
-            [key]:e.target.value,
-
-            id:data.length + 1,
+            [e.target.name]:e.target.value,
+            id:data.length,
 
         })
+        console.log(newRestaurants, 'newRestaurants')
+        console.log(e.target.value, 'EEEE')
     }
-const handleClick = () =>  {
-    Firebase.addNewRestaurant( newRestaurants, data.length );
-    closeModal()
+const handleClick = async () =>  {
+    await Firebase.addNewRestaurant( newRestaurants, data.length );
+    closeModal();
+
 }
 
 
@@ -57,7 +61,6 @@ const handleClick = () =>  {
 
     const paginate = pageNumber => {
         setCurrentPage(pageNumber);
-
     };
 
 
@@ -83,14 +86,15 @@ const handleClick = () =>  {
                     <span onClick={closeModal} className='close-modal-window'><img src={SVG}/></span>
                 </div>
                 <div>
-                    <Input placeholder={'URL IMG'} onChange={(e) => handleChangeRestaurants(newRestaurants.urlImg,e)}/>
-                    <Input  placeholder={'Name'} onChange={(e) => handleChangeRestaurants(newRestaurants.name,e)}/>
-                    <Input placeholder={'Cuisine'}  onChange={(e) => handleChangeRestaurants(newRestaurants.Cuisine, e)}/>
+                    <Input placeholder={'URL IMG'} onChange={(e) => handleChangeRestaurants(  e)} name={'urlImg'}/>
+                    <Input  placeholder={'Name'}  onChange={(e) => handleChangeRestaurants( e)} name={'name'}/>
+                    <Input placeholder={'Cuisine'}   onChange={(e) => handleChangeRestaurants( e)} name={'Cuisine'}/>
                     <span className='textarea-for-booking'>
                                 <textarea
-                                    onChange={(e) => handleChangeRestaurants(newRestaurants.description,e)}
-                                    placeholder='Description'>
-
+                                    onChange={(e) => handleChangeRestaurants(e)}
+                                    placeholder='Description'
+                                    name={'description'}
+                                >
                                 </textarea>
                     </span>
                     <div className={'btn-add-restaurants'}>
@@ -123,6 +127,7 @@ const handleClick = () =>  {
                         </div>
                     </>
                 ) : 'Loading...'}
+
             </div>
         </>
     )

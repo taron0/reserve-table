@@ -18,11 +18,27 @@ const RestaurantAbout = () => {
     const [data, setData] = useState([])
     const [loading, setLoading] = useState(false);
     const [isopenModal, setIsOpenModal] = useState(false);
+    const [customer, setCustomer] = useState({
+        person:'',
+        date:'',
+        time:'',
+        name:'',
+        email:'',
+        lastname:'',
+        telephone:'',
+        preferences:'',
+    })
     let location = useLocation()
+    const [count, setCount] = useState(0);
 
     const openModal = () => setIsOpenModal(true);
     const closeModal = () => setIsOpenModal(false);
-
+    const handleChange = (key, e) => {
+        setCustomer({
+            ...customer,
+            [key]: e.target.value,
+        })
+    }
 
     useEffect(() => {
         setLoading(true);
@@ -31,11 +47,24 @@ const RestaurantAbout = () => {
                 setData(val);
                 setLoading(false);
             }))
+        Firebase.getReserveTable().then(res => setCount(res.length))
+
     }, [])
 
     const restaurant = data.length && data[id];
+    const handleChangeReserve = ( e ) => {
+        setCustomer({
+            ...customer,
+            [e.target.name] : e.target.value,
+        })
+        console.log(customer, 'customer::::')
+    }
 
+    const handleClick = async ( ) => {
 
+        await Firebase.addReserveTables(customer,count )
+            setIsOpenModal(false)
+    }
     return (
         <>
 
@@ -52,18 +81,21 @@ const RestaurantAbout = () => {
                         <Dropdown
                             title='Party Size'
                             values={PART_SIZE}
+                            name={'person'}
                         />
                     </div>
                     <div className='dropdown-select'>
                         <Dropdown
                             title='Date'
                             values={DATE}
+                            name={'date'}
                         />
                     </div>
                     <div className='dropdown-select'>
                         <Dropdown
                             title='Time'
                             values={TIME}
+                            name={'time'}
                         />
                     </div>
 
@@ -81,18 +113,18 @@ const RestaurantAbout = () => {
                         <div className='dropdow-modal'>
                             <span>
                                   <Dropdown
-
                                       values={PART_SIZE}
+                                      name={'person'}
+                                      onChange={(e) =>  handleChangeReserve(e)}
                                   />
                             </span>
 
                             <span>
-                                  <Dropdown values={DATE}/>
+                                  <Dropdown values={DATE} name={'date'}      onChange={(e) =>  handleChangeReserve(e)}/>
                             </span>
 
                             <span>
-                                 <Dropdown values={TIME}/>
-
+                                 <Dropdown values={TIME}  name={'time'}      onChange={(e) =>  handleChangeReserve(e)}/>
                             </span>
 
                         </div>
@@ -100,12 +132,16 @@ const RestaurantAbout = () => {
                             <span>
                                 <Input type='name'
                                        placeholder='Name'
+                                       name={'name'}
+                                       onChange={(e) =>  handleChangeReserve(e)}
                                        />
                             </span>
                             <span>
                                 <Input
                                     type='text'
                                     placeholder='Lastname'
+                                    name={'lastname'}
+                                    onChange={(e) =>  handleChangeReserve(e)}
                                 />
                             </span>
 
@@ -115,6 +151,8 @@ const RestaurantAbout = () => {
                                 <Input
                                     type='text'
                                     placeholder='Email'
+                                    name={'email'}
+                                    onChange={(e) =>  handleChangeReserve(e)}
                                 />
                             </span>
 
@@ -122,23 +160,24 @@ const RestaurantAbout = () => {
                                 <Input
                                     type='text'
                                     placeholder='Telephone'
+                                    name={'telephone'}
+                                    onChange={(e) =>  handleChangeReserve(e)}
                                 />
                             </span>
 
                             <span className='textarea-for-booking'>
                                 <textarea
                                     placeholder='Preferences on booking'
+                                    name={'preferences'}
+                                    onChange={(e) =>  handleChangeReserve(e)}
                                 >
-
                                 </textarea>
                             </span>
 
                         </div>
                         <div className='reserve-table-btn'>
                             <span>
-                                <Button context='Book Now'
-
-                                />
+                                <Button context='Book Now'  onClick={() => handleClick()}/>
                             </span>
                             <span >
                                 <Button context='Special Events' />

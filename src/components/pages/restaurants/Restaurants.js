@@ -1,84 +1,57 @@
 import React, {useEffect, useState} from 'react';
 import imgContact from "../../../assets/cover-image.jpg";
-import './restaurants.css'
 import Firebase from '../../../service/firebase/firebase'
 import Posts from "../../pagination/posts";
 import Pagination from "../../pagination/pagination";
 import Header from "../../header/Header";
 import Filters from "../../filters";
 
+import './restaurants.css';
+
+const LIMIT = 9;
 
 const Restaurants = () => {
-    const [data, setData] = useState([])
-    const [loading, setLoading] = useState(false)
+    const [data, setData] = useState([]);
+    const [loading, setLoading] = useState(false);
     const [currentPage, setCurrentPage] = useState(1);
-    const [postsPerPage, setPostsPerPage] = useState(9);
     const [filtered, setFiltered] = useState([]);
     const [selectedFilters, setSelectedFilters] = useState({}); // [id]: true
 
-    const cuisines = [...data];
-console.log(loading)
+    const cuisines = [...data]; // TODO check
+
     useEffect(() => {
         setLoading(true);
         Firebase.getRestaurants()
             .then((val => {
                 setData(val);
                 setLoading(false);
-            }))
+                setFiltered(val);
+            }));
     }, []);
 
-useEffect(() => {
-    if(!loading){
-        setFiltered(data)
-    }
-},[loading])
-    const handleCheck = (e) => {
-        if (e.target.checked) {
-
-        } else {
-            // let i = checked.indexOf(e.target.name);
-
+    useEffect(() => {
+        if (Object.keys(selectedFilters).length) {
+            handleCuisineFiltration();
         }
-        // setFiltered([...filteredData(checked, data)])
+    }, [selectedFilters]);
 
-    }
-
-    const indexOfLastPost = currentPage * postsPerPage;
-    const indexOfFirstPost = indexOfLastPost - postsPerPage;
+    const indexOfLastPost = currentPage * LIMIT;
+    const indexOfFirstPost = indexOfLastPost - LIMIT;
 
     const currentPosts = loading ? [] : filtered?.slice(indexOfFirstPost, indexOfLastPost);
 
     const paginate = pageNumber => {
         setCurrentPage(pageNumber);
-
     };
 
-    const filterCheck = () => {
-      const arr =  Object.keys(selectedFilters).filter(val=>{
-            if(selectedFilters[val]){
-                return  val
-            }
-        })
-        setFiltered(data.filter((item,index)=>{
+    const handleCuisineFiltration = () => {
+      const cuisinesToBeFiltered = Object.keys(selectedFilters).filter(val=> selectedFilters[val]);
+      const isFiltersAvailable = !!cuisinesToBeFiltered.length;
 
-            if(arr.length && arr.indexOf(item?.Cuisine)>=0){
-                return item
-            }
-            if(!arr.length){
-                return item
-            }
-        }))
+      !isFiltersAvailable && setData(cuisines)
+      setFiltered(data.filter((item,index)=> (isFiltersAvailable && cuisinesToBeFiltered.indexOf(item?.Cuisine) >= 0) || !isFiltersAvailable));
+    };
 
-        if(!arr.length) {
-            setData(cuisines)
-        }
-    }
-    console.log(filtered,'540')
-    useEffect(() => {
-        if (Object.keys(selectedFilters).length) {
-            filterCheck()
-        }
-    }, [selectedFilters])
 
     return (
         <>
@@ -88,28 +61,26 @@ useEffect(() => {
                     <h1>RESTAURANTS</h1>
                     <p>Booking online is Easy.</p>
                 </div>
-
             </div>
             <div className='filters-container'>
-                <Filters setSelectedFilters={setSelectedFilters} selectedFilters={selectedFilters}/>
+                <Filters
+                    setSelectedFilters={setSelectedFilters}
+                    selectedFilters={selectedFilters}
+                />
             </div>
-
-
             <div className={'container-restaurants'}>
                 {!loading ? (
                     <>
                         <div className={'post-data'}>
-
                             <Posts
                                 posts={currentPosts}
                                 loading={loading}
                             />
                         </div>
-
                         <div className={'pagination-pages'}>
                             <Pagination
                                 paginate={paginate}
-                                postsPerPage={postsPerPage}
+                                postsPerPage={LIMIT}
                                 totalPosts={data?.length }
                                 url={`restaurants/page`}
                             />
@@ -119,6 +90,6 @@ useEffect(() => {
             </div>
         </>
     )
-}
+};
 
-export default Restaurants
+export default Restaurants;

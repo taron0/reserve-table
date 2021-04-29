@@ -27,7 +27,7 @@ const AdminPage = () => {
                                 <Link to={'/admin/restaurants'}><Button context={'Book Now'}/> </Link>
                             </div>
                             <div className={'btn-book'}>
-                                <Link to={''}><Button context={'Orders'}/> </Link>
+                                <Link to={'/admin/orders'}><Button context={'Orders'}/> </Link>
                             </div>
                         </div>
 

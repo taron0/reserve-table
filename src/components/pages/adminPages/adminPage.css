@@ -4,3 +4,21 @@
     flex-wrap: wrap;
     justify-content: center;
 }
+
+.btns-admin {
+    text-align: center;
+}
+
+
+.btn-add-restaurants {
+    display: flex;
+    justify-content: center;
+    text-align: center;
+}
+
+.orders-list {
+    text-align: center;
+    width: 1000px;
+    margin: 0 auto;
+
+}

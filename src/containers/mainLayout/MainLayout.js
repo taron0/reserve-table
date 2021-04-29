@@ -9,6 +9,7 @@ import RestaurantAbout from "../../components/pages/restaurantAbout/restaurantAb
 import Admin from "../../components/admin/admin";
 import AdminPage from "../../components/pages/adminPages/adminPage";
 import AdminRestaurants from "../../components/pages/adminRestaurants/adminRestaurants";
+import Orders from "../../components/pages/adminOrders/orders";
 
 
 const MainLayout = () => {
@@ -31,7 +32,7 @@ const MainLayout = () => {
                 <Contact/>
                 </Route>
                 <Route  path="/resturants/search/:id" component={RestaurantAbout } /> // TODO change to id++*/
-                <Route path="/restaurants/page/:id" component={Restaurants} /> // TODO change search params
+                <Route path="/restaurants/page/:id" component={Restaurants} />
                 {/*{Routes.map(({ route, component: Component }) => (*/}
                 {/*    <Route exact path={route}>*/}
                 {/*        <Component />*/}
@@ -43,6 +44,7 @@ const MainLayout = () => {
                 <Route exact path='/admin/page' component={AdminPage} />
                 <Route exact path={'/admin/restaurants'} component={AdminRestaurants}/>
                 <Route exact path={'/admin/restaurants/page/:id'} component={AdminRestaurants}/>
+                <Route exact path={'/admin/orders'} component={Orders} />
                 <Redirect to="/" />
                 <Route path="">
                     <h1>Not Found</h1>

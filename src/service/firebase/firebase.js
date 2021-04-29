@@ -19,6 +19,14 @@ class Firebase {
             .catch(err => console.log(err))
     }
 
+    addReserveTables (data, n) {
+        return this.db
+            .ref(`tables/${n}`)
+            .set(data)
+            .then(res => console.log(res))
+            .catch(err => console.log(err))
+
+    }
 
     addFirebaseUrl(data, n) {
         return this.db
@@ -36,14 +44,24 @@ class Firebase {
                 .catch(err => reject(err));
         })
     }
-
+    getReserveTable() {
+        return new Promise((resolve, reject) => {
+            this.db
+                .ref('tables/')
+                .once('value')
+                .then(snap => resolve(snap.val()))
+                .catch(err => reject(err));
+        })
+    }
     addNewRestaurant (data, id) {
-        return this.db
+        return (this.db
             .ref(`${RESTAURANTS}/${id}`)
             .set(data)
             .then(res => console.log(res))
-            .catch(err => console.log(err))
+            .catch(err => console.log(err)))
     }
+
+
 
     getRestaurants () {
         return new Promise((resolve, reject) => {
