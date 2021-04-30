@@ -1,7 +1,7 @@
 import React from 'react';
 import './dropdown.css'
 
-const Dropdown = ({title , values, onChange, name }) => {
+const Dropdown = ({ title , values, onChange, name }) => {
     return (
         <div className='dropdown-v'>
             <p className='dropdown-title'>{title}</p>
