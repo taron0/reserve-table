@@ -4,7 +4,7 @@ import Fetch from '../../service/fetch/fetch'
 import mainConfig from '../../configs/mainConfig'
 
 
-const Filters = ({selectedFilters,setSelectedFilters}) => {
+const Filters = ({ selectedFilters, setSelectedFilters }) => {
     const [cuisine, setCuisine] = useState([]);
     useEffect(() => {
 

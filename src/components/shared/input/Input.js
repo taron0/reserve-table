@@ -7,7 +7,6 @@ const Input = ({type, placeholder, name, value, onChange}) => {
     return (
         <>
             <span className='input-box'>
-
                 <input
                     type={type}
                     placeholder={placeholder}
@@ -16,7 +15,6 @@ const Input = ({type, placeholder, name, value, onChange}) => {
                     value={value}
                     onChange={onChange}
                 />
-
               </span>
         </>
     )
