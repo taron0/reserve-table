@@ -1,5 +1,5 @@
 import React from 'react';
-import ResturantsList from "../../helpers/resturantsList/resturantsList";
+import ResturantsList from "../resturantsList/resturantsList";
 
 const Posts = ({posts, loading}) => {
 
