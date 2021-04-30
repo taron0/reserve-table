@@ -55,7 +55,7 @@ const Restaurants = () => {
 
     return (
         <>
-            <div className={'wrapper-resturants'} style={{backgroundImage: `url(${imgContact})`}}>
+            <div className={'wrapper-restaurants'} style={{backgroundImage: `url(${imgContact})`}}>
                 <Header/>
                 <div className={'contact-text'}>
                     <h1>RESTAURANTS</h1>
@@ -81,7 +81,7 @@ const Restaurants = () => {
                             <Pagination
                                 paginate={paginate}
                                 postsPerPage={LIMIT}
-                                totalPosts={data?.length }
+                                totalPosts={filtered.length ? filtered.length : data?.length  }
                                 url={`restaurants/page`}
                             />
                         </div>

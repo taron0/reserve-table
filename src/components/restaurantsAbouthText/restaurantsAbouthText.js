@@ -2,7 +2,7 @@ import React from 'react'
 
 const RestaurantsAboutText = ({ restaurants }) => {
     return (
-        <div className='restaurant-about-content'>
+        <div className='restaurants-about-content'>
 
             <div>
                 <img

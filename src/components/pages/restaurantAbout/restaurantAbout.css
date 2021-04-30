@@ -1,4 +1,4 @@
-.wrapper-resturants-about {
+.wrapper-restaurants-about {
     color: white;
     min-height: 400px;
     background-size: cover;
@@ -56,7 +56,7 @@
 }
 
 
-.restaurant-about-content {
+.restaurants-about-content {
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
@@ -104,14 +104,14 @@
 }
 
 
-.dropdow-modal {
+.dropdown-modal {
     width: 100%;
     display: grid;
     grid-template-columns: 3fr 3fr 1fr;
     margin-top: 30px;
     grid-column-gap: 30px;
 }
-.fileds-box {
+.fields-box{
     width: 100%;
     display: grid;
     grid-template-columns: 1fr 2fr;

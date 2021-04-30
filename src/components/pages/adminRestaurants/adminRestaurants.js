@@ -18,14 +18,15 @@ const AdminRestaurants = () => {
     const [postsPerPage, setPostsPerPage] = useState(9);
     const [isopenModal, setIsOpenModal] = useState(false);
     const [newRestaurants, setNewRestaurants] = useState({
-        name:'',
-        description:'',
-        urlImg:'',
-        id:0,
-        Cuisine:'',
+        name: '',
+        description: '',
+        urlImg: '',
+        id: 0,
+        Cuisine: '',
     })
     const openModal = () => setIsOpenModal(true);
     const closeModal = () => setIsOpenModal(false);
+
 
     useEffect(() => {
         setLoading(true);
@@ -36,23 +37,20 @@ const AdminRestaurants = () => {
             }))
     }, []);
 
-    const handleChangeRestaurants =  ( e) => {
-
+    const handleChangeRestaurants = (e) => {
         setNewRestaurants({
             ...newRestaurants,
-            [e.target.name]:e.target.value,
-            id:data.length,
+            [e.target.name]: e.target.value,
+            id: data.length,
 
         })
-        console.log(newRestaurants, 'newRestaurants')
-        console.log(e.target.value, 'EEEE')
     }
-const handleClick = async () =>  {
-    await Firebase.addNewRestaurant( newRestaurants, data.length );
-    closeModal();
 
-}
+    const handleClick = async () => {
+        await Firebase.addNewRestaurant(newRestaurants, data.length);
+        closeModal();
 
+    }
 
 
     const indexOfLastPost = currentPage * postsPerPage;
@@ -67,28 +65,26 @@ const handleClick = async () =>  {
     return (
         <>
             <div className={'wrapper-resturants'} style={{backgroundImage: `url(${imgContact})`}}>
-
                 <div className={'contact-text'}>
                     <h1>RESTAURANTS</h1>
                     <p>Booking online is Easy.</p>
                 </div>
-
             </div>
 
             <div className={'btns-admin'}>
                 <Button context={'ADD'} onClick={() => openModal()}/>
-
             </div>
+
             <Modal isOpen={isopenModal}
                    onClose={() => closeModal()}>
                 <div className='modal-text'>
-
                     <span onClick={closeModal} className='close-modal-window'><img src={SVG}/></span>
                 </div>
+
                 <div>
-                    <Input placeholder={'URL IMG'} onChange={(e) => handleChangeRestaurants(  e)} name={'urlImg'}/>
-                    <Input  placeholder={'Name'}  onChange={(e) => handleChangeRestaurants( e)} name={'name'}/>
-                    <Input placeholder={'Cuisine'}   onChange={(e) => handleChangeRestaurants( e)} name={'Cuisine'}/>
+                    <Input placeholder={'URL IMG'} onChange={(e) => handleChangeRestaurants(e)} name={'urlImg'}/>
+                    <Input placeholder={'Name'} onChange={(e) => handleChangeRestaurants(e)} name={'name'}/>
+                    <Input placeholder={'Cuisine'} onChange={(e) => handleChangeRestaurants(e)} name={'Cuisine'}/>
                     <span className='textarea-for-booking'>
                                 <textarea
                                     onChange={(e) => handleChangeRestaurants(e)}

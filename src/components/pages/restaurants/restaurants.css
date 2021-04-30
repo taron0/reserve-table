@@ -1,4 +1,4 @@
-.wrapper-resturants {
+.wrapper-restaurants {
     color: white;
     min-height: 400px;
     background-size: cover;
@@ -50,6 +50,10 @@
     margin-top: 20px;
     font-size: 20px;
     padding: 10px;
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    justify-content: center;
 }
 
 

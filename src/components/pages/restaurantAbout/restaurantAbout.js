@@ -57,25 +57,24 @@ const RestaurantAbout = () => {
             ...customer,
             [e.target.name] : e.target.value,
         })
-        console.log(customer, 'customer::::')
     }
 
     const handleClick = async ( ) => {
-
         await Firebase.addReserveTables(customer,count )
             setIsOpenModal(false)
     }
+
     return (
         <>
 
-            <div className={'wrapper-resturants-about'} style={{backgroundImage: `url(${restaurant.urlImg})`}}>
+            <div className={'wrapper-restaurants-about'} style={{backgroundImage: `url(${restaurant.urlImg})`}}>
                 <Header />
                 <div className={'contact-text'}>
                     <h1>{restaurant.name}</h1>
                     <p>Order online is easy</p>
                 </div>
             </div>
-            <div className='reserve-tavle'>
+            <div className='reserve-table'>
                 <div className='dropdown-container'>
                     <div className='dropdown-select'>
                         <Dropdown
@@ -110,7 +109,7 @@ const RestaurantAbout = () => {
                             <span onClick={closeModal} className='close-modal-window'><img src={SVG}/></span>
                         </div>
 
-                        <div className='dropdow-modal'>
+                        <div className='dropdown-modal'>
                             <span>
                                   <Dropdown
                                       values={PART_SIZE}
@@ -128,7 +127,7 @@ const RestaurantAbout = () => {
                             </span>
 
                         </div>
-                        <div className='fileds-box'>
+                        <div className='fields-box'>
                             <span>
                                 <Input type='name'
                                        placeholder='Name'
@@ -146,7 +145,7 @@ const RestaurantAbout = () => {
                             </span>
 
                         </div>
-                        <div className='contact-fileds-input'>
+                        <div className='contact-fields-input'>
                             <span>
                                 <Input
                                     type='text'
@@ -173,16 +172,11 @@ const RestaurantAbout = () => {
                                 >
                                 </textarea>
                             </span>
-
                         </div>
                         <div className='reserve-table-btn'>
                             <span>
                                 <Button context='Book Now'  onClick={() => handleClick()}/>
                             </span>
-                            <span >
-                                <Button context='Special Events' />
-                            </span>
-
                         </div>
 
                     </Modal>
@@ -195,12 +189,10 @@ const RestaurantAbout = () => {
                 </p>
                 <p className='cuisine-text'>Cuisine</p>
                 <p>{restaurant.Cuisine}</p>
-
             </div>
             <div>
                 <RestaurantsAboutText restaurants={restaurant}/>
             </div>
-
         </>
     )
 }
