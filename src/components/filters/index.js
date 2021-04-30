@@ -1,4 +1,4 @@
-import React, {useEffect, useLayoutEffect, useState} from "react";
+import React, { useEffect, useState } from "react";
 import Checkbox from "../shared/checkbox/Checkbox";
 import Fetch from '../../service/fetch/fetch'
 import mainConfig from '../../configs/mainConfig'
@@ -13,10 +13,9 @@ const Filters = ({selectedFilters,setSelectedFilters}) => {
 
     }, []);
 
-console.log(cuisine)
 
     return (
-        <div className="filtred-container">
+        <div className="filtered-container">
             {
                 cuisine.map(el => (
                     <Checkbox
@@ -27,9 +26,7 @@ console.log(cuisine)
                     />
                 ))
             }
-
         </div>
-
     )
 }
 

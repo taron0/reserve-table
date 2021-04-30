@@ -5,11 +5,11 @@ class Fetch {
         )
     }
 
-    post(url, method, statmen, data) {
+    post(url, method, statement, data) {
         return (
             fetch(`${url}`, {
                 method:`${method}`,
-                [statmen]:`${JSON.stringify(data)}`
+                [statement]:`${JSON.stringify(data)}`
             })
         )
     }

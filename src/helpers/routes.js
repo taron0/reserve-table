@@ -6,16 +6,23 @@ import Restaurants from "../components/pages/restaurants/Restaurants";
 import Admin from "../components/admin/admin";
 import AdminPage from "../components/pages/adminPages/adminPage";
 import AdminRestaurants from "../components/pages/adminRestaurants/adminRestaurants";
+import Orders from "../components/pages/adminOrders/orders";
 
 export const  Routes = [
     {
         path:'/',
         component:Home,
+        options: {
+            exact: true,
+        }
     },
 
     {
         path:'/restaurants',
         component:Restaurants,
+        options: {
+            exact: true,
+        }
     },
 
     {
@@ -29,7 +36,7 @@ export const  Routes = [
     },
 
     {
-        path:'/resturants/search/:id',
+        path:'/restaurants/search/:id',
         component:RestaurantAbout,
     },
 
@@ -41,11 +48,17 @@ export const  Routes = [
     {
         path: '/admin',
         component:Admin,
+        options: {
+            exact: true,
+        }
     },
 
     {
         path: '/admin/page',
         component:AdminPage,
+        options: {
+            exact: true,
+        },
     },
 
     {
@@ -56,7 +69,17 @@ export const  Routes = [
     {
         path: '/admin/restaurants/page/:id',
         component:AdminRestaurants,
-    }
+    },
+
+    {
+        path: '/admin/restaurants/page/:id',
+        component:AdminRestaurants,
+    },
+
+    {
+        path: '/admin/orders',
+        component:Orders,
+    },
 
 ]
 

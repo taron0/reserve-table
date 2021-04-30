@@ -5,7 +5,7 @@ const Checkbox = ({value, name, onChange}) => {
 
     return (
         <>
-            <span className={'input-checkbox'}>
+            <span className='input-checkbox'>
                 <span>{name}</span>
                 <input
                     type='checkbox'

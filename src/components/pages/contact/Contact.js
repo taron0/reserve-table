@@ -1,11 +1,11 @@
 import React from "react";
 import imgContact from "../../../assets/cover-image.jpg";
 import Header from "../../header/Header";
-import './contact.css'
 import Input from "../../shared/input/Input";
 import Button from "../../shared/button/Button";
 import useContact from "../../hooks/useContact";
 import {registeredError,registeredMessage} from "../../../constant/errorMessage/errorMessage";
+import './contact.css'
 
 const Contact = () => {
     const {formik} = useContact()

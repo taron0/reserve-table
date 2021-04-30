@@ -21,17 +21,17 @@ const Orders = () => {
 
     return (
         <>
-            <div className={'wrapper-resturants'} style={{backgroundImage: `url(${imgContact})`}}>
-                <div className={'contact-text'}>
+            <div className='wrapper-restaurants' style={{backgroundImage: `url(${imgContact})`}}>
+                <div className='contact-text'>
                     <h1>Orders List</h1>
                     {/*<p>Booking online is Easy.</p>*/}
                 </div>
             </div>
-            <div className={'orders-list'}>
+            <div className='orders-list'>
                 <h1>Reserve Tables</h1>
             </div>
 
-            <div className={'tables'}>
+            <div className='tables'>
                 <table>
                     <tr>
                         <th>Name</th>

@@ -1,49 +1,42 @@
 import React from 'react'
 import {NavLink} from "react-router-dom";
-import './Header.css'
 import img from '../../assets/logo_r.png'
-
+import './Header.css'
 
 const Header = () => {
 
     return (
 
-        <div className={'header'}>
-
-            <div className={'logo-holder'}>
-                <a><img src={`${img}`} className={'respimg logo-viz'}/></a>
+        <div className='header'>
+            <div className='logo-holder'>
+                <a><img src={`${img}`} className='respimg logo-viz'/></a>
             </div>
-            <div className={'navigation-and-social'}>
-
-
-                <div className={'nav-holder'}>
+            <div className='navigation-and-social'>
+                <div className='nav-holder'>
                     <nav>
-                        <ul className={'menu'}>
-                            <li className={'menu-item'}>
+                        <ul className='menu'>
+                            <li className='menu-item'>
                                 <NavLink exact to={'/'}>
                                     HOME
                                 </NavLink>
                             </li>
-                            <li className={'menu-item'}>
+                            <li className='menu-item'>
                                 <NavLink exact to={'/restaurants'}>RESTURANTS</NavLink>
                             </li>
-                            <li className={'menu-item'}>
+                            <li className='menu-item'>
                                 <NavLink exact to={'/about'}>
                                     ABOUT
                                 </NavLink>
                             </li>
-                            <li className={'menu-item'}>
+                            <li className='menu-item'>
                                 <NavLink exact to={'/contact'}>
                                     CONTACT
                                 </NavLink>
-
-
                             </li>
                         </ul>
                     </nav>
                 </div>
             </div>
-
         </div>
     )
 }

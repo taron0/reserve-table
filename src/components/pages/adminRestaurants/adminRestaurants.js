@@ -64,7 +64,7 @@ const AdminRestaurants = () => {
 
     return (
         <>
-            <div className='wrapper-resturants' style={{backgroundImage: `url(${imgContact})`}}>
+            <div className='wrapper-restaurants' style={{backgroundImage: `url(${imgContact})`}}>
                 <div className='contact-text'>
                     <h1>RESTAURANTS</h1>
                     <p>Booking online is Easy.</p>
@@ -98,7 +98,6 @@ const AdminRestaurants = () => {
                         <Button context='Cancel' onClick={closeModal}/>
                     </div>
                 </div>
-
             </Modal>
 
             <div className='container-rees'>

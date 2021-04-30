@@ -6,13 +6,13 @@ const Input = ({type, placeholder, name, value, onChange}) => {
 
     return (
         <>
-            <span className={'input-box'}>
+            <span className='input-box'>
 
                 <input
                     type={type}
                     placeholder={placeholder}
                     name={name}
-                    className={'contact-input'}
+                    className='contact-input'
                     value={value}
                     onChange={onChange}
                 />
