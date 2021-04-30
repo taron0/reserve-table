@@ -1,11 +1,10 @@
 import React, {useEffect, useState} from 'react';
-import imgContact from "../../../assets/cover-image.jpg";
 import Firebase from '../../../service/firebase/firebase'
 import Posts from "../../pagination/posts";
 import Pagination from "../../pagination/pagination";
 import Header from "../../header/Header";
 import Filters from "../../filters";
-
+import imgContact from "../../../assets/cover-image.jpg";
 import './restaurants.css';
 
 const LIMIT = 9;
@@ -15,9 +14,9 @@ const Restaurants = () => {
     const [loading, setLoading] = useState(false);
     const [currentPage, setCurrentPage] = useState(1);
     const [filtered, setFiltered] = useState([]);
-    const [selectedFilters, setSelectedFilters] = useState({}); // [id]: true
+    const [selectedFilters, setSelectedFilters] = useState({});
 
-    const cuisines = [...data]; // TODO check
+    const cuisines = [...data]; // TODO check+++
 
     useEffect(() => {
         setLoading(true);
@@ -55,9 +54,9 @@ const Restaurants = () => {
 
     return (
         <>
-            <div className={'wrapper-restaurants'} style={{backgroundImage: `url(${imgContact})`}}>
+            <div className='wrapper-restaurants' style={{backgroundImage: `url(${imgContact})`}}>
                 <Header/>
-                <div className={'contact-text'}>
+                <div className='contact-text'>
                     <h1>RESTAURANTS</h1>
                     <p>Booking online is Easy.</p>
                 </div>
@@ -68,16 +67,16 @@ const Restaurants = () => {
                     selectedFilters={selectedFilters}
                 />
             </div>
-            <div className={'container-restaurants'}>
+            <div className='container-restaurants'>
                 {!loading ? (
                     <>
-                        <div className={'post-data'}>
+                        <div className='post-data'>
                             <Posts
                                 posts={currentPosts}
                                 loading={loading}
                             />
                         </div>
-                        <div className={'pagination-pages'}>
+                        <div className='pagination-pages'>
                             <Pagination
                                 paginate={paginate}
                                 postsPerPage={LIMIT}

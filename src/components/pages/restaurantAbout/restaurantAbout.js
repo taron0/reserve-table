@@ -1,5 +1,4 @@
 import React, {useEffect, useState} from 'react';
-import './restaurantAbout.css'
 import {useLocation, useParams} from 'react-router-dom';
 import Firebase from '../../../service/firebase/firebase'
 import Dropdown from "../../shared/dropdown/dropdown";
@@ -11,6 +10,7 @@ import Modal from "../../modalWindow/modalWindow";
 import SVG from '../../../assets/cancel.png'
 import Input from "../../shared/input/Input";
 import Header from "../../header/Header";
+import './restaurantAbout.css'
 
 
 const RestaurantAbout = () => {
@@ -67,9 +67,9 @@ const RestaurantAbout = () => {
     return (
         <>
 
-            <div className={'wrapper-restaurants-about'} style={{backgroundImage: `url(${restaurant.urlImg})`}}>
+            <div className='wrapper-restaurants-about' style={{backgroundImage: `url(${restaurant.urlImg})`}}>
                 <Header />
-                <div className={'contact-text'}>
+                <div className='contact-text'>
                     <h1>{restaurant.name}</h1>
                     <p>Order online is easy</p>
                 </div>
@@ -80,21 +80,21 @@ const RestaurantAbout = () => {
                         <Dropdown
                             title='Party Size'
                             values={PART_SIZE}
-                            name={'person'}
+                            name='person'
                         />
                     </div>
                     <div className='dropdown-select'>
                         <Dropdown
                             title='Date'
                             values={DATE}
-                            name={'date'}
+                            name='date'
                         />
                     </div>
                     <div className='dropdown-select'>
                         <Dropdown
                             title='Time'
                             values={TIME}
-                            name={'time'}
+                            name='time'
                         />
                     </div>
 
@@ -106,24 +106,26 @@ const RestaurantAbout = () => {
                     >
                         <div className='modal-text'>
                             <p className='text-content'>Find a reservation at MEZZO CLASSIC HOUSE CLUB</p>
-                            <span onClick={closeModal} className='close-modal-window'><img src={SVG}/></span>
+                            <span onClick={closeModal} className='close-modal-window'>
+                                <img src={SVG}/>
+                            </span>
                         </div>
 
                         <div className='dropdown-modal'>
                             <span>
                                   <Dropdown
                                       values={PART_SIZE}
-                                      name={'person'}
+                                      name='person'
                                       onChange={(e) =>  handleChangeReserve(e)}
                                   />
                             </span>
 
                             <span>
-                                  <Dropdown values={DATE} name={'date'}      onChange={(e) =>  handleChangeReserve(e)}/>
+                                  <Dropdown values={DATE} name='date'      onChange={(e) =>  handleChangeReserve(e)}/>
                             </span>
 
                             <span>
-                                 <Dropdown values={TIME}  name={'time'}      onChange={(e) =>  handleChangeReserve(e)}/>
+                                 <Dropdown values={TIME}  name='time'      onChange={(e) =>  handleChangeReserve(e)}/>
                             </span>
 
                         </div>
@@ -131,7 +133,7 @@ const RestaurantAbout = () => {
                             <span>
                                 <Input type='name'
                                        placeholder='Name'
-                                       name={'name'}
+                                       name='name'
                                        onChange={(e) =>  handleChangeReserve(e)}
                                        />
                             </span>
@@ -139,7 +141,7 @@ const RestaurantAbout = () => {
                                 <Input
                                     type='text'
                                     placeholder='Lastname'
-                                    name={'lastname'}
+                                    name='lastname'
                                     onChange={(e) =>  handleChangeReserve(e)}
                                 />
                             </span>
@@ -150,7 +152,7 @@ const RestaurantAbout = () => {
                                 <Input
                                     type='text'
                                     placeholder='Email'
-                                    name={'email'}
+                                    name='email'
                                     onChange={(e) =>  handleChangeReserve(e)}
                                 />
                             </span>
@@ -159,7 +161,7 @@ const RestaurantAbout = () => {
                                 <Input
                                     type='text'
                                     placeholder='Telephone'
-                                    name={'telephone'}
+                                    name='telephone'
                                     onChange={(e) =>  handleChangeReserve(e)}
                                 />
                             </span>
@@ -167,7 +169,7 @@ const RestaurantAbout = () => {
                             <span className='textarea-for-booking'>
                                 <textarea
                                     placeholder='Preferences on booking'
-                                    name={'preferences'}
+                                    name='preferences'
                                     onChange={(e) =>  handleChangeReserve(e)}
                                 >
                                 </textarea>
@@ -183,8 +185,8 @@ const RestaurantAbout = () => {
                 </div>
 
             </div>
-            <div className={'diner-icon'}>
-                <p className={'icon'}>
+            <div className='diner-icon'>
+                <p className='icon'>
                     < img src={imgDiner}/>
                 </p>
                 <p className='cuisine-text'>Cuisine</p>

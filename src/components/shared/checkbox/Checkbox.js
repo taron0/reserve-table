@@ -8,9 +8,9 @@ const Checkbox = ({value, name, onChange}) => {
             <span className={'input-checkbox'}>
                 <span>{name}</span>
                 <input
-                    type={'checkbox'}
+                    type='checkbox'
                     name={name}
-                    className={'checkbox-input'}
+                    className='checkbox-input'
                     value={value}
                     onChange={onChange}
                 />

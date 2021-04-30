@@ -90,7 +90,7 @@ html[lang='hy'] .section-title h4 {
     color: red;
 }
 
-.registred-message {
+.registered-message {
     border: 1px solid green;
     margin-top: 10px;
     width: 100%;
@@ -98,7 +98,7 @@ html[lang='hy'] .section-title h4 {
     padding: 0 20px;
 }
 
-.registred-error {
+.registered-error {
     border: 1px solid yellow;
     width: 100%;
     font-size: 12px;

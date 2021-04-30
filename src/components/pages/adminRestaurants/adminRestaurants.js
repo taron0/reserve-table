@@ -64,15 +64,15 @@ const AdminRestaurants = () => {
 
     return (
         <>
-            <div className={'wrapper-resturants'} style={{backgroundImage: `url(${imgContact})`}}>
-                <div className={'contact-text'}>
+            <div className='wrapper-resturants' style={{backgroundImage: `url(${imgContact})`}}>
+                <div className='contact-text'>
                     <h1>RESTAURANTS</h1>
                     <p>Booking online is Easy.</p>
                 </div>
             </div>
 
-            <div className={'btns-admin'}>
-                <Button context={'ADD'} onClick={() => openModal()}/>
+            <div className='btns-admin'>
+                <Button context='ADD' onClick={() => openModal()}/>
             </div>
 
             <Modal isOpen={isopenModal}
@@ -82,29 +82,29 @@ const AdminRestaurants = () => {
                 </div>
 
                 <div>
-                    <Input placeholder={'URL IMG'} onChange={(e) => handleChangeRestaurants(e)} name={'urlImg'}/>
-                    <Input placeholder={'Name'} onChange={(e) => handleChangeRestaurants(e)} name={'name'}/>
-                    <Input placeholder={'Cuisine'} onChange={(e) => handleChangeRestaurants(e)} name={'Cuisine'}/>
+                    <Input placeholder='URL IMG' onChange={(e) => handleChangeRestaurants(e)} name='urlImg'/>
+                    <Input placeholder='Name' onChange={(e) => handleChangeRestaurants(e)} name='name'/>
+                    <Input placeholder='Cuisine' onChange={(e) => handleChangeRestaurants(e)} name='Cuisine'/>
                     <span className='textarea-for-booking'>
                                 <textarea
                                     onChange={(e) => handleChangeRestaurants(e)}
                                     placeholder='Description'
-                                    name={'description'}
+                                    name='description'
                                 >
                                 </textarea>
                     </span>
-                    <div className={'btn-add-restaurants'}>
-                        <Button context={'Add'} onClick={handleClick}/>
-                        <Button context={'Cancel'} onClick={closeModal}/>
+                    <div className='btn-add-restaurants'>
+                        <Button context='Add' onClick={handleClick}/>
+                        <Button context='Cancel' onClick={closeModal}/>
                     </div>
                 </div>
 
             </Modal>
 
-            <div className={'container-rees'}>
+            <div className='container-rees'>
                 {!loading ? (
                     <>
-                        <div className={'post-data'}>
+                        <div className='post-data'>
 
                             <Posts
                                 posts={currentPosts}
@@ -113,7 +113,7 @@ const AdminRestaurants = () => {
                             />
                         </div>
 
-                        <div className={'pagination-pages'}>
+                        <div className='pagination-pages'>
                             <Pagination
                                 paginate={paginate}
                                 postsPerPage={postsPerPage}
