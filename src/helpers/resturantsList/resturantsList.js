@@ -1,9 +1,9 @@
 import React from 'react'
 import './resturantsList.css'
-import {Link, useHistory , useLocation } from "react-router-dom";
+import { Link, useHistory , useLocation } from "react-router-dom";
 
 
-const ResturantsList = ({el}) => {
+const ResturantsList = ({ el }) => {
     let location = useLocation();
 
 
@@ -11,7 +11,7 @@ const ResturantsList = ({el}) => {
         <>
             <div className={'box-restaurants'}>
                     <div className={'box-img'}>
-                        <img src={el.urlImg} className={'img-resturants'}/>
+                        <img src={el.urlImg} className={'img-restaurants'}/>
                     </div>
                     <div className={'description-img '}>
                         <p>
