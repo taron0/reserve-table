@@ -1,21 +1,23 @@
 import React from 'react'
 import {NavLink} from "react-router-dom";
 import img from '../../assets/logo_r.png'
-import i18next from 'i18next';
-import { useTranslation  } from 'react-i18next'
 import languages from "../../constant/language";
 import 'bootstrap/dist/js/bootstrap.js'
 import GlobalIcon from "../../constant/globalIcon";
+import { useTranslation } from 'react-i18next'
+import i18next from 'i18next'
+import cookies from 'js-cookie'
+import classNames from 'classnames'
 import 'bootstrap/dist/css/bootstrap.min.css'
 import 'flag-icon-css/css/flag-icon.min.css'
 import './Header.css'
 
 
-
-
 const Header = () => {
+    const currentLanguageCode = cookies.get('i18next') || 'en'
+    const currentLanguage = languages.find((l) => l.code === currentLanguageCode)
+    const { t } = useTranslation()
 
-    const { t } = useTranslation();
 
     return (
 
@@ -29,30 +31,31 @@ const Header = () => {
                         <ul className='menu'>
                             <li className='menu-item'>
                                 <NavLink exact to={'/'}>
-
+                                    {/*HOME*/}
                                     {t('home')}
                                 </NavLink>
                             </li>
                             <li className='menu-item'>
                                 <NavLink exact to={'/restaurants'}>
-
+                                    {/*RESTAURANTS*/}
                                     {t('resturants')}
                                 </NavLink>
                             </li>
                             <li className='menu-item'>
                                 <NavLink exact to={'/about'}>
-
+                                    {/*ABOUT*/}
                                     {t('about')}
 
                                 </NavLink>
                             </li>
                             <li className='menu-item'>
                                 <NavLink exact to={'/contact'}>
+                                    {/*CONTACT*/}
                                     {t('contact')}
                                 </NavLink>
                             </li>
                             <li className='menu-item'>
-                                <div className='d-flex justify-content-end ' >
+                                <div className='d-flex justify-content-end '>
                                     <div className="dropdown">
                                         <button
                                             className="btn btn-secondary dropdown-toggle btn-items"
@@ -60,7 +63,7 @@ const Header = () => {
                                             id="dropdownMenuButton1"
                                             data-bs-toggle="dropdown"
                                             aria-expanded="false">
-                                          <GlobalIcon />
+                                            <GlobalIcon/>
                                         </button>
                                         <ul
                                             className="dropdown-menu"
@@ -71,13 +74,14 @@ const Header = () => {
                                                         <button
                                                             className="dropdown-item"
                                                             onClick={() => i18next.changeLanguage(code)}
-                                                            // disabled={code === currentLanguageCode}
+                                                            disabled={code === currentLanguageCode}
                                                         >
-                                                            <span className={`flag-icon flag-icon-${country_code} mx-2`}></span>
+                                                            <span
+                                                                className={`flag-icon flag-icon-${country_code} mx-2`}></span>
                                                             {name}
                                                         </button>
                                                     </li>
-                                                    )
+                                                )
                                             })}
 
                                         </ul>

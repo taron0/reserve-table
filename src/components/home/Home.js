@@ -2,7 +2,7 @@ import React from 'react'
 import Header from "../header/Header";
 import background from '../../assets/cover-image.jpg'
 import { useTranslation } from "react-i18next";
-import i18next from "i18next";
+// import i18next from "i18next";
 import Button from "../shared/button/Button";
 import { Link } from "react-router-dom";
 import './Home.css'
@@ -21,13 +21,12 @@ const Home = () => {
                         <div className='hero-title'>
                             <div className='text-content'>
                                 <h3>
-                                    Discover
-                                    {/*{t('discover')}*/}
+                                    {t('discover')}
                                 </h3>
                                 <span className='border-span'></span>
                                 <h4>
-                                    In Yerevan Restaurants
-                                    {/*{t('in_yerevan_restaurants') }*/}
+
+                                    {t('in_yerevan_restaurants') }
                                 </h4>
 
                                 <span className='border-span'></span>

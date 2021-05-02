@@ -6,7 +6,7 @@ const ResoranPage = () => {
 
     return (
         <div>
-          helo vord
+          helo word
         </div>
     );
 };

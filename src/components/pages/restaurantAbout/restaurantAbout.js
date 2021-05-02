@@ -31,8 +31,17 @@ const RestaurantAbout = () => {
     let location = useLocation()
     const [count, setCount] = useState(0);
 
-    const openModal = () => setIsOpenModal(true);
-    const closeModal = () => setIsOpenModal(false);
+    const openModal = () => {
+        console.log(isopenModal, ":::::::::isOe")
+        setIsOpenModal(true);
+        console.log(isopenModal, 'isOpenModal')
+    }
+    const closeModal = () => {
+        console.log('CloseCloseClose', isopenModal)
+        setIsOpenModal(false);
+        console.log('closeModdal', isopenModal)
+    }
+
     const handleChange = (key, e) => {
         setCustomer({
             ...customer,
@@ -104,6 +113,7 @@ const RestaurantAbout = () => {
                     <Modal isOpen={isopenModal}
                            onClose={() => closeModal()}
                     >
+                        {console.log("::::", )}
                         <div className='modal-text'>
                             <p className='text-content'>Find a reservation at MEZZO CLASSIC HOUSE CLUB</p>
                             <span onClick={() => closeModal()} className='close-modal-window'>
