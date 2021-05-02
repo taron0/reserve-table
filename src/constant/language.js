@@ -16,6 +16,12 @@ const languages = [
         name: 'Россия',
         country_code: 'ru',
     },
+
+    {
+        code:'hy',
+        name:'Armenian',
+        country_code: 'am'
+    },
 ]
 
 export default languages
