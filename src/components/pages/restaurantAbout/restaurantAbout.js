@@ -108,7 +108,7 @@ const RestaurantAbout = () => {
                     </div>
 
                     <div className='modal-button'>
-                        <Button context='Bok Now' className='button-modal' onClick={() => openModal()}/>
+                        <Button context='Bok Now' className='button-modal-open-close' onClick={() => openModal()}/>
                     </div>
                     <Modal isOpen={isopenModal}
                            onClose={() => closeModal()}

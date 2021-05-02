@@ -6,6 +6,7 @@
     height: 100%;
     background: rgba(230, 230, 230, 0.7);
     z-index: 9999999;
+    display: block;
 }
 
 .bg {
@@ -51,20 +52,20 @@
 }
 
 
-/*.btn {*/
-/*    outline: none;*/
-/*    padding: 29px;*/
-/*    margin: 26px;*/
-/*    color: #fff;*/
-/*    font-size: 16px;*/
-/*    letter-spacing: 1px;*/
-/*    background: #603bbb;*/
-/*    cursor: pointer;*/
-/*    border-radius: 8px;*/
-/*    color: red;*/
-/*}*/
+.btn {
+    outline: none;
+    padding: 29px;
+    margin: 26px;
+    color: #fff;
+    font-size: 16px;
+    letter-spacing: 1px;
+    background: #603bbb;
+    cursor: pointer;
+    border-radius: 8px;
+    color: red;
+}
 
-/*.btn:hover {*/
-/*    color: tomato;*/
+.btn:hover {
+    color: tomato;
 
-/*}*/
+}

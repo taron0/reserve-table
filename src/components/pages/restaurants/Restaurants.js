@@ -5,11 +5,13 @@ import Pagination from "../../pagination/pagination";
 import Header from "../../header/Header";
 import Filters from "../../filters";
 import imgContact from "../../../assets/cover-image.jpg";
+import { useTranslation } from "react-i18next";
 import './restaurants.css';
 
 const LIMIT = 9;
 
 const Restaurants = () => {
+    const { t } = useTranslation()
     const [data, setData] = useState([]);
     const [loading, setLoading] = useState(false);
     const [currentPage, setCurrentPage] = useState(1);
@@ -57,8 +59,8 @@ const Restaurants = () => {
             <div className='wrapper-restaurants' style={{backgroundImage: `url(${imgContact})`}}>
                 <Header/>
                 <div className='contact-text'>
-                    <h1>RESTAURANTS</h1>
-                    <p>Booking online is Easy.</p>
+                    <h1>{t('resturants')}</h1>
+                    <p>{t("booking_online_is_easy")}.</p>
                 </div>
             </div>
             <div className='filters-container'>

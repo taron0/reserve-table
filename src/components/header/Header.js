@@ -77,7 +77,11 @@ const Header = () => {
                                                             disabled={code === currentLanguageCode}
                                                         >
                                                             <span
-                                                                className={`flag-icon flag-icon-${country_code} mx-2`}></span>
+                                                                className={`flag-icon flag-icon-${country_code} mx-2`}
+                                                                style={{
+                                                                    opacity: currentLanguageCode === code ? 0.5 : 1,
+                                                                }}
+                                                            ></span>
                                                             {name}
                                                         </button>
                                                     </li>
