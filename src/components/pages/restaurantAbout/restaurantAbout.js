@@ -19,14 +19,14 @@ const RestaurantAbout = () => {
     const [loading, setLoading] = useState(false);
     const [isopenModal, setIsOpenModal] = useState(false);
     const [customer, setCustomer] = useState({
-        person:'',
-        date:'',
-        time:'',
-        name:'',
-        email:'',
-        lastname:'',
-        telephone:'',
-        preferences:'',
+        person: '',
+        date: '',
+        time: '',
+        name: '',
+        email: '',
+        lastname: '',
+        telephone: '',
+        preferences: '',
     })
     let location = useLocation()
     const [count, setCount] = useState(0);
@@ -52,23 +52,23 @@ const RestaurantAbout = () => {
     }, [])
 
     const restaurant = data.length && data[id];
-    const handleChangeReserve = ( e ) => {
+    const handleChangeReserve = (e) => {
         setCustomer({
             ...customer,
-            [e.target.name] : e.target.value,
+            [e.target.name]: e.target.value,
         })
     }
 
-    const handleClick = async ( ) => {
-        await Firebase.addReserveTables(customer,count )
-            setIsOpenModal(false)
+    const handleClick = async () => {
+        await Firebase.addReserveTables(customer, count)
+        setIsOpenModal(false)
     }
 
     return (
         <>
 
             <div className='wrapper-restaurants-about' style={{backgroundImage: `url(${restaurant.urlImg})`}}>
-                <Header />
+                <Header/>
                 <div className='contact-text'>
                     <h1>{restaurant.name}</h1>
                     <p>Order online is easy</p>
@@ -106,7 +106,7 @@ const RestaurantAbout = () => {
                     >
                         <div className='modal-text'>
                             <p className='text-content'>Find a reservation at MEZZO CLASSIC HOUSE CLUB</p>
-                            <span onClick={closeModal} className='close-modal-window'>
+                            <span onClick={() => closeModal()} className='close-modal-window'>
                                 <img src={SVG}/>
                             </span>
                         </div>
@@ -116,16 +116,16 @@ const RestaurantAbout = () => {
                                   <Dropdown
                                       values={PART_SIZE}
                                       name='person'
-                                      onChange={(e) =>  handleChangeReserve(e)}
+                                      onChange={(e) => handleChangeReserve(e)}
                                   />
                             </span>
 
                             <span>
-                                  <Dropdown values={DATE} name='date'      onChange={(e) =>  handleChangeReserve(e)}/>
+                                  <Dropdown values={DATE} name='date' onChange={(e) => handleChangeReserve(e)}/>
                             </span>
 
                             <span>
-                                 <Dropdown values={TIME}  name='time'      onChange={(e) =>  handleChangeReserve(e)}/>
+                                 <Dropdown values={TIME} name='time' onChange={(e) => handleChangeReserve(e)}/>
                             </span>
 
                         </div>
@@ -134,15 +134,15 @@ const RestaurantAbout = () => {
                                 <Input type='name'
                                        placeholder='Name'
                                        name='name'
-                                       onChange={(e) =>  handleChangeReserve(e)}
-                                       />
+                                       onChange={(e) => handleChangeReserve(e)}
+                                />
                             </span>
                             <span>
                                 <Input
                                     type='text'
                                     placeholder='Lastname'
                                     name='lastname'
-                                    onChange={(e) =>  handleChangeReserve(e)}
+                                    onChange={(e) => handleChangeReserve(e)}
                                 />
                             </span>
 
@@ -153,16 +153,16 @@ const RestaurantAbout = () => {
                                     type='text'
                                     placeholder='Email'
                                     name='email'
-                                    onChange={(e) =>  handleChangeReserve(e)}
+                                    onChange={(e) => handleChangeReserve(e)}
                                 />
                             </span>
 
-                            <span >
+                            <span>
                                 <Input
                                     type='text'
                                     placeholder='Telephone'
                                     name='telephone'
-                                    onChange={(e) =>  handleChangeReserve(e)}
+                                    onChange={(e) => handleChangeReserve(e)}
                                 />
                             </span>
 
@@ -170,14 +170,14 @@ const RestaurantAbout = () => {
                                 <textarea
                                     placeholder='Preferences on booking'
                                     name='preferences'
-                                    onChange={(e) =>  handleChangeReserve(e)}
+                                    onChange={(e) => handleChangeReserve(e)}
                                 >
                                 </textarea>
                             </span>
                         </div>
                         <div className='reserve-table-btn'>
                             <span>
-                                <Button context='Book Now'  onClick={() => handleClick()}/>
+                                <Button context='Book Now' onClick={() => handleClick()}/>
                             </span>
                         </div>
 

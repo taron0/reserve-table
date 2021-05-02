@@ -25,7 +25,7 @@ nav {
     width: 100%;
 }
 
-nav li {
+nav .menu-item {
     float: left !important;
     position: relative !important;
     padding: 10px 20px !important;
@@ -33,7 +33,7 @@ nav li {
     list-style-type: none;
 }
 
-nav li a {
+nav .menu-item a {
     float: left;
     line-height: 1;
     font-size: 13px;
@@ -51,11 +51,11 @@ nav li a {
     transition: all 100ms linear;
 }
 
-html[lang='hy'] nav li a {
+html[lang='hy'] nav .menu-item a {
     font-family: 'Noto Sans Armenian', sans-serif;
 }
 
-nav li a:before, nav li a:after {
+nav .menu-item a:before, nav .menu-item a:after {
     content: '';
     position: absolute;
     top: 50%;
@@ -75,16 +75,16 @@ nav li a:before, nav li a:after {
     opacity: 0;
 }
 
-nav li a:before {
+nav .menu-item a:before {
     left: -16px;
 }
 
-nav li a:after {
+nav .menu-item a:after {
     right: -16px;
 }
 
 
-nav li ul {
+nav .menu-item .menu {
     margin: 30px 0 0 0;
     opacity: 0;
     visibility: hidden;
@@ -99,32 +99,32 @@ nav li ul {
     list-style-type: none;
 }
 
-nav li:hover > ul {
+nav .menu-item:hover > .menu {
     opacity: 1;
     visibility: visible;
     margin: 0;
 }
 
-nav li:last-child {
-    padding-right: 0 !important;
-}
+/*nav .menu-item:last-child {*/
+/*    padding-right: 0 !important;*/
+/*}*/
 
-.nav-social ul {
+.nav-social .menu {
     float: right;
     list-style-type: none;
     /*margin-right: 20px;*/
 }
 
-.nav-social li {
+.nav-social .menu-item , .btn-items{
     float: left;
     padding: 10px;
 }
 
-.nav-social li:last-child {
+.nav-social .menu-item:last-child {
     padding-right: 0;
 }
 
-.nav-social li a {
+.nav-social .menu-item a {
     color: white;
     font-size: 14px;
 }
@@ -159,4 +159,15 @@ nav li:last-child {
 .active {
     color: white;
     background-color: #C59D5F;
+}
+
+
+.dropdown-menu {
+    color: black;
+}
+
+#dropdownMenuButton1 {
+    margin: 0;
+    padding: 3px;
+    color: white;
 }

@@ -10,7 +10,7 @@ import AdminPage from "../../components/pages/adminPages/adminPage";
 import AdminRestaurants from "../../components/pages/adminRestaurants/adminRestaurants";
 import Orders from "../../components/pages/adminOrders/orders";
 import Routes from "../../helpers/routes";
-
+import '../../App.css'
 
 const MainLayout = () => {
 
@@ -53,8 +53,11 @@ const MainLayout = () => {
                 {/*<Route exact path={'/admin/orders'} component={Orders}/>*/}
                 {/*<Redirect to="/"/>*/}
                 <Route path="*">
-                    <h1>Not Found</h1>
-                    <p>404 ERROR</p>
+                    <div className='box-not-found'>
+                        <h1>Not Found</h1>
+                        <p>404 ERROR</p>
+                    </div>
+
                 </Route>
             </Switch>
         </>
