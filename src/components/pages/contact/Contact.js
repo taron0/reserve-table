@@ -4,14 +4,14 @@ import Header from "../../header/Header";
 import Input from "../../shared/input/Input";
 import Button from "../../shared/button/Button";
 import useContact from "../../hooks/useContact";
-import { useTranslation } from "react-i18next";
 import {registeredError,registeredMessage} from "../../../constant/errorMessage/errorMessage";
+import useTranslation from "../../hooks/useTranslation";
 import './contact.css'
 
 const Contact = () => {
     const {formik} = useContact();
-    const { t } = useTranslation();
 
+    const { t } = useTranslation()
     return (
         <>
             <div className='wrapper-contact' style={{backgroundImage: `url(${imgContact})`}}>

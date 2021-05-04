@@ -5,12 +5,14 @@ import Pagination from "../../pagination/pagination";
 import Header from "../../header/Header";
 import Filters from "../../filters";
 import imgContact from "../../../assets/cover-image.jpg";
-import { useTranslation } from "react-i18next";
+
 import './restaurants.css';
+import useTranslation from "../../hooks/useTranslation";
 
 const LIMIT = 9;
 
 const Restaurants = () => {
+
     const { t } = useTranslation()
     const [data, setData] = useState([]);
     const [loading, setLoading] = useState(false);

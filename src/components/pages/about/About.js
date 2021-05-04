@@ -1,12 +1,13 @@
 import React from 'react'
 import img from "../../../assets/cover-image.jpg";
 import Header from "../../header/Header";
-import { useTranslation } from "react-i18next";
+// import { useTranslation } from "react-i18next";
 import './About.css'
 import aboutImg from '../../../assets/El-Sky-Bar.jpg'
+import useTranslation from "../../hooks/useTranslation";
 
 const About = () => {
-    const { t } = useTranslation();
+    const { t } = useTranslation()
 
     return (
         <>

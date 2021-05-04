@@ -13,23 +13,11 @@ import './Header.css'
 
 
 const Header = () => {
-    const currentLanguageCode = cookies.get('i18next') || 'en'
-    const currentLanguage = languages.find((l) => l.code === currentLanguageCode)
-    const [lng, setLng] = useState(null)
+    // const currentLanguageCode = cookies.get('i18next') || 'en'
+    // const currentLanguage = languages.find((l) => l.code === currentLanguageCode)
+    // const [lng, setLng] = useState(null)
 
-
-    const {getJsonData, translations} = useTranslation()
-
-
-    const handleCLick = async (code) => {
-        await localStorage.setItem("language", code)
-        await getJsonData(localStorage.getItem("language"))
-    }
-
-    const translationBook = (key) =>{
-         return translations[key]
-
-    }
+    const {getJsonData, translations, handleCLick, t} = useTranslation()
 
 
     return (
@@ -46,7 +34,7 @@ const Header = () => {
                                 <NavLink exact to={'/'}>
                                     {/*HOME*/}
                                     {/*{t('home')}*/}
-                                    {translationBook("home")}
+                                    {t("home")}
                                     {/*{console.log(getTranslationByKey('home'), 'translation key ban man')}*/}
                                 </NavLink>
                             </li>
@@ -54,7 +42,7 @@ const Header = () => {
                                 <NavLink exact to={'/restaurants'}>
                                     {/*RESTAURANTS*/}
                                     {/*<Translate>resturants</Translate>*/}
-                                    {translationBook("resturants")}
+                                    {t("resturants")}
 
                                     {/*{t('resturants')}*/}
                                 </NavLink>
@@ -62,14 +50,14 @@ const Header = () => {
                             <li className='menu-item'>
                                 <NavLink exact to={'/about'}>
                                     {/*ABOUT*/}
-                                    {/*{t('about')}*/}
+                                    {t('about')}
 
                                 </NavLink>
                             </li>
                             <li className='menu-item'>
                                 <NavLink exact to={'/contact'}>
                                     {/*CONTACT*/}
-                                    {/*{t('contact')}*/}
+                                    {t('contact')}
                                 </NavLink>
                             </li>
                             <li className='menu-item'>
