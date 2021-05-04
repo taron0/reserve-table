@@ -4,7 +4,7 @@ import img from '../../assets/logo_r.png'
 import languages from "../../constant/language";
 import 'bootstrap/dist/js/bootstrap.js'
 import GlobalIcon from "../../constant/globalIcon";
-import { useTranslation } from 'react-i18next'
+import {useTranslation} from 'react-i18next'
 import i18next from 'i18next'
 import cookies from 'js-cookie'
 import 'bootstrap/dist/css/bootstrap.min.css'
@@ -18,18 +18,17 @@ const Header = () => {
     const currentLanguageCode = cookies.get('i18next') || 'en'
     const currentLanguage = languages.find((l) => l.code === currentLanguageCode)
     const { t } = useTranslation()
-    const [language, setLanguage] = useState(localStorage.getItem('en'));
     const [ready, setReady] = useState(false);
 
-
     useEffect(() => {
-        setReady(false);
-        translationService.getJsonData(language)
+        setReady(!ready);
+        console.log(localStorage.getItem('language'))
+        translationService.getJsonData(localStorage.getItem('language'))
             .then(val => {
                 console.log(val);
                 setReady(true);
             })
-    }, [language]);
+    }, [localStorage.getItem('language'),ready]);
 
     console.log('-----------', translationService.getTranslationByKey('home'))
 
@@ -86,13 +85,12 @@ const Header = () => {
                                             className="dropdown-menu"
                                             aria-labelledby="dropdownMenuButton">
                                             {languages.map(({code, name, country_code}) => {
-                                                localStorage.setItem(`${code}`, code)
                                                 return (
                                                     <li key={country_code} className='btn-item'>
                                                         <button
                                                             className="dropdown-item"
                                                             // onClick={() => i18next.changeLanguage(code)}
-                                                          onClick={() => setLanguage(code)}
+                                                          onClick={() => localStorage.setItem("language",code)}
                                                             // disabled={code === currentLanguageCode}
                                                         >
                                                             <span
