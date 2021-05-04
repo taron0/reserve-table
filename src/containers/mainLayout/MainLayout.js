@@ -1,14 +1,5 @@
 import React from "react";
-import { Redirect, Route, Switch } from "react-router-dom";
-import Home from "../../components/home/Home";
-import About from "../../components/pages/about/About";
-import Contact from "../../components/pages/contact/Contact";
-import Restaurants from "../../components/pages/restaurants/Restaurants";
-import RestaurantAbout from "../../components/pages/restaurantAbout/restaurantAbout";
-import Admin from "../../components/admin/admin";
-import AdminPage from "../../components/pages/adminPages/adminPage";
-import AdminRestaurants from "../../components/pages/adminRestaurants/adminRestaurants";
-import Orders from "../../components/pages/adminOrders/orders";
+import { Route, Switch } from "react-router-dom";
 import Routes from "../../helpers/routes";
 import '../../App.css'
 
@@ -34,9 +25,8 @@ const MainLayout = () => {
                 {/*<Route path="/restaurants/page/:id" component={Restaurants}/>*/}
 
                 {Routes.map(({ path, options = {}, component: Component }) => {
-                    console.log(path, options, Component)
                     return  (
-                        <Route
+                        <Route key={path}
                             path={path}
                             component={Component}
                             {...options}

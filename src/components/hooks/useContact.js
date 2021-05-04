@@ -27,7 +27,7 @@ const useContact = () => {
         },
         validationSchema: contactValidate,
         onSubmit: async values => {
-            console.log(values)
+            // console.log(values)
         },
     });
 

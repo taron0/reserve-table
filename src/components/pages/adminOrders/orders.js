@@ -15,7 +15,7 @@ const Orders = () => {
         setLoading(true);
             Firebase.getReserveTable().then(res => setData([...res]))
         setLoading(false);
-            console.log(data, 'data orders')
+            // console.log(data, 'data orders')
     }, [])
 
 

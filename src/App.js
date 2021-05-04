@@ -1,13 +1,14 @@
 import MainLayout from "./containers/mainLayout/MainLayout";
-//a
+import React from "react";
+
 
 
 function App() {
+
   return (
     <div>
         <MainLayout />
     </div>
-
   );
 }
 
