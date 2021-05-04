@@ -3,8 +3,7 @@ class TranslationService {
         this.translations = {};
     }
 
-    getJsonData(lng = 'en') {
-        console.log(lng)
+    getJsonData(lng) {
         return fetch(`${process.env.PUBLIC_URL}/translations/${lng}.json`)
             .then(res => res.json())
             .then((val) => {

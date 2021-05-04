@@ -18,17 +18,14 @@ const Header = () => {
     const currentLanguageCode = cookies.get('i18next') || 'en'
     const currentLanguage = languages.find((l) => l.code === currentLanguageCode)
     const { t } = useTranslation()
-    const [ready, setReady] = useState(false);
+    const [language, setLanguage] = useState();
 
-    useEffect(() => {
-        setReady(!ready);
-        console.log(localStorage.getItem('language'))
-        translationService.getJsonData(localStorage.getItem('language'))
-            .then(val => {
-                console.log(val);
-                setReady(true);
-            })
-    }, [localStorage.getItem('language'),ready]);
+    const handleCLick  = async (code) => {
+        await localStorage.setItem("language",code)
+        setLanguage(code)
+    }
+
+
 
     console.log('-----------', translationService.getTranslationByKey('home'))
 
@@ -90,7 +87,7 @@ const Header = () => {
                                                         <button
                                                             className="dropdown-item"
                                                             // onClick={() => i18next.changeLanguage(code)}
-                                                          onClick={() => localStorage.setItem("language",code)}
+                                                          onClick={() => handleCLick(code)}
                                                             // disabled={code === currentLanguageCode}
                                                         >
                                                             <span
