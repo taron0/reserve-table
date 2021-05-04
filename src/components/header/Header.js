@@ -18,7 +18,7 @@ const Header = () => {
     const currentLanguageCode = cookies.get('i18next') || 'en'
     const currentLanguage = languages.find((l) => l.code === currentLanguageCode)
     const { t } = useTranslation()
-    const [language, setLanguage] = useState('en');
+    const [language, setLanguage] = useState(localStorage.getItem('en'));
     const [ready, setReady] = useState(false);
 
 
