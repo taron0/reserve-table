@@ -1,33 +1,36 @@
-import React, {useEffect, useState} from 'react'
+import React, {useState,useEffect} from 'react'
 import {NavLink} from "react-router-dom";
 import img from '../../assets/logo_r.png'
 import languages from "../../constant/language";
 import 'bootstrap/dist/js/bootstrap.js'
 import GlobalIcon from "../../constant/globalIcon";
-import {useTranslation} from 'react-i18next'
+import useTranslation from '../hooks/useTranslation'
 import i18next from 'i18next'
 import cookies from 'js-cookie'
 import 'bootstrap/dist/css/bootstrap.min.css'
 import 'flag-icon-css/css/flag-icon.min.css'
 import './Header.css'
-import translationService from "../../service/translationService";
-import Translate from "../../helpers/translate";
 
 
 const Header = () => {
     const currentLanguageCode = cookies.get('i18next') || 'en'
     const currentLanguage = languages.find((l) => l.code === currentLanguageCode)
-    const { t } = useTranslation()
-    const [language, setLanguage] = useState();
+    const [lng, setLng] = useState(null)
 
-    const handleCLick  = async (code) => {
-        await localStorage.setItem("language",code)
-        setLanguage(code)
+
+    const {getJsonData, translations} = useTranslation()
+
+
+    const handleCLick = async (code) => {
+        await localStorage.setItem("language", code)
+        await getJsonData(localStorage.getItem("language"))
     }
 
+    const translationBook = (key) =>{
+         return translations[key]
 
+    }
 
-    console.log('-----------', translationService.getTranslationByKey('home'))
 
     return (
 
@@ -43,28 +46,30 @@ const Header = () => {
                                 <NavLink exact to={'/'}>
                                     {/*HOME*/}
                                     {/*{t('home')}*/}
-                                    <Translate>home</Translate>
+                                    {translationBook("home")}
                                     {/*{console.log(getTranslationByKey('home'), 'translation key ban man')}*/}
                                 </NavLink>
                             </li>
                             <li className='menu-item'>
                                 <NavLink exact to={'/restaurants'}>
                                     {/*RESTAURANTS*/}
-                                    <Translate>resturants</Translate>
+                                    {/*<Translate>resturants</Translate>*/}
+                                    {translationBook("resturants")}
+
                                     {/*{t('resturants')}*/}
                                 </NavLink>
                             </li>
                             <li className='menu-item'>
                                 <NavLink exact to={'/about'}>
                                     {/*ABOUT*/}
-                                    {t('about')}
+                                    {/*{t('about')}*/}
 
                                 </NavLink>
                             </li>
                             <li className='menu-item'>
                                 <NavLink exact to={'/contact'}>
                                     {/*CONTACT*/}
-                                    {t('contact')}
+                                    {/*{t('contact')}*/}
                                 </NavLink>
                             </li>
                             <li className='menu-item'>
