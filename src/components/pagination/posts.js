@@ -2,8 +2,6 @@ import React from 'react';
 import ResturantsList from "../resturantsList/resturantsList";
 
 const Posts = ({posts, loading}) => {
-
-
     return (
         <>{
             posts.map(el => {
@@ -14,8 +12,6 @@ const Posts = ({posts, loading}) => {
                 )
             })
         }
-
-
         </>
     )
 }

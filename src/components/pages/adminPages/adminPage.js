@@ -13,7 +13,6 @@ const AdminPage = () => {
             <div className='hero-title-holder'>
                 <div className='overlay'>
                     <div className='hero-title'>
-
                         <div className='text-content'>
                             <h3>Discover and book tables</h3>
                             <span className='border-span'></span>
@@ -31,13 +30,9 @@ const AdminPage = () => {
                                 <Link to={ADMIN_ORDERS}><Button context='Orders'/> </Link>
                             </div>
                         </div>
-
                     </div>
-
                 </div>
-
             </div>
-
         </div>
     )
 }

@@ -1,4 +1,4 @@
-import React from 'react'
+import React from 'react';
 import {NavLink} from "react-router-dom";
 import img from '../../assets/logo_r.png'
 import languages from "../../constant/language";
@@ -11,7 +11,7 @@ import './Header.css';
 
 
 const Header = () => {
-    const {handleCLick, t} = useTranslation()
+    const { handleCLick, t } = useTranslation();
 
     return (
 

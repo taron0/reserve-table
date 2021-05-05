@@ -18,7 +18,6 @@ import {
     RESTAURANTS_SEARCH_BY_ID,
     RESTAURANTS_PAGE_ID,
     ADMIN_RESTAURANTS_PAGE_ID,
-
 } from "../constant/urls";
 
 export const Routes = [

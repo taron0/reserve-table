@@ -90,10 +90,7 @@ const RestaurantAbout = () => {
                     <div className='modal-button'>
                         <Button context='Bok Now' className='button-modal-open-close' onClick={() => openModal()}/>
                     </div>
-                    <Modal isOpen={isopenModal}
-                           onClose={() => closeModal()}
-                    >
-
+                    <Modal isOpen={isopenModal} onClose={() => closeModal()} >
                         <div className='modal-text'>
                             <p className='text-content'>Find a reservation at MEZZO CLASSIC HOUSE CLUB</p>
                             <span onClick={() => closeModal()} className='close-modal-window'>

@@ -1,7 +1,5 @@
-import MainLayout from "./containers/mainLayout/MainLayout";
 import React from "react";
-
-
+import MainLayout from "./containers/mainLayout/MainLayout";
 
 function App() {
   return (

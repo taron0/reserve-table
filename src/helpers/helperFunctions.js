@@ -1,5 +1,5 @@
-import {validationForm} from "../constant/validationForm/validationForm";
-import {errorMessage} from "../constant/errorMessage";
+import { validationForm } from "../constant/validationForm/validationForm";
+import { ERROR_MESSAGE } from "../constant/errorMessage";
 
 export const getReserveDate = (n = 0) => {
     const date = new Date();
@@ -18,7 +18,6 @@ export const getReserveDate = (n = 0) => {
         }
         dates.push(`${monthName} ${day + i}, ${year}`)
     }
-
     return dates;
 }
 
@@ -38,42 +37,40 @@ export const getReserveTime = () => {
     return times
 }
 
-
-
 export const validateForm = (name, value) => {
 
     switch (name) {
         case "name":
             if (!value || value.trim() === "") {
-                return errorMessage;
+                return ERROR_MESSAGE.required;
             } else if (!value.match(validationForm.name)){
-                return errorMessage;
+                return ERROR_MESSAGE.required;
             }else {
                 return ""
             }
         case "email":
             if (!value) {
-                return errorMessage;
+                return ERROR_MESSAGE.required;
             } else if (
                 !value.match(validationForm.email)
             ) {
-                return errorMessage;
+                return ERROR_MESSAGE.required;
             } else {
                 return "";
             }
         case "phone":
             if (!value || value.trim() === "") {
-                return errorMessage;
+                return  ERROR_MESSAGE.required;
             } else if (!value.match(validationForm.phone)) {
-                return errorMessage;
+                return ERROR_MESSAGE.required;
             } else {
                 return "";
             }
         case "comment":
             if (!value) {
-                return errorMessage;
+                return ERROR_MESSAGE.required;
             } else if (!value.match(validationForm.comments) ) {
-                return errorMessage;
+                return ERROR_MESSAGE.required;
             } else {
                 return "";
             }

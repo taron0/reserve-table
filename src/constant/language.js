@@ -1,4 +1,3 @@
-
 const languages = [
     {
         code: 'fr',
@@ -17,7 +16,6 @@ const languages = [
         name: 'Россия',
         country_code: 'ru',
     },
-
     {
         code:'hy',
         name:'Armenian',

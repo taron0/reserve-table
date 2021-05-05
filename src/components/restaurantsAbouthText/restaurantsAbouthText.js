@@ -22,7 +22,6 @@ const RestaurantsAboutText = ({ restaurants }) => {
                 </div>
             </div>
         </div>
-
     )
 }
 

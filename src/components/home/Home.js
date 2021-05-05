@@ -8,7 +8,7 @@ import { Link } from "react-router-dom";
 import './Home.css';
 
 const Home = () => {
-    const { t } = useTranslation()
+    const { t } = useTranslation();
 
     return (
         <>

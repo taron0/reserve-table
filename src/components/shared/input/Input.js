@@ -3,7 +3,6 @@ import './Input.css';
 
 
 const Input = ({type, placeholder, name, value, onChange}) => {
-
     return (
         <>
             <span className='input-box'>

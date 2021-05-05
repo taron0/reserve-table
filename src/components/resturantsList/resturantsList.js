@@ -3,7 +3,6 @@ import { Link } from "react-router-dom";
 import './resturantsList.css';
 
 const ResturantsList = ({ el }) => {
-
     return (
         <>
             <div className='box-restaurants'>
@@ -22,8 +21,6 @@ const ResturantsList = ({ el }) => {
             </div>
         </>
     )
-
-
 }
 
 export default ResturantsList

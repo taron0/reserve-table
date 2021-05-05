@@ -2,7 +2,6 @@ import React from 'react'
 import './Checkbox.css'
 
 const Checkbox = ({ value, name, onChange }) => {
-
     return (
         <>
             <span className='input-checkbox'>
@@ -14,10 +13,8 @@ const Checkbox = ({ value, name, onChange }) => {
                     value={value}
                     onChange={onChange}
                 />
-
               </span>
         </>
     )
-
 }
 export default Checkbox

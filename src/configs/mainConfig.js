@@ -7,7 +7,7 @@ const mainConfig = {
         storageBucket: "reserve-table-v2.appspot.com",
         messagingSenderId: "530003811208",
         appId: "1:530003811208:web:5fc9b1590b4700be52b83d",
-        measurementId: "G-HQNK4HQLNK"
+        measurementId: "G-HQNK4HQLNK",
     },
 };
 

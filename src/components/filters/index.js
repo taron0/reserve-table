@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import Checkbox from "../shared/checkbox/Checkbox";
-import Fetch from '../../service/fetch/fetch'
-import mainConfig from '../../configs/mainConfig'
+import Fetch from '../../service/fetch/fetch';
+import mainConfig from '../../configs/mainConfig';
 
 
 const Filters = ({ selectedFilters, setSelectedFilters }) => {

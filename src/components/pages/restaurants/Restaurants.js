@@ -1,4 +1,4 @@
-import React, {useEffect, useState} from 'react';
+import React, { useEffect, useState } from 'react';
 import Firebase from '../../../service/firebase/firebase'
 import Posts from "../../pagination/posts";
 import Pagination from "../../pagination/pagination";
