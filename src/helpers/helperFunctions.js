@@ -1,5 +1,5 @@
 import {validationForm} from "../constant/validationForm/validationForm";
-import {errorMessage} from "../constant/errorMessage/errorMessage";
+import {errorMessage} from "../constant/errorMessage";
 
 export const getReserveDate = (n = 0) => {
     const date = new Date();

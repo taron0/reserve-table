@@ -1,22 +1,21 @@
-import React, {useEffect, useState} from 'react';
-import {useLocation, useParams} from 'react-router-dom';
+import React, { useEffect, useState } from 'react';
+import { useParams } from 'react-router-dom';
 import Firebase from '../../../service/firebase/firebase'
 import Dropdown from "../../shared/dropdown/dropdown";
 import Button from "../../shared/button/Button";
-import {DATE, PART_SIZE, TIME} from "../../../constant/dataDropdown";
-import imgDiner from '../../../assets/cutlery.png'
+import { DATE, PART_SIZE, TIME } from "../../../constant/dataDropdown";
+import imgDiner from '../../../assets/cutlery.png';
 import RestaurantsAboutText from "../../restaurantsAbouthText/restaurantsAbouthText";
 import Modal from "../../modalWindow/modalWindow";
-import SVG from '../../../assets/cancel.png'
+import SVG from '../../../assets/cancel.png';
 import Input from "../../shared/input/Input";
 import Header from "../../header/Header";
-import './restaurantAbout.css'
+import './restaurantAbout.css';
 
 
 const RestaurantAbout = () => {
     const {id} = useParams();
-    const [data, setData] = useState([])
-    const [loading, setLoading] = useState(false);
+    const [data, setData] = useState([]);
     const [isopenModal, setIsOpenModal] = useState(false);
     const [customer, setCustomer] = useState({
         person: '',
@@ -27,37 +26,18 @@ const RestaurantAbout = () => {
         lastname: '',
         telephone: '',
         preferences: '',
-    })
-    let location = useLocation()
+    });
+
     const [count, setCount] = useState(0);
-
-    const openModal = () => {
-        console.log(isopenModal, ":::::::::isOe")
-        setIsOpenModal(true);
-        console.log(isopenModal, 'isOpenModal')
-    }
-    const closeModal = () => {
-        console.log('CloseCloseClose', isopenModal)
-        setIsOpenModal(false);
-        console.log('closeModdal', isopenModal)
-    }
-
-    const handleChange = (key, e) => {
-        setCustomer({
-            ...customer,
-            [key]: e.target.value,
-        })
-    }
+    const openModal = () => setIsOpenModal(true);
+    const closeModal = () =>  setIsOpenModal(false);
 
     useEffect(() => {
-        setLoading(true);
         Firebase.getRestaurants()
             .then((val => {
                 setData(val);
-                setLoading(false);
             }))
         Firebase.getReserveTable().then(res => setCount(res.length))
-
     }, [])
 
     const restaurant = data.length && data[id];
@@ -113,14 +93,13 @@ const RestaurantAbout = () => {
                     <Modal isOpen={isopenModal}
                            onClose={() => closeModal()}
                     >
-                        {console.log("::::", )}
+
                         <div className='modal-text'>
                             <p className='text-content'>Find a reservation at MEZZO CLASSIC HOUSE CLUB</p>
                             <span onClick={() => closeModal()} className='close-modal-window'>
-                                <img src={SVG}/>
+                                <img src={SVG} alt='img-logo-dinner'/>
                             </span>
                         </div>
-
                         <div className='dropdown-modal'>
                             <span>
                                   <Dropdown
@@ -129,15 +108,12 @@ const RestaurantAbout = () => {
                                       onChange={(e) => handleChangeReserve(e)}
                                   />
                             </span>
-
                             <span>
                                   <Dropdown values={DATE} name='date' onChange={(e) => handleChangeReserve(e)}/>
                             </span>
-
                             <span>
                                  <Dropdown values={TIME} name='time' onChange={(e) => handleChangeReserve(e)}/>
                             </span>
-
                         </div>
                         <div className='fields-box'>
                             <span>
@@ -155,7 +131,6 @@ const RestaurantAbout = () => {
                                     onChange={(e) => handleChangeReserve(e)}
                                 />
                             </span>
-
                         </div>
                         <div className='contact-fields-input'>
                             <span>
@@ -166,7 +141,6 @@ const RestaurantAbout = () => {
                                     onChange={(e) => handleChangeReserve(e)}
                                 />
                             </span>
-
                             <span>
                                 <Input
                                     type='text'
@@ -175,7 +149,6 @@ const RestaurantAbout = () => {
                                     onChange={(e) => handleChangeReserve(e)}
                                 />
                             </span>
-
                             <span className='textarea-for-booking'>
                                 <textarea
                                     placeholder='Preferences on booking'
@@ -190,14 +163,12 @@ const RestaurantAbout = () => {
                                 <Button context='Book Now' onClick={() => handleClick()}/>
                             </span>
                         </div>
-
                     </Modal>
                 </div>
-
             </div>
             <div className='diner-icon'>
                 <p className='icon'>
-                    < img src={imgDiner}/>
+                    < img src={imgDiner} alt='img-dinner'/>
                 </p>
                 <p className='cuisine-text'>Cuisine</p>
                 <p>{restaurant.Cuisine}</p>
@@ -206,7 +177,7 @@ const RestaurantAbout = () => {
                 <RestaurantsAboutText restaurants={restaurant}/>
             </div>
         </>
-    )
+    );
 }
 
 export default RestaurantAbout

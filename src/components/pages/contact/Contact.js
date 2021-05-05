@@ -4,14 +4,14 @@ import Header from "../../header/Header";
 import Input from "../../shared/input/Input";
 import Button from "../../shared/button/Button";
 import useContact from "../../hooks/useContact";
-import {registeredError,registeredMessage} from "../../../constant/errorMessage/errorMessage";
+import { ERROR_MESSAGE } from "../../../constant/errorMessage";
 import useTranslation from "../../hooks/useTranslation";
-import './contact.css'
+import './contact.css';
 
 const Contact = () => {
-    const {formik} = useContact();
+    const { formik } = useContact();
+    const { t } = useTranslation();
 
-    const { t } = useTranslation()
     return (
         <>
             <div className='wrapper-contact' style={{backgroundImage: `url(${imgContact})`}}>
@@ -20,17 +20,16 @@ const Contact = () => {
                     <h1>{t("contact")}</h1>
                     <p>{t("get_in_touch_with_us")}</p>
                 </div>
-
             </div>
             <div className='for-restaurants'>
-                <h3>FOR RESTAURANTS</h3>
-                <p>We’re are open to partner with the best restaurants across the country.</p>
-                <p>Join our growing list of partners.</p>
+                <h3>{t('for_restaurants')}</h3>
+                <p>{t('text')}</p>
+                <p>{t('join')}</p>
             </div>
             <div className='container-content'>
                 <div className='section-title'>
-                    <h3>Get in Touch</h3>
-                    <h4 className='decor-title'>WRITE US</h4>
+                    <h3>{t('get_in_touch')}</h3>
+                    <h4 className='decor-title'>{t('write_us')}</h4>
                 </div>
                 <form className='form' onSubmit={formik.handleSubmit}>
                     <Input
@@ -54,7 +53,7 @@ const Contact = () => {
                         {formik.touched.phone && <span className="text-danger">{formik.errors.email}</span>}
                     </div>
                     <Input
-                        type='text'
+                        type='number'
                         placeholder='Phone/+(123) - 456-78-90'
                         name='phone'
                         value={formik.values.phone}
@@ -75,17 +74,17 @@ const Contact = () => {
                     <div className='text-danger'>
                         {formik.touched.comment && <span>{formik.errors.comment}</span>}
                     </div>
-
                     <Button context='Send'/>
                     <div>
                         {Object.keys(formik.touched).length ?
                             <span>{Object.keys(formik.errors).length ?
-                                <span className='registered-error'>{registeredError}</span> :
-                                <span className='registered-message'>{registeredMessage}</span>}</span> : <></>}
+                                <span className='registered-error'>{ERROR_MESSAGE.registeredError}</span> :
+                                <span
+                                    className='registered-message'>{ERROR_MESSAGE.registeredMessage}</span>}</span> : <></>}
                     </div>
                 </form>
             </div>
         </>
-    )
+    );
 }
 export default Contact

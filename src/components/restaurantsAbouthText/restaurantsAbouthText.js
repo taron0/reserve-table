@@ -1,4 +1,4 @@
-import React from 'react'
+import React from 'react';
 
 const RestaurantsAboutText = ({ restaurants }) => {
     return (
@@ -7,6 +7,7 @@ const RestaurantsAboutText = ({ restaurants }) => {
                 <img
                     src={restaurants.urlImg}
                     className='img-style'
+                    alt='img-about-text'
                 />
             </div>
             <div className='about-context-desc'>

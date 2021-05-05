@@ -7,13 +7,13 @@ import Button from "../../shared/button/Button";
 import Modal from "../../modalWindow/modalWindow";
 import SVG from "../../../assets/cancel.png";
 import Input from "../../shared/input/Input";
+import { ADMIN_RESTAURANTS_PAGE } from "../../../constant/urls";
 import '../../modalWindow/modalWindow.css';
-import '../adminPages/adminPage.css'
+import '../adminPages/adminPage.css';
 
 const AdminRestaurants = () => {
-
-    const [data, setData] = useState([])
-    const [loading, setLoading] = useState(false)
+    const [data, setData] = useState([]);
+    const [loading, setLoading] = useState(false);
     const [currentPage, setCurrentPage] = useState(1);
     const [postsPerPage, setPostsPerPage] = useState(9);
     const [isopenModal, setIsOpenModal] = useState(false);
@@ -49,9 +49,7 @@ const AdminRestaurants = () => {
     const handleClick = async () => {
         await Firebase.addNewRestaurant(newRestaurants, data.length);
         closeModal();
-
     }
-
 
     const indexOfLastPost = currentPage * postsPerPage;
     const indexOfFirstPost = indexOfLastPost - postsPerPage;
@@ -61,7 +59,6 @@ const AdminRestaurants = () => {
         setCurrentPage(pageNumber);
     };
 
-
     return (
         <>
             <div className='wrapper-restaurants' style={{backgroundImage: `url(${imgContact})`}}>
@@ -70,17 +67,14 @@ const AdminRestaurants = () => {
                     <p>Booking online is Easy.</p>
                 </div>
             </div>
-
             <div className='btns-admin'>
                 <Button context='ADD' onClick={() => openModal()}/>
             </div>
-
             <Modal isOpen={isopenModal}
                    onClose={() => closeModal()}>
                 <div className='modal-text'>
-                    <span onClick={closeModal} className='close-modal-window'><img src={SVG}/></span>
+                    <span onClick={closeModal} className='close-modal-window'><img src={SVG} alt='svg-img'/></span>
                 </div>
-
                 <div>
                     <Input placeholder='URL IMG' onChange={(e) => handleChangeRestaurants(e)} name='urlImg'/>
                     <Input placeholder='Name' onChange={(e) => handleChangeRestaurants(e)} name='name'/>
@@ -99,30 +93,25 @@ const AdminRestaurants = () => {
                     </div>
                 </div>
             </Modal>
-
             <div className='container-rees'>
                 {!loading ? (
                     <>
                         <div className='post-data'>
-
                             <Posts
                                 posts={currentPosts}
                                 loading={loading}
-
                             />
                         </div>
-
                         <div className='pagination-pages'>
                             <Pagination
                                 paginate={paginate}
                                 postsPerPage={postsPerPage}
                                 totalPosts={data?.length}
-                                url={'admin/restaurants/page'}
+                                url={ADMIN_RESTAURANTS_PAGE}
                             />
                         </div>
                     </>
                 ) : 'Loading...'}
-
             </div>
         </>
     )

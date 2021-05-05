@@ -5,22 +5,21 @@ import Pagination from "../../pagination/pagination";
 import Header from "../../header/Header";
 import Filters from "../../filters";
 import imgContact from "../../../assets/cover-image.jpg";
-
-import './restaurants.css';
 import useTranslation from "../../hooks/useTranslation";
+import { RESTAURANTS_PAGE } from "../../../constant/urls";
+import './restaurants.css';
 
 const LIMIT = 9;
 
 const Restaurants = () => {
 
-    const { t } = useTranslation()
+    const { t } = useTranslation();
     const [data, setData] = useState([]);
     const [loading, setLoading] = useState(false);
     const [currentPage, setCurrentPage] = useState(1);
     const [filtered, setFiltered] = useState([]);
     const [selectedFilters, setSelectedFilters] = useState({});
-
-    const cuisines = [...data]; // TODO check+++
+    const cuisines = [...data];
 
     useEffect(() => {
         setLoading(true);
@@ -40,7 +39,6 @@ const Restaurants = () => {
 
     const indexOfLastPost = currentPage * LIMIT;
     const indexOfFirstPost = indexOfLastPost - LIMIT;
-
     const currentPosts = loading ? [] : filtered?.slice(indexOfFirstPost, indexOfLastPost);
 
     const paginate = pageNumber => {
@@ -85,7 +83,7 @@ const Restaurants = () => {
                                 paginate={paginate}
                                 postsPerPage={LIMIT}
                                 totalPosts={filtered.length ? filtered.length : data?.length  }
-                                url={`restaurants/page`}
+                                url={RESTAURANTS_PAGE}
                             />
                         </div>
                     </>

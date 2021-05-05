@@ -53,6 +53,7 @@ class Firebase {
                 .catch(err => reject(err));
         })
     }
+
     addNewRestaurant (data, id) {
         return (this.db
             .ref(`${RESTAURANTS}/${id}`)
@@ -60,8 +61,6 @@ class Firebase {
             .then(res => console.log(res))
             .catch(err => console.log(err)))
     }
-
-
 
     getRestaurants () {
         return new Promise((resolve, reject) => {

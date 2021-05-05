@@ -2,8 +2,9 @@ import React, {useEffect, useState} from 'react';
 import Input from "../shared/input/Input";
 import {Link} from "react-router-dom";
 import Button from "../shared/button/Button";
-import Firebase from '../../service/firebase/firebase'
-import './admin.css'
+import Firebase from '../../service/firebase/firebase';
+import { ADMIN, ADMIN_PAGE } from "../../constant/urls";
+import './admin.css';
 
 const Admin = () => {
     const [admin, setAdmin] = useState([]);
@@ -13,7 +14,6 @@ const Admin = () => {
 
     });
     const [isAdmin, setIsAdmin] = useState(false);
-    const [error, setError] = useState(false);
 
     useEffect(() => {
         Firebase.getAdminInfo().then(res => {
@@ -21,17 +21,11 @@ const Admin = () => {
         })
     }, [])
 
-
-    // useEffect(() => {
-    //     Fetch.get(`${mainConfig.connection.databaseURL}/admin.json`).then(res => setAdmin([...res]));
-    //
-    // }, [])
-
     const handleChange = (e) => {
         setLogin({
             ...login,
             [e.target.name]: e.target.value,
-        })
+        });
     }
 
     const handleClick = () => {
@@ -39,12 +33,9 @@ const Admin = () => {
         const isPassword = admin[0].password === login.password
         if (isUsername && isPassword) {
             setIsAdmin(true);
-            setError(false)
         } else {
             setIsAdmin(false);
-            setError(true);
         }
-        console.log('xxxxxx')
     }
 
     return (
@@ -68,7 +59,7 @@ const Admin = () => {
                     name='password'
                     onChange={(e) => handleChange(e)}
                 />
-                <Link to={isAdmin ? '/admin/page/' : '/admin'}>
+                <Link to={isAdmin ? ADMIN_PAGE : ADMIN}>
                     <Button context='Sign In' onClick={handleClick}/>
                 </Link>
             </div>

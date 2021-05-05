@@ -1,9 +1,8 @@
-import React, { useState } from 'react';
+import React from 'react';
 import './modalWindow.css';
 
 
 const Modal = ({ onClose, isOpen, children }) => {
-
     if (isOpen === false){
         return null
     }
@@ -16,7 +15,6 @@ const Modal = ({ onClose, isOpen, children }) => {
             </div>
         </div>
     );
-
 }
 
 export default Modal;

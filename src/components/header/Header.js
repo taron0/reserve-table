@@ -1,30 +1,23 @@
-import React, {useState,useEffect} from 'react'
+import React from 'react'
 import {NavLink} from "react-router-dom";
 import img from '../../assets/logo_r.png'
 import languages from "../../constant/language";
-import 'bootstrap/dist/js/bootstrap.js'
+import { CONTACT_URL, ABOUT, RESTAURANTS,  } from '../../constant/urls';
 import GlobalIcon from "../../constant/globalIcon";
-import useTranslation from '../hooks/useTranslation'
-import i18next from 'i18next'
-import cookies from 'js-cookie'
-import 'bootstrap/dist/css/bootstrap.min.css'
-import 'flag-icon-css/css/flag-icon.min.css'
-import './Header.css'
+import useTranslation from '../hooks/useTranslation';
+import 'bootstrap/dist/css/bootstrap.min.css';
+import 'flag-icon-css/css/flag-icon.min.css';
+import './Header.css';
 
 
 const Header = () => {
-    // const currentLanguageCode = cookies.get('i18next') || 'en'
-    // const currentLanguage = languages.find((l) => l.code === currentLanguageCode)
-    // const [lng, setLng] = useState(null)
-
-    const {getJsonData, translations, handleCLick, t} = useTranslation()
-
+    const {handleCLick, t} = useTranslation()
 
     return (
 
         <div className='header'>
             <div className='logo-holder'>
-                <a><img src={`${img}`} className='respimg logo-viz'/></a>
+                <a><img src={`${img}`} className='respimg logo-viz' alt='logo-viz'/></a>
             </div>
             <div className='navigation-and-social'>
                 <div className='nav-holder'>
@@ -32,31 +25,22 @@ const Header = () => {
                         <ul className='menu'>
                             <li className='menu-item'>
                                 <NavLink exact to={'/'}>
-                                    {/*HOME*/}
-                                    {/*{t('home')}*/}
                                     {t("home")}
-                                    {/*{console.log(getTranslationByKey('home'), 'translation key ban man')}*/}
                                 </NavLink>
                             </li>
                             <li className='menu-item'>
-                                <NavLink exact to={'/restaurants'}>
-                                    {/*RESTAURANTS*/}
-                                    {/*<Translate>resturants</Translate>*/}
+                                <NavLink exact to={RESTAURANTS}>
                                     {t("resturants")}
 
-                                    {/*{t('resturants')}*/}
                                 </NavLink>
                             </li>
                             <li className='menu-item'>
-                                <NavLink exact to={'/about'}>
-                                    {/*ABOUT*/}
+                                <NavLink exact to={ABOUT}>
                                     {t('about')}
-
                                 </NavLink>
                             </li>
                             <li className='menu-item'>
-                                <NavLink exact to={'/contact'}>
-                                    {/*CONTACT*/}
+                                <NavLink exact to={CONTACT_URL}>
                                     {t('contact')}
                                 </NavLink>
                             </li>
@@ -79,9 +63,7 @@ const Header = () => {
                                                     <li key={country_code} className='btn-item'>
                                                         <button
                                                             className="dropdown-item"
-                                                            // onClick={() => i18next.changeLanguage(code)}
-                                                          onClick={() => handleCLick(code)}
-                                                            // disabled={code === currentLanguageCode}
+                                                            onClick={() => handleCLick(code)}
                                                         >
                                                             <span
                                                                 className={`flag-icon flag-icon-${country_code} mx-2`}

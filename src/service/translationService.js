@@ -18,5 +18,4 @@ class TranslationService {
     }
 }
 
-
 export default new TranslationService()

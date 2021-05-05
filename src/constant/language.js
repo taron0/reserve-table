@@ -21,8 +21,8 @@ const languages = [
     {
         code:'hy',
         name:'Armenian',
-        country_code: 'am'
+        country_code: 'am',
     },
-]
+];
 
 export default languages

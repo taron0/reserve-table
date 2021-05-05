@@ -7,80 +7,93 @@ import Admin from "../components/admin/admin";
 import AdminPage from "../components/pages/adminPages/adminPage";
 import AdminRestaurants from "../components/pages/adminRestaurants/adminRestaurants";
 import Orders from "../components/pages/adminOrders/orders";
+import {
+    ABOUT,
+    ADMIN,
+    ADMIN_ORDERS,
+    ADMIN_PAGE,
+    ADMIN_RESTAURANTS,
+    CONTACT_URL,
+    RESTAURANTS,
+    RESTAURANTS_SEARCH_BY_ID,
+    RESTAURANTS_PAGE_ID,
+    ADMIN_RESTAURANTS_PAGE_ID,
 
-export const  Routes = [
+} from "../constant/urls";
+
+export const Routes = [
     {
-        path:'/',
-        component:Home,
+        path: '/',
+        component: Home,
         options: {
             exact: true,
         }
     },
 
     {
-        path:'/restaurants',
-        component:Restaurants,
+        path: RESTAURANTS,
+        component: Restaurants,
         options: {
             exact: true,
         }
     },
 
     {
-        path:'/about',
-        component:About,
+        path: ABOUT,
+        component: About,
     },
 
     {
-        path:'/contact',
-        component:Contact,
+        path: CONTACT_URL,
+        component: Contact,
     },
 
     {
-        path:'/restaurants/search/:id',
-        component:RestaurantAbout,
+        path: RESTAURANTS_SEARCH_BY_ID,
+        component: RestaurantAbout,
     },
 
     {
-        path:'/restaurants/page/:id',
-        component:Restaurants,
+        path: RESTAURANTS_PAGE_ID,
+        component: Restaurants,
     },
 
     {
-        path: '/admin',
-        component:Admin,
+        path: ADMIN,
+        component: Admin,
         options: {
             exact: true,
         }
     },
 
     {
-        path: '/admin/page',
-        component:AdminPage,
+        path: ADMIN_PAGE,
+        component: AdminPage,
         options: {
             exact: true,
         },
     },
 
     {
-        path: '/admin/restaurants',
-        component:AdminRestaurants,
+        path: ADMIN_RESTAURANTS,
+        component: AdminRestaurants,
     },
 
     {
-        path: '/admin/restaurants/page/:id',
-        component:AdminRestaurants,
+        path: ADMIN_RESTAURANTS_PAGE_ID,
+        component: AdminRestaurants,
     },
 
     {
-        path: '/admin/restaurants/page/:id',
-        component:AdminRestaurants,
+        path: ADMIN_RESTAURANTS_PAGE_ID,
+        component: AdminRestaurants,
     },
 
     {
-        path: '/admin/orders',
-        component:Orders,
+        path: ADMIN_ORDERS,
+        component: Orders,
     },
 
-]
+];
 
 export default Routes

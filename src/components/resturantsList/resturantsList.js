@@ -1,6 +1,6 @@
-import React from 'react'
+import React from 'react';
 import { Link } from "react-router-dom";
-import './resturantsList.css'
+import './resturantsList.css';
 
 const ResturantsList = ({ el }) => {
 
@@ -8,7 +8,7 @@ const ResturantsList = ({ el }) => {
         <>
             <div className='box-restaurants'>
                 <div className='box-img'>
-                    <img src={el.urlImg} className='img-restaurants'/>
+                    <img src={el.urlImg} className='img-restaurants' alt="image"/>
                 </div>
                 <div className='description-img '>
                     <p>

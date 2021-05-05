@@ -1,7 +1,7 @@
 import React from 'react'
 import './Checkbox.css'
 
-const Checkbox = ({value, name, onChange}) => {
+const Checkbox = ({ value, name, onChange }) => {
 
     return (
         <>
