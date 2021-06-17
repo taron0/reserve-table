@@ -1,4 +1,25 @@
-# Getting Started with Create React App
+# Reserve Table
+## *This project is my first React Project. I wrote it when I first started reading the React documentation.*
+
+---
+### About the site:
+- *There are almost all restaurants in Armenia on the site.*
+    - There is a filter section in the list of restaurants
+        - The filtration is done according to the cuisines of different countries
+            - Example: Armenian, Russian, USA ...
+- *The site also has the function of booking a table in any restaurant*
+    - Booking a table in a given restaurant indicates the date, contact information, number of people, etc.
+- *The site has a function of different luzs, I realized it by hand, which is similar to the i18next library.*
+    - I created it by writing the useTranslation custom hook
+- The site has an admin page
+    - Admin can add new restaurants
+    - Admin can delete and edit restaurants information
+    - The admin has the ability to see all the fixed tables with all the data
+- Etc.
+
+- *I used Firebase as a Back-End to make the site*
+--- 
+## Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
