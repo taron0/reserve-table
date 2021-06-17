@@ -1,5 +1,5 @@
 # Reserve Table
-## *This project is my first React Project. I wrote it when I first started reading the React documentation.*
+## *This project is my first React Project. I wrote it when I first started reading the React documentation.And for that, there may be some errors in the code structure, because I still did not know the structure and writing of the React App.🙂🙂🙂🙂*
 
 ---
 ### About the site:
