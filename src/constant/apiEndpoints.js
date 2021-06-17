@@ -1,1 +1,1 @@
-export const RESTAURANTS = '/restaurants';
+export const RESTAURANTS = "/restaurants";

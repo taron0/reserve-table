@@ -1,20 +1,17 @@
-import React from 'react';
-import './modalWindow.css';
-
+import React from "react";
+import "./modalWindow.css";
 
 const Modal = ({ onClose, isOpen, children }) => {
-    if (isOpen === false){
-        return null
-    }
+  if (isOpen === false) {
+    return null;
+  }
 
-    return (
-        <div className='modal'>
-            <div className='bg' />
-            <div className='content'>
-                {children}
-            </div>
-        </div>
-    );
-}
+  return (
+    <div className="modal">
+      <div className="bg" />
+      <div className="content">{children}</div>
+    </div>
+  );
+};
 
 export default Modal;

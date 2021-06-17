@@ -1,10 +1,10 @@
 import React from "react";
-import MainLayout from "./containers/mainLayout/MainLayout";
+import MainLayout from "./containers/mainLayout/mainLayout";
 
 function App() {
   return (
     <div>
-        <MainLayout />
+      <MainLayout />
     </div>
   );
 }

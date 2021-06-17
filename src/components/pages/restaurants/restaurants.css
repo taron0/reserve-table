@@ -1,69 +1,66 @@
 .wrapper-restaurants {
-    color: white;
-    min-height: 400px;
-    background-size: cover;
-    background-position: center;
-    position: relative;
+  color: white;
+  min-height: 400px;
+  background-size: cover;
+  background-position: center;
+  position: relative;
 }
 
 .filtered-container {
-    padding-top: 15px;
-    padding-bottom: 15px;
-    display: grid;
-    grid-template-columns: 1fr 3fr;
-    width: 900px;
-    margin: 0 auto;
-    margin-top: 35px;
-    margin-bottom: 25px;
-    border-top: 2px solid #C59D5F;
-    border-bottom: 2px solid #C59D5F;
+  padding-top: 15px;
+  padding-bottom: 15px;
+  display: grid;
+  grid-template-columns: 1fr 3fr;
+  width: 900px;
+  margin: 0 auto;
+  margin-top: 35px;
+  margin-bottom: 25px;
+  border-top: 2px solid #c59d5f;
+  border-bottom: 2px solid #c59d5f;
 }
 
 .countries {
-    display: grid;
-    grid-template-columns: 1fr 1fr 1fr;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
 }
 
 .checkbox {
-    width: 25px !important;
-    height: 25px !important;
-    border-radius: 5px !important;
+  width: 25px !important;
+  height: 25px !important;
+  border-radius: 5px !important;
 }
 .container-restaurants {
-    text-align: center;
-
+  text-align: center;
 }
 .post-data {
-    width: 1500px;
-    display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
-    justify-content: center;
-    align-content: space-between;
-    align-items: center;
-    margin: 0 auto;
+  width: 1500px;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-content: space-between;
+  align-items: center;
+  margin: 0 auto;
 }
 
-.pagination-pages{
-    width: 500px;
-    margin: 0 auto;
-    margin-top: 20px;
-    font-size: 20px;
-    padding: 10px;
-    display: flex;
-    flex-wrap: wrap;
-    flex-direction: row;
-    justify-content: center;
+.pagination-pages {
+  width: 500px;
+  margin: 0 auto;
+  margin-top: 20px;
+  font-size: 20px;
+  padding: 10px;
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: row;
+  justify-content: center;
 }
-
 
 .filters-container {
-    text-align: center;
-    margin: 0 auto;
+  text-align: center;
+  margin: 0 auto;
 }
 
-
 .container-rees {
-    text-align: center;
-    margin-top: 25px;
+  text-align: center;
+  margin-top: 25px;
 }

@@ -1,24 +1,22 @@
 .admin-book {
-    display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
-    justify-content: center;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
 }
 
 .btns-admin {
-    text-align: center;
+  text-align: center;
 }
 
-
 .btn-add-restaurants {
-    display: flex;
-    justify-content: center;
-    text-align: center;
+  display: flex;
+  justify-content: center;
+  text-align: center;
 }
 
 .orders-list {
-    text-align: center;
-    width: 1000px;
-    margin: 0 auto;
-
+  text-align: center;
+  width: 1000px;
+  margin: 0 auto;
 }

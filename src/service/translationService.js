@@ -1,21 +1,46 @@
 class TranslationService {
-    constructor() {
-        this.translations = {};
-    }
+  constructor() {
+    this.translations = {};
+  }
 
-    getJsonData(lng) {
-         fetch(`${process.env.PUBLIC_URL}/translations/${lng}.json`)
-            .then(res => res.json())
-            .then((val) => {
-                this.translations = val;
-                return Promise.resolve(val);
-            })
-            .catch((err) => console.log(err))
-    }
+  getTranslationByKey(key = "") {
+    if (
+      Object.keys(this.translations).length &&
+      key &&
+      typeof key === "string"
+    ) {
+      const foundConstants = key.match(/{.*?}/g);
 
-    getTranslationByKey (key) {
-        return this.translations[key]
+      if (Array.isArray(foundConstants)) {
+        const removeBrackets = (str) =>
+          str?.replace(/{/g, "")?.replace(/}/g, "");
+
+        let newKey = key;
+
+        foundConstants.forEach((foundConstant, i) => {
+          newKey = newKey?.replace(foundConstant, `{${i + 1}}`);
+        });
+
+        let val = this.translations[newKey] || removeBrackets(key);
+
+        const foundValues = val?.match(/{.*?}/g);
+
+        if (Array.isArray(foundValues)) {
+          foundValues.forEach((foundValue) => {
+            val = val?.replace(
+              foundValue,
+              removeBrackets(foundConstants[removeBrackets(foundValue) - 1])
+            );
+          });
+        }
+
+        return val;
+      }
+
+      return this.translations[key] || key;
     }
+    return key;
+  }
 }
 
-export default new TranslationService()
+export default new TranslationService();

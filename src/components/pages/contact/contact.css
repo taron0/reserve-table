@@ -1,114 +1,112 @@
 .wrapper-contact {
-    color: white;
-    min-height: 400px;
-    background-size: cover;
-    background-position: center;
-    position: relative;
+  color: white;
+  min-height: 400px;
+  background-size: cover;
+  background-position: center;
+  position: relative;
 }
 
 .contact-text {
-    /*width: 500px;*/
-    margin: 0;
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    margin-right: -50%;
-    transform: translate(-50%, -50%);
-    text-align: center;
+  /*width: 500px;*/
+  margin: 0;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  margin-right: -50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
 }
 
 .contact-text > p {
-    color: #C59D5F;
-    font-style: italic;
-    font-family: 'Noto Serif', serif;
-    font-size: 34px;
-
+  color: #c59d5f;
+  font-style: italic;
+  font-family: "Noto Serif", serif;
+  font-size: 34px;
 }
 
 .section-title {
-    float: left;
-    width: 100%;
-    height: 280px;
-
+  float: left;
+  width: 100%;
+  height: 280px;
 }
 
 .section-title h3 {
-    font-size: 48px;
-    font-family: 'Noto Serif', serif;
-    font-style: italic;
-    color: #C59D5F;
+  font-size: 48px;
+  font-family: "Noto Serif", serif;
+  font-style: italic;
+  color: #c59d5f;
 }
 
-html[lang='hy'] .section-title h3 {
-    font-family: 'Noto Serif Armenian', serif;
+html[lang="hy"] .section-title h3 {
+  font-family: "Noto Serif Armenian", serif;
 }
 
 .section-title h4 {
-    font-size: 20px;
-    text-transform: uppercase;
-    font-weight: bold;
-    letter-spacing: 1px;
-    color: #333333;
-    font-family: 'Noto Sans', sans-serif;
+  font-size: 20px;
+  text-transform: uppercase;
+  font-weight: bold;
+  letter-spacing: 1px;
+  color: #333333;
+  font-family: "Noto Sans", sans-serif;
 }
 
-html[lang='hy'] .section-title h4 {
-    font-family: 'Noto Sans Armenian', sans-serif;
+html[lang="hy"] .section-title h4 {
+  font-family: "Noto Sans Armenian", sans-serif;
 }
 
-.decor-title:before, .decor-title:after {
-    content: '';
-    position: absolute;
-    width: 26px;
-    height: 6px;
+.decor-title:before,
+.decor-title:after {
+  content: "";
+  position: absolute;
+  width: 26px;
+  height: 6px;
 }
 
 .decor-title:before {
-    left: -46px;
+  left: -46px;
 }
 
 .section-title h4:after {
-    right: -46px;
+  right: -46px;
 }
 
 .container-content {
-    width: 500px;
-    margin: 0 auto;
-    text-align: center;
+  width: 500px;
+  margin: 0 auto;
+  text-align: center;
 }
 
 .textarea-form > textarea {
-    text-align: left;
-    /*padding-top: 10px;*/
-    width: 100%;
-    font-size: 100%;
-    font-family: inherit;
-    height: 160px;
+  text-align: left;
+  /*padding-top: 10px;*/
+  width: 100%;
+  font-size: 100%;
+  font-family: inherit;
+  height: 160px;
 }
 
 .text-danger {
-    color: red;
+  color: red;
 }
 
 .registered-message {
-    border: 1px solid green;
-    margin-top: 10px;
-    width: 100%;
-    font-size: 12px;
-    padding: 0 20px;
+  border: 1px solid green;
+  margin-top: 10px;
+  width: 100%;
+  font-size: 12px;
+  padding: 0 20px;
 }
 
 .registered-error {
-    border: 1px solid yellow;
-    width: 100%;
-    font-size: 12px;
-    padding: 0 20px;
+  border: 1px solid yellow;
+  width: 100%;
+  font-size: 12px;
+  padding: 0 20px;
 }
 
 .for-restaurants {
-    width: 400px;
-    margin: 0 auto;
-    text-align: center;
-    font-family: 'Noto Serif', serif;
-
+  width: 400px;
+  margin: 0 auto;
+  text-align: center;
+  font-family: "Noto Serif", serif;
 }

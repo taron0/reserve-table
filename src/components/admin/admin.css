@@ -1,73 +1,72 @@
 .btnn {
-    border: none;
-    outline: none;
-    width: 100%;
-    padding: 15px 0;
-    color: #C59D5F;
-    font-size: 16px;
-    letter-spacing: 1px;
-    background: #603bbb;
-    cursor: pointer;
+  border: none;
+  outline: none;
+  width: 100%;
+  padding: 15px 0;
+  color: #c59d5f;
+  font-size: 16px;
+  letter-spacing: 1px;
+  background: #603bbb;
+  cursor: pointer;
 }
 
 .login {
-    width: 100%;
-    min-height: 50vh;
-    padding: 0 20px;
-    /*background: #C59D5F;*/
-    display: flex;
+  width: 100%;
+  min-height: 50vh;
+  padding: 0 20px;
+  /*background: #C59D5F;*/
+  display: flex;
 }
 
 .login .loginContainer {
-    text-align: center;
-    padding: 60px;
-    margin: auto;
-    width: 100%;
-    max-width: 400px;
-    min-height: 350px;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    background-color: navajowhite;
-    box-shadow: 10px 50px 70px -20px black;
-    border-radius: 8px;
+  text-align: center;
+  padding: 60px;
+  margin: auto;
+  width: 100%;
+  max-width: 400px;
+  min-height: 350px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  background-color: navajowhite;
+  box-shadow: 10px 50px 70px -20px black;
+  border-radius: 8px;
 }
 
 .login .loginContainer label {
-    color: black;
-    margin: 14px 0;
-    display: block;
-    font-size: 22px;
-    line-height: 1;
+  color: black;
+  margin: 14px 0;
+  display: block;
+  font-size: 22px;
+  line-height: 1;
 }
 
 .login .loginContainer input {
-    width: 100%;
-    border: none;
-    outline: none;
-    font-size: 19px;
-    padding: 8px;
-    background: white;
-    color: black;
-    letter-spacing: 1px;
+  width: 100%;
+  border: none;
+  outline: none;
+  font-size: 19px;
+  padding: 8px;
+  background: white;
+  color: black;
+  letter-spacing: 1px;
 }
 
 .login .loginContainer .btnContainer {
-    position: relative;
-    width: 100%;
-    padding: 24px 0;
+  position: relative;
+  width: 100%;
+  padding: 24px 0;
 }
 
 .login .loginContainer .btnContainer p {
-    margin: 14px 0 0 0;
-    text-align: right;
-    color: #fff;
+  margin: 14px 0 0 0;
+  text-align: right;
+  color: #fff;
 }
 
-
 .login > .loginContainer > p {
-    color: red;
-    font-size: 20px;
-    font-weight: bold;
-    font-family: cursive;
+  color: red;
+  font-size: 20px;
+  font-weight: bold;
+  font-family: cursive;
 }

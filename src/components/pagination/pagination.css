@@ -1,20 +1,19 @@
 .page-link {
-    color: black;
-    border: 1px solid black;
-    font-size: 20px;
-    padding: 10px;
+  color: black;
+  border: 1px solid black;
+  font-size: 20px;
+  padding: 10px;
 }
 .page-link:hover {
-    background-color: #C59D5F;
-    color: white;
+  background-color: #c59d5f;
+  color: white;
 }
 .pagination {
-    margin-top: 10px;
-    font-size: 20px;
-    text-align: center;
+  margin-top: 10px;
+  font-size: 20px;
+  text-align: center;
 }
 
- .active  {
-    color: white;
- 
+.active {
+  color: white;
 }

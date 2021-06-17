@@ -1,65 +1,65 @@
 .box-restaurants {
-    width: 400px;
-    height: 400px;
-    position: relative;
-    text-align: center;
-    margin-left: 40px;
-    margin-bottom: 40px;
-    overflow: hidden;
-    display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
-    justify-content: center;
-    justify-items: center;
-    border-bottom: 1px solid black;
-
+  width: 400px;
+  height: 400px;
+  position: relative;
+  text-align: center;
+  margin-left: 40px;
+  margin-bottom: 40px;
+  overflow: hidden;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
+  justify-items: center;
+  border-bottom: 1px solid black;
 }
 
 .box-img {
-    position: absolute;
-    margin: 0;
-    padding: 0;
-    top: 0;
-    left: 0;
-    overflow: hidden;
-    background-size: cover;
-    background-position: center;
-    transition: 0.5s;
+  position: absolute;
+  margin: 0;
+  padding: 0;
+  top: 0;
+  left: 0;
+  overflow: hidden;
+  background-size: cover;
+  background-position: center;
+  transition: 0.5s;
 }
 .box-img:hover {
-    transform: scale(1.1);
+  transform: scale(1.1);
 }
 
 .box-img > .img-restaurants {
-    width: 400px;
-    height: 266px;
-    overflow: hidden;
+  width: 400px;
+  height: 266px;
+  overflow: hidden;
 }
 
-.description-img  {
-    position: absolute;
-    top: 270px;color: black;
-    font-weight: bold;
-    cursor: pointer;
+.description-img {
+  position: absolute;
+  top: 270px;
+  color: black;
+  font-weight: bold;
+  cursor: pointer;
 }
 .description-img:hover {
-    color: gray;
+  color: gray;
 }
 .description-name {
-    position: absolute;
-    margin-bottom: 45px;
-    display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
-    top: 300px;
+  position: absolute;
+  margin-bottom: 45px;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  top: 300px;
 }
 
 .description-name > p {
-    margin-left: 20px;
-    color: #C59D5F;
-    cursor: pointer;
+  margin-left: 20px;
+  color: #c59d5f;
+  cursor: pointer;
 }
 
 .description-name > p:hover {
-    color: black;
+  color: black;
 }

@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import Checkbox from "../shared/checkbox/Checkbox";
+import Checkbox from "../shared/checkbox/checkbox";
 import Fetch from '../../service/fetch/fetch';
 import mainConfig from '../../configs/mainConfig';
 
